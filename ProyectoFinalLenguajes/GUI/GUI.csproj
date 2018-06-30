@@ -115,8 +115,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Administration\" />
+    <Folder Include="DishesPicture\" />
     <Folder Include="Kitchen\" />
     <Folder Include="Movil\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BL\BL.csproj">
+      <Project>{93871550-e9ca-408a-85b7-12592645c53b}</Project>
+      <Name>BL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
