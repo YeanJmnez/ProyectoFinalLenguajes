@@ -51,6 +51,7 @@ namespace DAO.Administration
                 using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
                 {
                     db.Clients.Add(client);
+                    db.Addresses.Add(new Address() { ClientEmail = client.ClientEmail, PhysicalAddress = client.ClientAddress });
                     db.SaveChanges();
                 }
             }
@@ -78,6 +79,8 @@ namespace DAO.Administration
             using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
             {
                 var client = db.Clients.Find(email);
+                var Address = db.Addresses.Find(email);
+                client.ClientAddress = Address.PhysicalAddress;
                 return client;
             }
         }
