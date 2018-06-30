@@ -22,16 +22,5 @@ namespace DAO.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQL7003.site4now.net;Initial Catalog=DB_A3DC31_ProyectoLenguajes;User" +
-            " Id=DB_A3DC31_ProyectoLenguajes_admin;Password=Lenguajes1234;")]
-        public string StringConnection {
-            get {
-                return ((string)(this["StringConnection"]));
-            }
-        }
     }
 }

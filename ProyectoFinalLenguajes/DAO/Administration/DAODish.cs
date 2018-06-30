@@ -4,149 +4,92 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
-using TAO.Administration;
+using TAO;
 using System.Data.SqlClient;
 
 namespace DAO.Administration
 {
     public class DAODish
     {
-        public SqlConnection sqlCnt = new SqlConnection(Properties.Settings.Default.StringConnection);
-
-        public List<TODish> DishesList()
+        public List<Dish> DishesList()
         {
-            List<TAO.Administration.TODish> list = new List<TAO.Administration.TODish>();
-            TAO.Administration.TODish dish = new TAO.Administration.TODish();
-            string con = "select * from Dishes";
-            SqlCommand comand = new SqlCommand(con, sqlCnt);
-
-            if (sqlCnt.State != System.Data.ConnectionState.Open)
+            List<Dish> listDish = new List<Dish>();
+            using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
             {
-                sqlCnt.Open();
+                listDish = db.Dishes.ToList();
             }
+            return listDish;
+        }
 
-            SqlDataReader reader = comand.ExecuteReader();
-
-            if (reader.HasRows)
+        public void updateDish(Dish dish)
+        {
+            try
             {
-                while (reader.Read())
+                using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
                 {
-                    dish = new TAO.Administration.TODish(int.Parse(reader.GetValue(0).ToString()), reader.GetValue(1).ToString(), reader.GetValue(2).ToString(), double.Parse(reader.GetValue(3).ToString()), reader.GetValue(4).ToString(), reader.GetValue(5).ToString());
-                    list.Add(dish);
-                }
-            }
-            else
-            {
-                Console.WriteLine("No rows found.");
-            }
-
-            if (sqlCnt.State != System.Data.ConnectionState.Closed)
-            {
-                sqlCnt.Close();
-            }
-
-            return list;
-        }
-
-        public void updateDish(TODish dish)
-        {
-            string con = "Update Dishes set Name = @nam, Description = @desc, Price = @pri, State = @sta, Picture = @pic where Code = @cod";
-            SqlCommand comand = new SqlCommand(con, sqlCnt);
-            comand.Parameters.AddWithValue("@cod", dish.Code);
-            comand.Parameters.AddWithValue("@nam", dish.Name);
-            comand.Parameters.AddWithValue("@desc", dish.Description);
-            comand.Parameters.AddWithValue("@pri", dish.Price);
-            comand.Parameters.AddWithValue("@sta", dish.State);
-            comand.Parameters.AddWithValue("@pic", dish.Picture);
-
-            if (sqlCnt.State != System.Data.ConnectionState.Open)
-            {
-                sqlCnt.Open();
-            }
-            comand.ExecuteNonQuery();
-
-            if (sqlCnt.State == System.Data.ConnectionState.Closed)
-            {
-                sqlCnt.Close();
-            }
-        }
-
-        public void addDish(TODish dish)
-        {
-            string con = "Insert into Dishes (Code, Name, Description, Price, State, Picture) values (@cod, @nam, @desc, @pri, @sta, @Pic)";
-            SqlCommand comand = new SqlCommand(con, sqlCnt);
-            comand.Parameters.AddWithValue("@cod", dish.Code);
-            comand.Parameters.AddWithValue("@nam", dish.Name);
-            comand.Parameters.AddWithValue("@desc", dish.Description);
-            comand.Parameters.AddWithValue("@pri", dish.Price);
-            comand.Parameters.AddWithValue("@sta", dish.State);
-            comand.Parameters.AddWithValue("@Pic", dish.Picture);
-
-            if (sqlCnt.State != System.Data.ConnectionState.Open)
-            {
-                sqlCnt.Open();
-            }
-            comand.ExecuteNonQuery();
-
-            if (sqlCnt.State == System.Data.ConnectionState.Closed)
-            {
-                sqlCnt.Close();
-            }
-        }
-
-        public void DeleteDish(int code)
-        {
-            string con = "Delete From Dishes where Code = @cod";
-            SqlCommand comand = new SqlCommand(con, sqlCnt);
-            comand.Parameters.AddWithValue("@cod", code);
-
-            if (sqlCnt.State != System.Data.ConnectionState.Open)
-            {
-                sqlCnt.Open();
-            }
-            comand.ExecuteNonQuery();
-
-            if (sqlCnt.State == System.Data.ConnectionState.Closed)
-            {
-                sqlCnt.Close();
-            }
-        }
-
-        public TAO.Administration.TODish ChargeDish(int code)
-        {
-            TODish dish = new TODish();
-            string con = "select * from Dishes where Code = @cod";
-            SqlCommand comand = new SqlCommand(con, sqlCnt);
-            comand.Parameters.AddWithValue("@cod", code);
-            if (sqlCnt.State != System.Data.ConnectionState.Open)
-            {
-                sqlCnt.Open();
-            }
-
-            SqlDataReader reader = comand.ExecuteReader();
-
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    if (int.Parse(reader.GetValue(0).ToString()) == code)
+                    Dish dis = db.Dishes.Find(dish.DishCode);
+                    if (dis != null)
                     {
-                        dish = new TAO.Administration.TODish(int.Parse(reader.GetValue(0).ToString()), reader.GetValue(1).ToString(), reader.GetValue(2).ToString(), double.Parse(reader.GetValue(3).ToString()), reader.GetValue(4).ToString(), reader.GetValue(5).ToString());
-                        return dish;
+                        dis.DishName = dish.DishName;
+                        dis.DishDescription = dish.DishDescription;
+                        dis.DishPrice = dish.DishPrice;
+                        dis.DishAvailable = dish.DishAvailable;
+                        db.SaveChanges();
                     }
 
                 }
             }
-            else
+            catch
             {
-                Console.WriteLine("No rows found.");
-            }
 
-            if (sqlCnt.State != System.Data.ConnectionState.Closed)
-            {
-                sqlCnt.Close();
             }
-            return dish;
+        }
+
+        public void addDish(Dish dish)
+        {
+            try
+            {
+                using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+                {
+                    db.Dishes.Add(dish);
+                    DishPhoto photo = new DishPhoto();
+                    photo.DishCode = dish.DishCode;
+                    photo.PhotoPath = dish.DishPhoto;
+                    db.DishPhotoes.Add(photo);
+                    db.SaveChanges();
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        public void DeleteDish(String code)
+        {
+            using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+            {
+                Dish dish = db.Dishes.Find(code);
+                DishPhoto photo = db.DishPhotoes.Find(code);
+                if (dish != null)
+                {
+                    db.DishPhotoes.Attach(photo);
+                    db.DishPhotoes.Remove(photo);
+                    db.Dishes.Attach(dish);
+                    db.Dishes.Remove(dish);
+                    db.SaveChanges();
+                }
+            }
+        }
+
+        public Dish ChargeDish(string code)
+        {
+            using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+            {
+                var dish = db.Dishes.Find(code);
+                var photo = db.DishPhotoes.Find(code);
+                dish.DishPhoto = photo.PhotoPath;
+                return dish;
+            }
         }
     }
 

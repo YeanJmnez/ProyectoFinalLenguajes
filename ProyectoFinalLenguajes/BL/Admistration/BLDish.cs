@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
-using TAO.Administration;
+using TAO;
 using DAO.Administration;
 
 namespace BL.Admistration
@@ -14,8 +14,8 @@ namespace BL.Admistration
         public int Code { set; get; }
         public string Name { set; get; }
         public string Description { set; get; }
-        public double Price { set; get; }
-        public string State { set; get; }
+        public decimal Price { set; get; }
+        public bool State { set; get; }
         public string Picture { set; get; }
 
         ArrayList DishesLists = new ArrayList();
@@ -24,7 +24,7 @@ namespace BL.Admistration
 
         }
 
-        public BLDish(int code, string name, string description, double price, string state, string picture)
+        public BLDish(int code, string name, string description, decimal price, bool state, string picture)
         {
             this.Code = code;
             this.Name = name;
@@ -37,10 +37,10 @@ namespace BL.Admistration
         public ArrayList DishesList()
         {
             DAODish dv = new DAODish();
-            List<TODish> list = dv.DishesList();
-            foreach (TODish dish in list)
+            List<TAO.Dish> list = dv.DishesList();
+            foreach (TAO.Dish dish in list)
             {
-                BLDish bldhs = new BLDish(dish.Code, dish.Name, dish.Description, dish.Price, dish.State, dish.Picture);
+                BLDish bldhs = new BLDish(dish.DishCode, dish.DishName, dish.DishDescription, dish.DishPrice, dish.DishAvailable, dish.DishPhoto);
                 DishesLists.Add(bldhs);
             }
             return DishesLists;
@@ -54,7 +54,7 @@ namespace BL.Admistration
             {
                 if (dish.Code == bldish.Code)
                 {
-                    TODish todish = new TODish(bldish.Code, bldish.Name, bldish.Description, bldish.Price, bldish.State, bldish.Picture);
+                    Dish todish = new Dish() { DishCode = bldish.Code, DishName = bldish.Name, DishDescription = bldish.Description, DishPrice = bldish.Price, DishAvailable = bldish.State, DishPhoto = bldish.Picture };
                     dv.updateDish(todish);
                     return;
                 }
@@ -66,11 +66,11 @@ namespace BL.Admistration
         public void addDish(BLDish bldish)
         {
             DAODish dv = new DAODish();
-            TODish todish = new TODish(bldish.Code, bldish.Name, bldish.Description, bldish.Price, bldish.State, bldish.Picture);
+            Dish todish = new Dish() { DishCode = bldish.Code, DishName = bldish.Name, DishDescription = bldish.Description, DishPrice = bldish.Price, DishAvailable = bldish.State, DishPhoto = bldish.Picture };
             dv.addDish(todish);
         }
 
-        public void deleteDish(int code)
+        public void deleteDish(string code)
         {
             DAODish dish = new DAODish();
             dish.DeleteDish(code);
@@ -78,12 +78,12 @@ namespace BL.Admistration
             DishesList();
         }
 
-        public ArrayList ChargeDish(int code)
+        public ArrayList ChargeDish(string code)
         {
             ArrayList onlyDish = new ArrayList();
             DAODish dv = new DAODish();
-            TODish dish = dv.ChargeDish(code);
-            BLDish bldish = new BLDish(dish.Code, dish.Name, dish.Description, dish.Price, dish.State, dish.Picture);
+            Dish dish = dv.ChargeDish(code);
+            BLDish bldish = new BLDish(dish.DishCode, dish.DishName, dish.DishDescription, dish.DishPrice, dish.DishAvailable, dish.DishPhoto);
             onlyDish.Add(bldish);
             return onlyDish;
         }
