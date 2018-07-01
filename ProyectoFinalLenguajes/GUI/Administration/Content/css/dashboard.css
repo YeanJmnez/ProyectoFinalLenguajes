@@ -26,6 +26,25 @@
     }
 }
 
+/* Login Page CSS */
+.warn {
+    color: red;
+    font-weight: bold;
+    background-color: #fcc;
+}
+.custom-btn-red {
+    background-color: #3c8dbc;
+    color: #ffffff;
+}
+.custom-btn-red:hover,
+.custom-btn-red:focus {
+    background-color: #367fa9;
+    color: #ffffff;
+}
+.center-block {
+    float: none;
+}
+
 /* User Session */
 div.current-user {
 	width: 100%;
