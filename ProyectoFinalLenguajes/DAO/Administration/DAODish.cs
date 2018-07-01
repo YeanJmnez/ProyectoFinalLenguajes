@@ -81,7 +81,7 @@ namespace DAO.Administration
             }
         }
 
-        public Dish ChargeDish(string code)
+        public Dish ChargeDish(int code)
         {
             using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
             {

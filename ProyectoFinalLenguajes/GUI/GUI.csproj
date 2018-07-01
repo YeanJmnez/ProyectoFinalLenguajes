@@ -107,6 +107,7 @@
     <Content Include="Administration\index.aspx" />
     <Content Include="Administration\Login.aspx" />
     <Content Include="Administration\RemoveDish.aspx" />
+    <Content Include="DishesPicture\i79651-ceviche-de-poisson.jpg" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -176,7 +177,6 @@
   <ItemGroup>
     <Folder Include="Administration\DishPicture\" />
     <Folder Include="Content\" />
-    <Folder Include="DishesPicture\" />
     <Folder Include="Kitchen\" />
     <Folder Include="Movil\" />
   </ItemGroup>

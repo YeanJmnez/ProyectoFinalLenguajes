@@ -12,8 +12,11 @@
         <br />
         <asp:TextBox ID="TbFindDish" runat="server"></asp:TextBox>
         <br />
+        
         <br />
-        <asp:Button ID="Button1" CssClass="btn-primary boton" runat="server" Text="Find" />
-
+        <asp:Button ID="Button1" CssClass="btn-primary boton" runat="server" Text="Find" OnClick="Button1_Click" />
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="lbNombre" runat="server" Text="Nombre"></asp:Label>
+           <br />
     </form>
 </asp:Content>

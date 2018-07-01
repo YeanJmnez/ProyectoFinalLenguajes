@@ -87,7 +87,7 @@ namespace BL.Admistration
             DishesList();
         }
 
-        public ArrayList ChargeDish(string code)
+        public ArrayList ChargeDish(int code)
         {
             ArrayList onlyDish = new ArrayList();
             DAODish dv = new DAODish();
