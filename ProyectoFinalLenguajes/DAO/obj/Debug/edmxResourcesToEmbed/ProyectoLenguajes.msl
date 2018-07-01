@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_A3DC31_ProyectoLenguajesModelStoreContainer" CdmEntityContainer="ProyectoLenguajes_Admin">
+    <EntitySetMapping Name="Addresses">
+      <EntityTypeMapping TypeName="DB_A3DC31_ProyectoLenguajesModel.Address">
+        <MappingFragment StoreEntitySet="Address">
+          <ScalarProperty Name="ClientEmail" ColumnName="ClientEmail" />
+          <ScalarProperty Name="PhysicalAddress" ColumnName="PhysicalAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="DB_A3DC31_ProyectoLenguajesModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="ClientEmail" ColumnName="ClientEmail" />
+          <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+          <ScalarProperty Name="ClientPassword" ColumnName="ClientPassword" />
+          <ScalarProperty Name="ClientAvailable" ColumnName="ClientAvailable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientOrders">
+      <EntityTypeMapping TypeName="DB_A3DC31_ProyectoLenguajesModel.ClientOrder">
+        <MappingFragment StoreEntitySet="ClientOrder">
+          <ScalarProperty Name="OrderCode" ColumnName="OrderCode" />
+          <ScalarProperty Name="OrderState" ColumnName="OrderState" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="DateHourIn" ColumnName="DateHourIn" />
+          <ScalarProperty Name="DateHourOut" ColumnName="DateHourOut" />
+          <ScalarProperty Name="ClientEmail" ColumnName="ClientEmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dishes">
+      <EntityTypeMapping TypeName="DB_A3DC31_ProyectoLenguajesModel.Dish">
+        <MappingFragment StoreEntitySet="Dish">
+          <ScalarProperty Name="DishCode" ColumnName="DishCode" />
+          <ScalarProperty Name="DishName" ColumnName="DishName" />
+          <ScalarProperty Name="DishDescription" ColumnName="DishDescription" />
+          <ScalarProperty Name="DishPrice" ColumnName="DishPrice" />
+          <ScalarProperty Name="DishAvailable" ColumnName="DishAvailable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DishPhotoes">
+      <EntityTypeMapping TypeName="DB_A3DC31_ProyectoLenguajesModel.DishPhoto">
+        <MappingFragment StoreEntitySet="DishPhoto">
+          <ScalarProperty Name="PhotoCode" ColumnName="PhotoCode" />
+          <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+          <ScalarProperty Name="DishCode" ColumnName="DishCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="DB_A3DC31_ProyectoLenguajesModel.OrderDetail">
+        <MappingFragment StoreEntitySet="OrderDetail">
+          <ScalarProperty Name="OrderCode" ColumnName="OrderCode" />
+          <ScalarProperty Name="DishCode" ColumnName="DishCode" />
+          <ScalarProperty Name="DishPrice" ColumnName="DishPrice" />
+          <ScalarProperty Name="DishQuantity" ColumnName="DishQuantity" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemUsers">
+      <EntityTypeMapping TypeName="DB_A3DC31_ProyectoLenguajesModel.SystemUser">
+        <MappingFragment StoreEntitySet="SystemUser">
+          <ScalarProperty Name="SystemUserName" ColumnName="SystemUserName" />
+          <ScalarProperty Name="SystemUserPassword" ColumnName="SystemUserPassword" />
+          <ScalarProperty Name="SystemUserRole" ColumnName="SystemUserRole" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

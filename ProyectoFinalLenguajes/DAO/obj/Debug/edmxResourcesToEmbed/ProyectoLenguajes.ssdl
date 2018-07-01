@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_A3DC31_ProyectoLenguajesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="ClientEmail" />
+    </Key>
+    <Property Name="ClientEmail" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="PhysicalAddress" Type="nvarchar" MaxLength="800" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ClientEmail" />
+    </Key>
+    <Property Name="ClientEmail" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ClientName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ClientPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ClientAvailable" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClientOrder">
+    <Key>
+      <PropertyRef Name="OrderCode" />
+    </Key>
+    <Property Name="OrderCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderState" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TotalPrice" Type="money" Nullable="false" />
+    <Property Name="DateHourIn" Type="datetime" Nullable="false" />
+    <Property Name="DateHourOut" Type="datetime" />
+    <Property Name="ClientEmail" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Dish">
+    <Key>
+      <PropertyRef Name="DishCode" />
+    </Key>
+    <Property Name="DishCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DishName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="DishDescription" Type="nvarchar" MaxLength="400" Nullable="false" />
+    <Property Name="DishPrice" Type="money" Nullable="false" />
+    <Property Name="DishAvailable" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DishPhoto">
+    <Key>
+      <PropertyRef Name="PhotoCode" />
+    </Key>
+    <Property Name="PhotoCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PhotoPath" Type="nvarchar" MaxLength="800" Nullable="false" />
+    <Property Name="DishCode" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="OrderCode" />
+      <PropertyRef Name="DishCode" />
+    </Key>
+    <Property Name="OrderCode" Type="int" Nullable="false" />
+    <Property Name="DishCode" Type="int" Nullable="false" />
+    <Property Name="DishPrice" Type="money" Nullable="false" />
+    <Property Name="DishQuantity" Type="int" Nullable="false" />
+    <Property Name="SubTotal" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SystemUser">
+    <Key>
+      <PropertyRef Name="SystemUserName" />
+    </Key>
+    <Property Name="SystemUserName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SystemUserPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SystemUserRole" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Address_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientEmail" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="ClientEmail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientOrder_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="ClientOrder" Type="Self.ClientOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientEmail" />
+      </Principal>
+      <Dependent Role="ClientOrder">
+        <PropertyRef Name="ClientEmail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DishPhoto_Dish">
+    <End Role="Dish" Type="Self.Dish" Multiplicity="1" />
+    <End Role="DishPhoto" Type="Self.DishPhoto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dish">
+        <PropertyRef Name="DishCode" />
+      </Principal>
+      <Dependent Role="DishPhoto">
+        <PropertyRef Name="DishCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetail_ClientOrder">
+    <End Role="ClientOrder" Type="Self.ClientOrder" Multiplicity="1" />
+    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientOrder">
+        <PropertyRef Name="OrderCode" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="OrderCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetail_Dish">
+    <End Role="Dish" Type="Self.Dish" Multiplicity="1" />
+    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dish">
+        <PropertyRef Name="DishCode" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="DishCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB_A3DC31_ProyectoLenguajesModelStoreContainer">
+    <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClientOrder" EntityType="Self.ClientOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dish" EntityType="Self.Dish" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DishPhoto" EntityType="Self.DishPhoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SystemUser" EntityType="Self.SystemUser" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Address_Client" Association="Self.FK_Address_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientOrder_Client" Association="Self.FK_ClientOrder_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="ClientOrder" EntitySet="ClientOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DishPhoto_Dish" Association="Self.FK_DishPhoto_Dish">
+      <End Role="Dish" EntitySet="Dish" />
+      <End Role="DishPhoto" EntitySet="DishPhoto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetail_ClientOrder" Association="Self.FK_OrderDetail_ClientOrder">
+      <End Role="ClientOrder" EntitySet="ClientOrder" />
+      <End Role="OrderDetail" EntitySet="OrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetail_Dish" Association="Self.FK_OrderDetail_Dish">
+      <End Role="Dish" EntitySet="Dish" />
+      <End Role="OrderDetail" EntitySet="OrderDetail" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
