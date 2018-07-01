@@ -26,6 +26,17 @@ C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\BL\bin
 C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
 C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\BL\obj\Debug\BL.dll
 C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\BL\obj\Debug\BL.pdb
+C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\BL\bin\Debug\BL.dll.config
+C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\BL\bin\Debug\BL.dll
+C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\BL\bin\Debug\BL.pdb
+C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\BL\bin\Debug\DAO.dll
+C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\BL\bin\Debug\EntityFramework.dll
+C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\BL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\BL\bin\Debug\TAO.dll
+C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\BL\bin\Debug\DAO.pdb
+C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\BL\bin\Debug\TAO.pdb
+C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\BL\bin\Debug\EntityFramework.xml
+C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\BL\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
 C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\BL\obj\Debug\BL.dll
 C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\BL\obj\Debug\BL.pdb
