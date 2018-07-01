@@ -1,0 +1,127 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminSiteMasterPage.master.cs" Inherits="GUI.AdminSiteMasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Dashboard Template (Sidebar icons animated) - Bootsnipp.com</title>
+    <link href="Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/css/dashboard.css" rel="stylesheet" />
+    <script src="Content/js/jquery-1.11.1.min.js"></script>
+    <script src="Content/js/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder ID="adminPanelHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="throbber" style="display:none; min-height:120px;"></div>
+	<div id="noty-holder"></div>
+	<div id="wrapper">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-static-top admin-panel-navbar" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header mobile-navbar">
+            <button type="button" class="mobile-button-menu navbar-toggle" data-toggle="collapse" data-target=".navbar-admin-panel-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <span>Admin</span>Panel
+            </a>
+        </div>
+        <!-- Top Menu Items -->
+        <ul class="nav navbar-right top-nav mobile-navbar-right">
+            <li><a href="#" data-placement="bottom" data-toggle="tooltip" data-original-title="Stats"><i class="fa fa-bar-chart-o"></i>
+                </a>
+            </li>            
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin User <b class="fa fa-angle-down"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+        <div class="collapse navbar-collapse navbar-admin-panel-collapse dashboard-navbar">
+            <ul class="nav navbar-nav side-nav">
+				
+				<li class="current-user">
+					<div class="user-image">
+						<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="" />
+					</div>
+					<div class="user-data">
+						<div class="user-name">Username</div>
+						<div class="user-status">
+							<span class="session-indicator"></span>
+							<span class="session-status">online</span>
+						</div>
+					</div>
+				</li>
+				<li>
+                    <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-cutlery"></i> Manage Dishes <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                    <ul id="submenu-1" class="collapse">
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Add Dish</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Find Dish</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Modify Dish</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Remove Dish</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-th-list"></i> Manage Orders <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                    <ul id="submenu-2" class="collapse">
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.1</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.2</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" data-toggle="collapse" data-target="#submenu-3"><i class="fa fa-fw fa-users"></i>  Manage Users <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                    <ul id="submenu-3" class="collapse">
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Add User</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Find User</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Modify User</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Remove User</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="investigaciones/favoritas"><i class="fa fa-fw fa-male"></i>  Manage Clients</a>
+                </li>
+                <li>
+                    <a href="sugerencias"><i class="fa fa-fw fa-paper-plane-o"></i> MENU 4</a>
+                </li>
+                <li>
+                    <a href="faq"><i class="fa fa-fw fa fa-question-circle"></i> MENU 5</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <!-- Page Heading -->
+            <div class="row" id="main" >
+                <div class="col-sm-12 col-md-12 well" id="content">
+                    <h1>Welcome Admin!</h1>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /#page-wrapper -->
+    </div><!-- /#wrapper -->
+    <script type="text/javascript" src="Content/js/dashboard.js"></script>
+        <asp:ContentPlaceHolder ID="adminPanelContent" runat="server">
+        
+        </asp:ContentPlaceHolder>
+</body>
+</html>
