@@ -53,7 +53,7 @@
         <div class="collapse navbar-collapse navbar-admin-panel-collapse dashboard-navbar">
             <ul class="nav navbar-nav side-nav">
 				
-				<li class="current-user">
+				<div class="current-user">
 					<div class="user-image">
 						<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="" />
 					</div>
@@ -64,7 +64,7 @@
 							<span class="session-status">online</span>
 						</div>
 					</div>
-				</li>
+				</div>
 				<li>
                     <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-cutlery"></i> Manage Dishes <i class="fa fa-fw fa-angle-down pull-right"></i></a>
                     <ul id="submenu-1" class="collapse">
