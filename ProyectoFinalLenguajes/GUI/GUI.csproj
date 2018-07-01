@@ -99,6 +99,7 @@
     <Content Include="Administration\Content\js\bootstrap.min.js" />
     <Content Include="Administration\Content\js\dashboard.js" />
     <Content Include="Administration\Content\js\jquery-1.11.1.min.js" />
+    <Content Include="Administration\FindDish.aspx" />
     <Content Include="Administration\index.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -124,6 +125,13 @@
     </Compile>
     <Compile Include="Administration\AdminSiteMasterPage.Master.designer.cs">
       <DependentUpon>AdminSiteMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\FindDish.aspx.cs">
+      <DependentUpon>FindDish.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\FindDish.aspx.designer.cs">
+      <DependentUpon>FindDish.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administration\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
