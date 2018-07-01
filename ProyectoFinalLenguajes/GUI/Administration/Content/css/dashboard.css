@@ -223,8 +223,15 @@ div.current-user {
 	color: #000;
 }
 
+.boton {
+    background-color: dodgerblue;
+    width: 90px;
+    font-weight: bold;
+}
 
-
+.labels {
+  font-weight: bold;
+}
 
 
 
