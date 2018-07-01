@@ -34,6 +34,15 @@ namespace BL.Admistration
             this.Picture = picture;
         }
 
+        public BLDish(string name, string description, decimal price, bool state, string picture)
+        {
+            this.Name = name;
+            this.Description = description;
+            this.Price = price;
+            this.State = state;
+            this.Picture = picture;
+        }
+
         public ArrayList DishesList()
         {
             DAODish dv = new DAODish();
