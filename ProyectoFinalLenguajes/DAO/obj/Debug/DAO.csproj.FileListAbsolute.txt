@@ -10,3 +10,15 @@ C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\DAO\bi
 C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\DAO\obj\Debug\DAO.dll
 C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\DAO\obj\Debug\DAO.pdb
+C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\DAO\bin\Debug\DAO.dll.config
+C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\DAO\bin\Debug\DAO.dll
+C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\DAO\bin\Debug\DAO.pdb
+C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\DAO\bin\Debug\EntityFramework.dll
+C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\DAO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\DAO\bin\Debug\TAO.dll
+C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\DAO\bin\Debug\TAO.pdb
+C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\DAO\bin\Debug\EntityFramework.xml
+C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\DAO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\DAO\obj\Debug\DAO.dll
+C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\DAO\obj\Debug\DAO.pdb
