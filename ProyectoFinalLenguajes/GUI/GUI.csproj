@@ -97,16 +97,25 @@
     <Content Include="Administration\AddDish.aspx" />
     <Content Include="Administration\Content\css\bootstrap.min.css" />
     <Content Include="Administration\Content\css\dashboard.css" />
+    <Content Include="Administration\Content\css\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Administration\Content\css\login.css" />
     <Content Include="Administration\Content\js\bootstrap.min.js" />
     <Content Include="Administration\Content\js\dashboard.js" />
     <Content Include="Administration\Content\js\jquery-1.11.1.min.js" />
+    <Content Include="Administration\Content\js\login.js" />
     <Content Include="Administration\FindDish.aspx" />
     <Content Include="Administration\index.aspx" />
+    <Content Include="Administration\Login.aspx" />
+    <Content Include="Administration\RemoveDish.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Administration\AdminSiteMasterPage.Master" />
+    <Content Include="Administration\Content\css\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Administration\Content\css\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Administration\Content\css\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Administration\Content\css\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -147,6 +156,20 @@
     </Compile>
     <Compile Include="Administration\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\RemoveDish.aspx.cs">
+      <DependentUpon>RemoveDish.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\RemoveDish.aspx.designer.cs">
+      <DependentUpon>RemoveDish.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

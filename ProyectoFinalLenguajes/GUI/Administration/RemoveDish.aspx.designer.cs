@@ -10,7 +10,7 @@
 namespace GUI.Administration {
     
     
-    public partial class FindDish {
+    public partial class RemoveDish {
         
         /// <summary>
         /// Label1 control.
