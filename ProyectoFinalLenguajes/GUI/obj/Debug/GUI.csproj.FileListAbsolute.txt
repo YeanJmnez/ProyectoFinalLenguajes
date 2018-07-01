@@ -53,3 +53,6 @@ C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\bi
 C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\bin\roslyn\System.IO.FileSystem.Primitives.dll
 C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\bin\roslyn\vbc.exe.config
 C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\bin\roslyn\vbc.rsp
+C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\obj\Debug\GUI.dll
+C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\obj\Debug\GUI.pdb
