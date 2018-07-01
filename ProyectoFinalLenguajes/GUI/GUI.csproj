@@ -104,7 +104,6 @@
     <Content Include="Administration\Content\js\login.js" />
     <Content Include="Administration\FindDish.aspx" />
     <Content Include="Administration\index.aspx" />
-    <Content Include="Administration\RemoveDish.aspx" />
     <Content Include="Administration\Login.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -148,13 +147,6 @@
     </Compile>
     <Compile Include="Administration\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Administration\RemoveDish.aspx.cs">
-      <DependentUpon>RemoveDish.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Administration\RemoveDish.aspx.designer.cs">
-      <DependentUpon>RemoveDish.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administration\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
