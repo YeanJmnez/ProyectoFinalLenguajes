@@ -87,14 +87,13 @@ namespace BL.Admistration
             DishesList();
         }
 
-        public ArrayList ChargeDish(int code)
+        public BLDish ChargeDish(int code)
         {
-            ArrayList onlyDish = new ArrayList();
+           
             DAODish dv = new DAODish();
             Dish dish = dv.ChargeDish(code);
             BLDish bldish = new BLDish(dish.DishCode, dish.DishName, dish.DishDescription, dish.DishPrice, dish.DishAvailable, dish.DishPhoto);
-            onlyDish.Add(bldish);
-            return onlyDish;
+            return bldish;
         }
     }
 }
