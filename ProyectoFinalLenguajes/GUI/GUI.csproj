@@ -101,7 +101,6 @@
     <Content Include="Administration\Content\js\jquery-1.11.1.min.js" />
     <Content Include="Administration\FindDish.aspx" />
     <Content Include="Administration\index.aspx" />
-    <Content Include="Administration\RemoveDish.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -140,13 +139,6 @@
     </Compile>
     <Compile Include="Administration\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Administration\RemoveDish.aspx.cs">
-      <DependentUpon>RemoveDish.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Administration\RemoveDish.aspx.designer.cs">
-      <DependentUpon>RemoveDish.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
