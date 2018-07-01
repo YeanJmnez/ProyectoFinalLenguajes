@@ -17,5 +17,14 @@ namespace TAO
         public string SystemUserName { get; set; }
         public string SystemUserPassword { get; set; }
         public string SystemUserRole { get; set; }
+
+        public SystemUser() { }
+
+        public SystemUser( string Name, String Password, String role)
+        {
+            this.SystemUserName = Name;
+            this.SystemUserPassword = Password;
+            this.SystemUserRole = role;
+        }
     }
 }
