@@ -110,7 +110,9 @@
             <!-- Page Heading -->
             <div class="row" id="main" >
                 <div class="col-sm-12 col-md-12 well" id="content">
-                    <h1>Welcome Admin!</h1>
+                    <asp:ContentPlaceHolder ID="adminPanelContent" runat="server">
+        
+                    </asp:ContentPlaceHolder>
                 </div>
             </div>
             <!-- /.row -->
@@ -119,9 +121,6 @@
     </div>
     <!-- /#page-wrapper -->
     </div><!-- /#wrapper -->
-    <script type="text/javascript" src="Content/js/dashboard.js"></script>
-        <asp:ContentPlaceHolder ID="adminPanelContent" runat="server">
-        
-        </asp:ContentPlaceHolder>
+    <script type="text/javascript" src="Content/js/dashboard.js"></script>        
 </body>
 </html>
