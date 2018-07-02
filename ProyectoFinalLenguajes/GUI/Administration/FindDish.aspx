@@ -17,9 +17,9 @@
         <asp:Button ID="Button1" CssClass="btn btn-primary boton" runat="server" Text="Find" OnClick="Button1_Click" />
 
         <br />
-             <br />
-         <asp:GridView AlternatingRowStyle-CssClass="alternarColores" CssClass="customGrid" ID="grid" runat="server"></asp:GridView>
-              </div>
+        <br />
+        <asp:GridView AlternatingRowStyle-CssClass="alternarColores" CssClass="customGrid" ID="grid" runat="server"></asp:GridView>
+        </div>
     </form>
 
     
