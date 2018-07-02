@@ -13,25 +13,19 @@ namespace GUI.Administration
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                lbNombre.Visible = false;
-            }
-            else
-            {
-             
-                lbNombre.Visible = true;
-            }
+           
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             BLDish BLdish = new BLDish();
-            
-            BLdish = BLdish.ChargeDish( int.Parse(tbFind.Text.Trim()));
-            lbNombre.Text = BLdish.Name;
+            int i;
+            if (int.TryParse(tbFind.Text.Trim(), out i)) { 
+            BLdish = BLdish.ChargeDish(i);
+            } else
+            {
 
-
+            }
 
         }
    
