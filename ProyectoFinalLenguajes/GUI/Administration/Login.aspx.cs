@@ -18,15 +18,7 @@ namespace GUI.Administration
         protected void btnLogIn_Click(object sender, EventArgs e)
         {
             Page.ClientScript.RegisterStartupScript(this.GetType(), "CallCheckTextBoxes", "checkTextBoxes();", true);
-            /*
-            if (wrongUserName.Visible)
-            {
-                wrongUserName.Visible = false;
-            }
-            if (wrongPassword.Visible)
-            {
-                wrongPassword.Visible = false;
-            }*/
+
             String username = txtLoginUserName.Value.Trim();
             String password = txtLoginUserPassword.Value.Trim();
             String role = rblRoleSelector.SelectedItem.Value;
