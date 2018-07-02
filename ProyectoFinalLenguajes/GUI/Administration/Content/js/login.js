@@ -1,14 +1,14 @@
 ﻿$(document).ready(function () {
-    $('#loginUserEmail').keyup(function () {
+    $('#txtLoginUserName').keyup(function () {
         if ($(this).val() == "") {
-            $('#wrongEmail').addClass('hidden');
-            $('#loginEmptyEmail').removeClass('hidden');
+            $('#wrongUserName').addClass('hidden');
+            $('#loginEmptyUserName').removeClass('hidden');
         } else {
-            $('#loginEmptyEmail').addClass('hidden');
-            $('#wrongEmail').addClass('hidden');
+            $('#loginEmptyUserName').addClass('hidden');
+            $('#wrongUserName').addClass('hidden');
         }
     }),
-    $('#loginUserPassword').keyup(function () {
+    $('#txtLoginUserPassword').keyup(function () {
         if ($(this).val() == "") {
             $('#wrongPassword').addClass('hidden');
             $('#loginEmptyPassword').removeClass('hidden');
@@ -19,15 +19,15 @@
     });
 });
 
-function userLogin() {
-    var userEmail = document.getElementById('loginUserEmail').value;
-    var userPassword = document.getElementById('loginUserPassword').value;
+function checkTextBoxes() {
+    var userEmail = document.getElementById('txtLoginUserName').value;
+    var userPassword = document.getElementById('txtLoginUserPassword').value;
 
     console.log(userEmail);
     console.log(userPassword);
 
     if (userEmail == '') {
-        $('#loginEmptyEmail').removeClass('hidden');
+        $('#loginEmptyUserName').removeClass('hidden');
     }
     if (userPassword == '') {
         $('#loginEmptyPassword').removeClass('hidden');

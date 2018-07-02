@@ -17,6 +17,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <form runat="server">
     <div id="throbber" style="display:none; min-height:120px;"></div>
 	<div id="noty-holder"></div>
 	<div id="wrapper">
@@ -45,7 +46,7 @@
                     <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
                     <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
                     <li class="divider"></li>
-                    <li><a href="#"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                    <li><asp:LinkButton runat="server" ID="lbLogOut" OnClick="lbLogOut_Click"><i class="fa fa-fw fa-power-off"></i> Log Out</asp:LinkButton></li>
                 </ul>
             </li>
         </ul>
@@ -58,7 +59,9 @@
 						<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="" />
 					</div>
 					<div class="user-data">
-						<div class="user-name">Username</div>
+						<div class="user-name">
+                            <asp:Label ID="lblUserName" runat="server" Text="Username"></asp:Label>
+						</div>
 						<div class="user-status">
 							<span class="session-indicator"></span>
 							<span class="session-status">online</span>
@@ -121,6 +124,7 @@
     </div>
     <!-- /#page-wrapper -->
     </div><!-- /#wrapper -->
+    </form>
     <script type="text/javascript" src="Content/js/dashboard.js"></script>        
 </body>
 </html>

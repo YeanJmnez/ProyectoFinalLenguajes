@@ -11,6 +11,43 @@ namespace DAO.Administration
   public class DAOSystemUser
     {
 
+        public String checkUserCredentials(SystemUser su)
+        {
+            String result = "";
+
+            SystemUser suFound = null;
+
+            using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+            {
+                suFound = db.SystemUsers.Find(su.SystemUserName);
+
+                if (suFound != null)
+                {
+                    if (suFound.SystemUserPassword.Equals(su.SystemUserPassword))
+                    {
+                        if (suFound.SystemUserRole.Equals(su.SystemUserRole))
+                        {
+                            result = "Correct";
+                        }
+                        else
+                        {
+                            result = "IncorrectRole";
+                        }
+                    }
+                    else
+                    {
+                        result = "IncorrectPassword";
+                    }
+                }
+                else
+                {
+                    result = "IncorrectUserName";
+                }
+            }            
+
+            return result;
+        }
+
         public List<SystemUser> UserList()
         {
             List<SystemUser> systemUser = new List<SystemUser>();

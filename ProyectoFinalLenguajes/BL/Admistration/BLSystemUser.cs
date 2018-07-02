@@ -15,7 +15,10 @@ namespace BL.Admistration
         public string SystemUserPassword { get; set; }
         public string SystemUserRole { get; set; }
 
-        public BLSystemUser(String name, String password, string role) {
+        public BLSystemUser() { }
+
+        public BLSystemUser(String name, String password, string role)
+        {
             this.SystemUserName = name;
             this.SystemUserPassword = password;
             this.SystemUserRole = role;
@@ -25,12 +28,22 @@ namespace BL.Admistration
         {
             DAOSystemUser Ds = new DAOSystemUser();
             List<SystemUser> list = Ds.UserList();
-            foreach (TAO.SystemUser user in list)
+            foreach (SystemUser user in list)
             {
                 SystemUser auxUser = new SystemUser(user.SystemUserName, user.SystemUserPassword, user.SystemUserRole);
                 list.Add(auxUser);
             }
             return list;
+        }
+
+        public String userLogIn()
+        {
+            DAOSystemUser dsu = new DAOSystemUser();
+            SystemUser user = new SystemUser(this.SystemUserName, this.SystemUserPassword, this.SystemUserRole);
+
+            String result = dsu.checkUserCredentials(user);
+
+            return result;
         }
 
         public void updateUser(SystemUser user)
