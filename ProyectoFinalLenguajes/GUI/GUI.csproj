@@ -107,6 +107,7 @@
     <Content Include="Administration\index.aspx" />
     <Content Include="Administration\Login.aspx" />
     <Content Include="Administration\RemoveDish.aspx" />
+    <Content Include="Administration\UpdateDish.aspx" />
     <Content Include="DishesPicture\i79651-ceviche-de-poisson.jpg" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -171,6 +172,13 @@
     </Compile>
     <Compile Include="Administration\RemoveDish.aspx.designer.cs">
       <DependentUpon>RemoveDish.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\UpdateDish.aspx.cs">
+      <DependentUpon>UpdateDish.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\UpdateDish.aspx.designer.cs">
+      <DependentUpon>UpdateDish.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -73,7 +73,7 @@
                     <ul id="submenu-1" class="collapse">
                         <li><a href="<%= Page.ResolveUrl("AddDish.aspx") %>"><i class="fa fa-angle-double-right"></i> Add Dish</a></li>
                         <li><a href="<%= Page.ResolveUrl("FindDish.aspx") %>"><i class="fa fa-angle-double-right"></i> Find Dish</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Modify Dish</a></li>
+                        <li><a href="<%= Page.ResolveUrl("UpdateDish.aspx") %>"><i class="fa fa-angle-double-right"></i> Update Dish</a></li>
                         <li><a href="<%= Page.ResolveUrl("RemoveDish.aspx") %>"><i class="fa fa-angle-double-right"></i> Remove Dish</a></li>
                     </ul>
                 </li>
