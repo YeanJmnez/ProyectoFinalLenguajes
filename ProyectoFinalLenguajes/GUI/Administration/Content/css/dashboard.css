@@ -1,19 +1,41 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
-@media(min-width:768px) {
-    body {
-        margin-top: 50px;
+
+.page-content {
+    margin-top: 125px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+@media only screen and (min-width:768px) {
+    .page-content {
+        margin-top: 65px;
+        margin-left: 230px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
     }
-    /*html, body, #wrapper, #page-wrapper {height: 100%; overflow: hidden;}*/
+}
+#wrapper {
+    padding-left: 0;  
 }
 
-#wrapper {
-    padding-left: 0;    
+#page-wrapper div {
+    height: 100%;
 }
 
 #page-wrapper {
-    width: 100%;        
+    width: 100%;
     padding: 0;
-    background-color: #fff;
+    background-color: #000;
 }
 
 @media(min-width:768px) {

@@ -107,23 +107,10 @@
         </div>
         <!-- /.navbar-collapse -->
     </nav>
-
-    <div id="page-wrapper">
-        <div class="container-fluid">
-            <!-- Page Heading -->
-            <div class="row" id="main" >
-                <div class="col-sm-12 col-md-12 well" id="content">
-                    <asp:ContentPlaceHolder ID="adminPanelContent" runat="server">
-        
-                    </asp:ContentPlaceHolder>
-                </div>
-            </div>
-            <!-- /.row -->
+        <div class="page-content well" id="content">
+            <asp:ContentPlaceHolder ID="adminPanelContent" runat="server">
+            </asp:ContentPlaceHolder>
         </div>
-        <!-- /.container-fluid -->
-    </div>
-    <!-- /#page-wrapper -->
-    </div><!-- /#wrapper -->
     </form>
     <script type="text/javascript" src="Content/js/dashboard.js"></script>        
 </body>
