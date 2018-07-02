@@ -63,11 +63,17 @@ namespace BL.Admistration
 
         }
 
-        public void addDish(BLSystemUser user)
+        public bool addUser()
         {
             DAOSystemUser dv = new DAOSystemUser();
-            SystemUser toUser= new SystemUser() { SystemUserName = user.SystemUserName, SystemUserPassword = user.SystemUserPassword, SystemUserRole = user.SystemUserRole };
-            dv.addUser(toUser);
+            SystemUser toUser = new SystemUser() { SystemUserName = SystemUserName, SystemUserPassword = SystemUserPassword, SystemUserRole = SystemUserRole };
+            if (dv.checkNameUser(toUser.SystemUserName))
+            {
+                dv.addUser(toUser);
+                return true;
+            }
+            return false;
+            
         }
 
         public void deleteUser(string name)
