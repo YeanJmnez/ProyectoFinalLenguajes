@@ -44,7 +44,15 @@ namespace GUI.Administration
 
         protected void btUpdateDish_Click(object sender, EventArgs e)
         {
-            BLDish Bl = new BLDish();
+            bool aux = false;
+            if (TxtUpdateState.Text.ToLower().Trim() == "habilitado")
+            {
+                aux = true;
+            }
+            BLDish Bl = new BLDish(int.Parse(TxtCodeUpdate.Text.Trim()), TxtUpdateName.Text.Trim(), TxtUpdateDescription.Text.Trim(), decimal.Parse(TxtUpdatePrice.Text.Trim()), aux, FileUploadUpdateImage.FileName);
+            FileUploadUpdateImage.SaveAs("C:\\Users\\Antho\\Source\\Repos\\ProyectoFinalLenguajes\\ProyectoFinalLenguajes\\GUI\\DishesPicture\\" + FileUploadUpdateImage.FileName);
+            Bl.updateDishes(Bl);
+            ChargeAllDish();
         }
     }
 }
