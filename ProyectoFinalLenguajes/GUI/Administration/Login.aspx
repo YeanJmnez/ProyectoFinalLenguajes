@@ -10,35 +10,37 @@
     <script src="Content/js/bootstrap.min.js"></script>
     <script src="Content/js/login.js"></script>
 </head>
-<body>
-    <div id="login-form" class="container">
-            <div class="col-md-6 center-block">
-                <div class="jumbotron">
-                    <div class="form-group" id="header">
-                        <h1>Log In</h1>
-                    </div>
-                    <hr />
-                        <div class="form-group input-group">
-                            <span class="input-group-addon">
-                                <span class="fa fa-envelope"></span>
-                            </span>
-                            <input runat="server" id="loginUserEmail" class="form-control" type="email" name="userEmail" placeholder="Email" required="required" />
-                            <span class="input-group-addon warn hidden" id="loginEmptyEmail">Complete this field</span>
-                            <span class="input-group-addon warn hidden" id="wrongEmail">Email not found</span>
-                        </div>
-                        <div class="form-group input-group">
-                            <span class="input-group-addon">
-                                <span class="fa fa-lock" style="font-size: 20px;"></span>
-                            </span>
-                            <input runat="server" id="loginUserPassword" class="form-control" type="password" name="userPassword" placeholder="Password" required="required" />
-                            <span class="input-group-addon warn hidden" id="loginEmptyPassword">Complete this field</span>
-                            <span class="input-group-addon warn hidden" id="wrongPassword">Wrong password</span>
-                        </div>
-                        <div class="form-group">
-                            <button class="btn custom-btn-red btn-block" onclick="userLogin()">Log In</button>
-                        </div>
-                </div>
+<body class="center-block">
+    <div id="login-form">
+        <label class="label label-primary login-title">Log In To Admin Panel</label>
+        <hr />
+        <form runat="server" novalidate="novalidate">
+            <div class="form-group input-group">
+                <span class="input-group-addon">
+                    <span class="fa fa-envelope"></span>
+                </span>
+                <input runat="server" id="txtLoginUserName" class="form-control" type="text" name="userName" placeholder="User Name" required="required" />
+                <span class="input-group-addon warn hidden" runat="server" id="loginEmptyUserName">Complete this field</span>
+                <span class="input-group-addon warn hidden" runat="server" id="wrongUserName">Username not found</span>
             </div>
-        </div>
+            <div class="form-group input-group">
+                <span class="input-group-addon">
+                    <span class="fa fa-lock" style="font-size: 20px;"></span>
+                </span>
+                <input runat="server" id="txtLoginUserPassword" class="form-control" type="password" name="userPassword" placeholder="Password" required="required" />
+                <span class="input-group-addon warn hidden" runat="server" id="loginEmptyPassword">Complete this field</span>
+                <span class="input-group-addon warn hidden" runat="server" id="wrongPassword">Wrong password</span>
+            </div>
+            <div class="form-group input-group">
+                <asp:RadioButtonList CssClass="form-control" ID="rblRoleSelector" runat="server" RepeatDirection="Horizontal">
+                    <asp:ListItem Value="Admin" Selected="True">Admin User&nbsp;&nbsp;&nbsp;</asp:ListItem>
+                    <asp:ListItem Value="Kitchen">Kitchen User</asp:ListItem>
+                </asp:RadioButtonList>
+            </div>
+            <div class="form-group">
+                <asp:Button CssClass="btn custom-btn-blue btn-block" ID="btnLogIn" runat="server" Text="Log In" OnClick="btnLogIn_Click" />
+            </div>
+        </form>
+    </div>
 </body>
 </html>

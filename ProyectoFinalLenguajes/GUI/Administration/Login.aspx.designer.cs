@@ -13,21 +13,75 @@ namespace GUI.Administration {
     public partial class Login {
         
         /// <summary>
-        /// loginUserEmail control.
+        /// txtLoginUserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl loginUserEmail;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtLoginUserName;
         
         /// <summary>
-        /// loginUserPassword control.
+        /// loginEmptyUserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword loginUserPassword;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl loginEmptyUserName;
+        
+        /// <summary>
+        /// wrongUserName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl wrongUserName;
+        
+        /// <summary>
+        /// txtLoginUserPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtLoginUserPassword;
+        
+        /// <summary>
+        /// loginEmptyPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl loginEmptyPassword;
+        
+        /// <summary>
+        /// wrongPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl wrongPassword;
+        
+        /// <summary>
+        /// rblRoleSelector control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList rblRoleSelector;
+        
+        /// <summary>
+        /// btnLogIn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLogIn;
     }
 }

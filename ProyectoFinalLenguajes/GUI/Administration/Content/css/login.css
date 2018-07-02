@@ -1,4 +1,17 @@
 ﻿@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+/* For Flexbox center content */
+body, html {
+    height: 100%;
+}
+.center-block {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#login-form {
+    width: 500px;
+    text-align: center;
+}
 
 /* Login Page CSS */
 .warn {
@@ -6,15 +19,15 @@
     font-weight: bold;
     background-color: #fcc;
 }
-.custom-btn-red {
+.custom-btn-blue {
     background-color: #3c8dbc;
     color: #ffffff;
 }
-.custom-btn-red:hover,
-.custom-btn-red:focus {
+.custom-btn-blue:hover,
+.custom-btn-blue:focus {
     background-color: #367fa9;
     color: #ffffff;
 }
-.center-block {
-    float: none;
+.login-title {
+    font-size: 20px;
 }
