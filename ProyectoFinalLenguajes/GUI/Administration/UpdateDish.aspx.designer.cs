@@ -13,24 +13,6 @@ namespace GUI.Administration {
     public partial class UpdateDish {
         
         /// <summary>
-        /// GridCompleteDishesList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridCompleteDishesList;
-        
-        /// <summary>
-        /// LbUpdateCD control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbUpdateCD;
-        
-        /// <summary>
         /// TxtCodeUpdate control.
         /// </summary>
         /// <remarks>
@@ -49,15 +31,6 @@ namespace GUI.Administration {
         protected global::System.Web.UI.WebControls.Button BtChargeDU;
         
         /// <summary>
-        /// LbName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbName;
-        
-        /// <summary>
         /// TxtUpdateName control.
         /// </summary>
         /// <remarks>
@@ -65,15 +38,6 @@ namespace GUI.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtUpdateName;
-        
-        /// <summary>
-        /// LbDescription control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbDescription;
         
         /// <summary>
         /// TxtUpdateDescription control.
@@ -85,15 +49,6 @@ namespace GUI.Administration {
         protected global::System.Web.UI.WebControls.TextBox TxtUpdateDescription;
         
         /// <summary>
-        /// LbPrice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbPrice;
-        
-        /// <summary>
         /// TxtUpdatePrice control.
         /// </summary>
         /// <remarks>
@@ -103,15 +58,6 @@ namespace GUI.Administration {
         protected global::System.Web.UI.WebControls.TextBox TxtUpdatePrice;
         
         /// <summary>
-        /// LbState control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbState;
-        
-        /// <summary>
         /// TxtUpdateState control.
         /// </summary>
         /// <remarks>
@@ -119,15 +65,6 @@ namespace GUI.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtUpdateState;
-        
-        /// <summary>
-        /// LbImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbImage;
         
         /// <summary>
         /// FileUploadUpdateImage control.
@@ -146,5 +83,14 @@ namespace GUI.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btUpdateDish;
+        
+        /// <summary>
+        /// GridCompleteDishesList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridCompleteDishesList;
     }
 }

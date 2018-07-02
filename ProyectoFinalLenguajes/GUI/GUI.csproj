@@ -98,6 +98,7 @@
     <Content Include="Administration\Content\css\bootstrap.min.css" />
     <Content Include="Administration\Content\css\dashboard.css" />
     <Content Include="Administration\Content\css\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Administration\Content\css\updateDish.css" />
     <Content Include="Administration\Content\css\login.css" />
     <Content Include="Administration\Content\js\bootstrap.min.js" />
     <Content Include="Administration\Content\js\dashboard.js" />
