@@ -71,10 +71,10 @@
 				<li>
                     <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-cutlery"></i> Manage Dishes <i class="fa fa-fw fa-angle-down pull-right"></i></a>
                     <ul id="submenu-1" class="collapse">
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Add Dish</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Find Dish</a></li>
+                        <li><a href="AddDish.aspx"><i class="fa fa-angle-double-right"></i> Add Dish</a></li>
+                        <li><a href="FindDish.aspx"><i class="fa fa-angle-double-right"></i> Find Dish</a></li>
                         <li><a href="#"><i class="fa fa-angle-double-right"></i> Modify Dish</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Remove Dish</a></li>
+                        <li><a href="RemoveDish.aspx"><i class="fa fa-angle-double-right"></i> Remove Dish</a></li>
                     </ul>
                 </li>
                 <li>
