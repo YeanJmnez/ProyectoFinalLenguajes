@@ -6,17 +6,16 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="adminPanelContent" runat="server">
     <form runat="server">
 
-        <asp:Label ID="Label1" CssClass="labels" runat="server" Text="Please enter the dish yo want in the box below "></asp:Label>
+        <asp:Label ID="Label1" CssClass="label label-primary labels" runat="server" Text="Please enter the dish yo want in the box below "></asp:Label>
         <br />
         <br />
         <br />
-        <asp:TextBox ID="TbFindDish" runat="server"></asp:TextBox>
+        <asp:TextBox ID="tbFind" runat="server"></asp:TextBox>
         <br />
-        
+
         <br />
-        <asp:Button ID="Button1" CssClass="btn-primary boton" runat="server" Text="Find" OnClick="Button1_Click" />
-           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Label ID="lbNombre" runat="server" Text="Nombre"></asp:Label>
-           <br />
+        <asp:Button ID="Button1" CssClass="btn btn-primary boton" runat="server" Text="Find" OnClick="Button1_Click" />
+
+        <br />
     </form>
 </asp:Content>

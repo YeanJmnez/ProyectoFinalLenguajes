@@ -81,6 +81,8 @@ namespace DAO.Administration
             }
         }
 
+
+
         public Dish ChargeDish(int code)
         {
             using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
@@ -91,6 +93,24 @@ namespace DAO.Administration
                 return dish;
             }
         }
+
+        public List<Dish> ChargeRelatedDish(string word)
+        {
+            using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+            {
+                IQueryable<Dish> results = from dish in db.Dishes where (dish.DishName == word || dish.DishDescription.Contains(word)) select dish;
+                List<Dish> list = results.ToList();
+                return list;
+            }
+        }
+
+        public DAODish()
+        {
+
+        }
+
+
+
     }
 
 }

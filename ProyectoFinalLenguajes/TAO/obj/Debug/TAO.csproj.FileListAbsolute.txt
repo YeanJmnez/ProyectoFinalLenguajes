@@ -32,7 +32,6 @@ C:\Users\Joshura\source\repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\
 C:\Users\Joshura\source\repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Joshura\source\repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\bin\Debug\EntityFramework.xml
 C:\Users\Joshura\source\repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Joshura\source\repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\obj\Debug\TAO.csprojResolveAssemblyReference.cache
 C:\Users\Joshura\source\repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\obj\Debug\TAO.dll
 C:\Users\Joshura\source\repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\obj\Debug\TAO.pdb
 C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\obj\Debug\TAO.csprojResolveAssemblyReference.cache

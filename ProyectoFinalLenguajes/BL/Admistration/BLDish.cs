@@ -89,11 +89,25 @@ namespace BL.Admistration
 
         public BLDish ChargeDish(int code)
         {
-           
             DAODish dv = new DAODish();
             Dish dish = dv.ChargeDish(code);
             BLDish bldish = new BLDish(dish.DishCode, dish.DishName, dish.DishDescription, dish.DishPrice, dish.DishAvailable, dish.DishPhoto);
             return bldish;
         }
+
+        public ArrayList chargeRelatedDishes(string word)
+        {
+            DAODish dv = new DAODish();
+        List<Dish> dishes = dv.ChargeRelatedDish(word);
+            ArrayList array = new ArrayList();
+            foreach (var item in dishes)
+            {
+                BLDish blDish = new BLDish(item.DishCode, item.DishName, item.DishDescription, item.DishPrice, item.DishAvailable, item.DishPhoto);
+                array.Add(blDish);
+            }
+            return array;
+        }
+
     }
+
 }
