@@ -16,7 +16,7 @@
         &nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="TxtCodeUpdate" runat="server"></asp:TextBox>
         &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="BtChargeDU" CssClass="btn btn-primary" runat="server" Text="Buscar Plato" OnClick="BtChargeDU_Click" />
+        <asp:Button ID="BtChargeDU" CssClass="btn btn-primary" runat="server" Text="Buscar Plato" OnClick="BtChargeDU_Click" Height="30px" Width="140px" />
 
         <br />
         <br />
@@ -44,6 +44,6 @@
         &nbsp;&nbsp;&nbsp;
         <asp:FileUpload ID="FileUploadUpdateImage" CssClass="btn-primary" runat="server" />
         <br />
-        <asp:Button ID="btUpdateDish" CssClass="btn btn-primary" runat="server" OnClick="btUpdateDish_Click" Text="Modificar Plato" />
+        <asp:Button ID="btUpdateDish" CssClass="btn btn-primary" runat="server" OnClick="btUpdateDish_Click" Text="Modificar Plato" Height="30px" Width="140px" />
     </div>
 </asp:Content>
