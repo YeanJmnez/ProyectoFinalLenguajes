@@ -163,9 +163,6 @@ C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\bin\
 C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
 C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\obj\Debug\GUI.dll
 C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\obj\Debug\GUI.pdb
-C:\Users\Joshura\source\repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
-C:\Users\Joshura\source\repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\obj\Debug\GUI.dll
-C:\Users\Joshura\source\repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\obj\Debug\GUI.pdb
 C:\Users\Joshura\source\repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\bin\ApplicationInsights.config
 C:\Users\Joshura\source\repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\bin\GUI.dll.config
 C:\Users\Joshura\source\repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\bin\GUI.dll
@@ -218,3 +215,6 @@ C:\Users\Joshura\source\repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\
 C:\Users\Joshura\source\repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\bin\DAO.pdb
 C:\Users\Joshura\source\repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\bin\TAO.pdb
 C:\Users\Joshura\source\repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\bin\EntityFramework.xml
+C:\Users\Joshura\source\repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+C:\Users\Joshura\source\repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\obj\Debug\GUI.dll
+C:\Users\Joshura\source\repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\obj\Debug\GUI.pdb

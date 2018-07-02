@@ -19,7 +19,7 @@ namespace GUI.Administration
             }
             else
             {
-                TbFindDish.Text = "";
+             
                 lbNombre.Visible = true;
             }
         }
@@ -27,7 +27,8 @@ namespace GUI.Administration
         protected void Button1_Click(object sender, EventArgs e)
         {
             BLDish BLdish = new BLDish();
-            BLdish = BLdish.ChargeDish(int.Parse(TbFindDish.Text.Trim()));
+            
+            BLdish = BLdish.ChargeDish( int.Parse(tbFind.Text.Trim()));
             lbNombre.Text = BLdish.Name;
 
 

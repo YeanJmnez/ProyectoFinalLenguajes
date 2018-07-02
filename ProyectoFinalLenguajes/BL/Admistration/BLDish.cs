@@ -89,7 +89,6 @@ namespace BL.Admistration
 
         public BLDish ChargeDish(int code)
         {
-           
             DAODish dv = new DAODish();
             Dish dish = dv.ChargeDish(code);
             BLDish bldish = new BLDish(dish.DishCode, dish.DishName, dish.DishDescription, dish.DishPrice, dish.DishAvailable, dish.DishPhoto);
