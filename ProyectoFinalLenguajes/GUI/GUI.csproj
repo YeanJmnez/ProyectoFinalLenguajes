@@ -176,7 +176,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Administration\DishPicture\" />
-    <Folder Include="Content\" />
     <Folder Include="Kitchen\" />
     <Folder Include="Movil\" />
   </ItemGroup>

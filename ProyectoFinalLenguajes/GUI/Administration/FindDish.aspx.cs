@@ -18,15 +18,18 @@ namespace GUI.Administration
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            ArrayList list = new ArrayList();
             BLDish BLdish = new BLDish();
             int i;
             if (int.TryParse(tbFind.Text.Trim(), out i)) { 
             BLdish = BLdish.ChargeDish(i);
+                list.Add(BLdish);
             } else
             {
-
+                list = BLdish.chargeRelatedDishes(tbFind.Text.Trim());
             }
-
+            grid.DataSource = list;
+            grid.DataBind();
         }
    
 

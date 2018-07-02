@@ -8,7 +8,7 @@
         <br />
         <br />
         <br />
-        <asp:TextBox ID="TbFindDish" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TbFindDish" runat="server" Width="187px"></asp:TextBox>
         <br />
         <br />
         <asp:Button ID="Button1" CssClass="btn-primary boton" runat="server" Text="Find" />

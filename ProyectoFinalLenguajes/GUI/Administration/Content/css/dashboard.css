@@ -233,7 +233,38 @@ div.current-user {
   font-weight: bold;
 }
 
+.customGrid {
+    width: 100%;
+    background-color: #fff;
+    border: solid 1px #525252;
+}
+.customGrid td {
+    text-align: center;
+    padding: 5px 10px;
+    border: solid 1px #c1c1c1;
+    color: #717171;
+}
+.customGrid th {
+    text-align: center;
+    padding: 5px 10px;
+    color: #fff;
+    background: #424242 url('../img/grd_head.png') repeat-x top;
+    font-size: 1em;
+}
+.customGrid .alternarColores {
+    background: #fcfcfc url('../img/grd_alt.png') repeat-x top; 
+}
 
+.center-block {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    border: 4px solid #343A40;
+    padding: 25px;
+    margin-top: 50px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 30px -2px rgba(0,0,0,0.56);
+}
 
 
 
