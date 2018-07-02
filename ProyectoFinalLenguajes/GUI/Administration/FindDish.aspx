@@ -11,13 +11,17 @@
         <br />
         <asp:TextBox ID="tbFind" runat="server" required="required" Width="147px"></asp:TextBox>
         <br />
-
         <br />
         <asp:Button ID="Button1" CssClass="btn btn-primary boton" runat="server" Text="Find" OnClick="Button1_Click" />
-
         <br />
         <br />
-        <asp:GridView AlternatingRowStyle-CssClass="alternarColores" CssClass="customGrid" ID="grid" runat="server"></asp:GridView>
+        <asp:GridView AlternatingRowStyle-CssClass="alternarColores" CssClass="customGrid" ID="grid" runat="server" Width="368px" OnRowDataBound="grid_RowDataBound">
+<AlternatingRowStyle CssClass="alternarColores"></AlternatingRowStyle>
+            <Columns>
+                <asp:ImageField DataImageUrlField="Picture" DataImageUrlFormatString="\DishesPicture" HeaderText="Picture">
+                </asp:ImageField>
+            </Columns>
+        </asp:GridView>
     </div>
     <br />
     <br />

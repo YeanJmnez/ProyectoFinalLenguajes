@@ -28,13 +28,10 @@ namespace GUI.Administration
             {
                 list = BLdish.chargeRelatedDishes(tbFind.Text.Trim());
             }
+   
             grid.DataSource = list;
             grid.DataBind();
+            
         }
-
-        
-
-   
-
     }
 }
