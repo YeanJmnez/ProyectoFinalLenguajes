@@ -104,7 +104,7 @@
     <Content Include="Administration\Content\js\jquery-1.11.1.min.js" />
     <Content Include="Administration\Content\js\login.js" />
     <Content Include="Administration\FindDish.aspx" />
-    <Content Include="Administration\index.aspx" />
+    <Content Include="Administration\Index.aspx" />
     <Content Include="Administration\Login.aspx" />
     <Content Include="Administration\RemoveDish.aspx" />
     <Content Include="Administration\UpdateDish.aspx" />
@@ -152,12 +152,12 @@
     <Compile Include="Administration\FindDish.aspx.designer.cs">
       <DependentUpon>FindDish.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Administration\index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="Administration\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Administration\index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="Administration\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administration\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

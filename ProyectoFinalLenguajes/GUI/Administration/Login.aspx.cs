@@ -43,7 +43,7 @@ namespace GUI.Administration
                 if (result.Equals("Correct"))
                 {
                     Session["username"] = username;
-                    Response.Redirect("index.aspx");
+                    Response.Redirect("Index.aspx");
                 }
                 else if (result.Equals("IncorrectUserName"))
                 {
