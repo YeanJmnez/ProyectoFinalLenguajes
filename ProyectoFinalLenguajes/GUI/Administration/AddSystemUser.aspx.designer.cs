@@ -7,90 +7,81 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GUI.Administration {
+namespace GUI {
     
     
-    public partial class UpdateDish {
+    public partial class AddSystemUser {
         
         /// <summary>
-        /// TxtCodeUpdate control.
+        /// L_Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtCodeUpdate;
+        protected global::System.Web.UI.WebControls.Label L_Name;
         
         /// <summary>
-        /// BtChargeDU control.
+        /// Text_Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtChargeDU;
+        protected global::System.Web.UI.WebControls.TextBox Text_Name;
         
         /// <summary>
-        /// TxtUpdateName control.
+        /// Label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtUpdateName;
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// TxtUpdateDescription control.
+        /// Text_Password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtUpdateDescription;
+        protected global::System.Web.UI.WebControls.TextBox Text_Password;
         
         /// <summary>
-        /// TxtUpdatePrice control.
+        /// L_State control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtUpdatePrice;
+        protected global::System.Web.UI.WebControls.Label L_State;
         
         /// <summary>
-        /// TxtUpdateState control.
+        /// L_Rol control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtUpdateState;
+        protected global::System.Web.UI.WebControls.Label L_Rol;
         
         /// <summary>
-        /// FileUploadUpdateImage control.
+        /// Radio_Role control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUploadUpdateImage;
+        protected global::System.Web.UI.WebControls.RadioButtonList Radio_Role;
         
         /// <summary>
-        /// btUpdateDish control.
+        /// B_addUSer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btUpdateDish;
-        
-        /// <summary>
-        /// GridCompleteDishesList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridCompleteDishesList;
+        protected global::System.Web.UI.WebControls.Button B_addUSer;
     }
 }

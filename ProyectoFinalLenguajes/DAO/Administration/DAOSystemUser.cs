@@ -109,6 +109,18 @@ namespace DAO.Administration
             }
         }
 
+        public bool checkNameUser(string name) {
+            using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+            {
+                var user = db.SystemUsers.Find(name);
+                if (user == null)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public SystemUser ChargeUser(String name)
         {
             using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
