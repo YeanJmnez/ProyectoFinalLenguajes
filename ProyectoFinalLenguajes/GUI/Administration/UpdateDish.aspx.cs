@@ -50,7 +50,7 @@ namespace GUI.Administration
                 aux = true;
             }
             BLDish Bl = new BLDish(int.Parse(TxtCodeUpdate.Text.Trim()), TxtUpdateName.Text.Trim(), TxtUpdateDescription.Text.Trim(), decimal.Parse(TxtUpdatePrice.Text.Trim()), aux, FileUploadUpdateImage.FileName);
-            FileUploadUpdateImage.SaveAs("C:\\Users\\Antho\\Source\\Repos\\ProyectoFinalLenguajes\\ProyectoFinalLenguajes\\GUI\\DishesPicture\\" + FileUploadUpdateImage.FileName);
+            FileUploadUpdateImage.SaveAs(Server.MapPath("../DishesPicture/").ToString() + FileUploadUpdateImage.FileName);
             Bl.updateDishes(Bl);
             ChargeAllDish();
         }

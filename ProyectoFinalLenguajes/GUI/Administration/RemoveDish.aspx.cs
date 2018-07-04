@@ -13,5 +13,12 @@ namespace GUI.Administration
         {
 
         }
+
+        protected void btRemove_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+
     }
 }

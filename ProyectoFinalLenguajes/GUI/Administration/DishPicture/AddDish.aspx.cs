@@ -26,9 +26,9 @@ namespace GUI.Administration
                 state = false;
             }
             BLDish newDish = new BLDish(TxtName.Text.Trim(), TxtDescription.Text.Trim(), decimal.Parse(TxtPrice.Text.ToLower().Trim()), state, FileUploadDish.FileName);
-            FileUploadDish.SaveAs("C:\\Users\\Antho\\Source\\Repos\\ProyectoFinalLenguajes\\ProyectoFinalLenguajes\\GUI\\DishesPicture\\" + FileUploadDish.FileName);
+            FileUploadDish.SaveAs(Server.MapPath("../DishesPicture/").ToString() + FileUploadDish.FileName);
             newDish.addDish(newDish);
-            Response.Redirect("http://localhost:12021/Administration/AddDish.aspx");
+            Response.Redirect("AddDish.aspx");
         }
     }
 }

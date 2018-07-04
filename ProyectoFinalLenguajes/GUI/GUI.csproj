@@ -94,6 +94,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Administration\AddSystemUser.aspx" />
     <Content Include="Administration\AddDish.aspx" />
     <Content Include="Administration\Content\css\bootstrap.min.css" />
     <Content Include="Administration\Content\css\dashboard.css" />
@@ -132,6 +133,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administration\AddSystemUser.aspx.cs">
+      <DependentUpon>AddSystemUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\AddSystemUser.aspx.designer.cs">
+      <DependentUpon>AddSystemUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Administration\AddDish.aspx.cs">
       <DependentUpon>AddDish.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -193,6 +201,9 @@
       <Project>{93871550-e9ca-408a-85b7-12592645c53b}</Project>
       <Name>BL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

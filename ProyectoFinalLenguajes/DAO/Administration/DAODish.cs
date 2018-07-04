@@ -34,6 +34,7 @@ namespace DAO.Administration
                         dis.DishDescription = dish.DishDescription;
                         dis.DishPrice = dish.DishPrice;
                         dis.DishAvailable = dish.DishAvailable;
+                        db.DishPhotoes.Find(dish.DishCode).PhotoPath = dish.DishPhoto;
                         db.SaveChanges();
                     }
 
