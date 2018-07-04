@@ -1,12 +1,3 @@
-C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\bin\Debug\TAO.dll.config
-C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\bin\Debug\TAO.dll
-C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\bin\Debug\TAO.pdb
-C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\bin\Debug\EntityFramework.dll
-C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\bin\Debug\EntityFramework.xml
-C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\obj\Debug\TAO.dll
-C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\obj\Debug\TAO.pdb
 C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\bin\Debug\TAO.dll.config
 C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\bin\Debug\TAO.dll
 C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\bin\Debug\TAO.pdb
@@ -35,3 +26,12 @@ C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\bin\
 C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\obj\Debug\TAO.csprojResolveAssemblyReference.cache
 C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\obj\Debug\TAO.dll
 C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\obj\Debug\TAO.pdb
+C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\bin\Debug\TAO.dll.config
+C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\bin\Debug\TAO.dll
+C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\bin\Debug\TAO.pdb
+C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\bin\Debug\EntityFramework.dll
+C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\bin\Debug\EntityFramework.xml
+C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\obj\Debug\TAO.dll
+C:\Users\Antho\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\TAO\obj\Debug\TAO.pdb
