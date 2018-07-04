@@ -1,7 +1,7 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 
 .page-content {
-    margin-top: 125px;
+    margin-top: -15px;
     margin-left: 5px;
     margin-right: 5px;
     margin-bottom: 5px;
@@ -9,7 +9,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    position: absolute;
 }
 @media only screen and (min-width:768px) {
     .page-content {
@@ -275,7 +274,12 @@ div.current-user {
 .customGrid .alternarColores {
     background: #fcfcfc url('../img/grd_alt.png') repeat-x top; 
 }
-
+.flex-div {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
 .center-block {
     display: table;
     margin-left: auto;
