@@ -90,18 +90,18 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TO\TO.csproj">
-      <Project>{363932d9-276a-4ebb-8652-2c6972c56342}</Project>
-      <Name>TO</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="DB_Project_Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DB_Project_Model.edmx</DependentUpon>
       <LastGenOutput>DB_Project_Model.Context.cs</LastGenOutput>
       <CustomToolNamespace>TO</CustomToolNamespace>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TO\TO.csproj">
+      <Project>{363932d9-276a-4ebb-8652-2c6972c56342}</Project>
+      <Name>TO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

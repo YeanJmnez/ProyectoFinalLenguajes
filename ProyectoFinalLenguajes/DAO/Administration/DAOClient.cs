@@ -50,8 +50,8 @@ namespace DAO.Administration
             {
                 using (DB_Project db = new DB_Project())
                 {
-                    db.Clients.Add(client);
-                    db.Addresses.Add(new Address() { ClientEmail = client.ClientEmail, PhysicalAddress = client.ClientAddress });
+                    db.Client.Add(client);
+                    //db.Address.Add(new Address() { ClientEmail = client.ClientEmail, PhysicalAddress = client.ClientAddress });
                     db.SaveChanges();
                 }
             }
@@ -62,13 +62,13 @@ namespace DAO.Administration
 
         public void DeleteClient(String email)
         {
-            using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+            using (DB_Project db = new DB_Project())
             {
-                var client = db.Clients.Find(email);
+                var client = db.Client.Find(email);
                 if (client != null)
                 {
-                    db.Clients.Attach(client);
-                    db.Clients.Remove(client);
+                    db.Client.Attach(client);
+                    db.Client.Remove(client);
                     db.SaveChanges();
                 }
             }
@@ -76,11 +76,11 @@ namespace DAO.Administration
 
         public Client ChargeClient(String email)
         {
-            using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+            using (DB_Project db = new DB_Project())
             {
-                var client = db.Clients.Find(email);
-                var Address = db.Addresses.Find(email);
-                client.ClientAddress = Address.PhysicalAddress;
+                var client = db.Client.Find(email);
+                var Address = db.Address.Find(email);
+                //client.ClientAddress = Address.PhysicalAddress;
                 return client;
             }
         }

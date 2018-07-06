@@ -34,7 +34,7 @@ namespace DAO.Administration
                         dis.DishDescription = dish.DishDescription;
                         dis.DishPrice = dish.DishPrice;
                         dis.DishAvailable = dish.DishAvailable;
-                        db.DishPhotoes.Find(dish.DishCode).PhotoPath = dish.DishPhoto;
+                        dis.DishPhoto = dish.DishPhoto;
                         db.SaveChanges();
                     }
 
@@ -66,11 +66,8 @@ namespace DAO.Administration
             using (DB_Project db = new DB_Project())
             {
                 Dish dish = db.Dish.Find(code);
-                DishPhoto photo = db.DishPhotoes.Find(code);
                 if (dish != null)
                 {
-                    db.DishPhotoes.Attach(photo);
-                    db.DishPhotoes.Remove(photo);
                     db.Dish.Attach(dish);
                     db.Dish.Remove(dish);
                     db.SaveChanges();
@@ -85,8 +82,6 @@ namespace DAO.Administration
             using (DB_Project db = new DB_Project())
             {
                 var dish = db.Dish.Find(code);
-                var photo = db.DishPhotoes.Find(code);
-                dish.DishPhoto = photo.PhotoPath;
                 return dish;
             }
         }

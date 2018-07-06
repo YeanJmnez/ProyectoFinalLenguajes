@@ -163,4 +163,3 @@ C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\bi
 C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
 C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\obj\Debug\GUI.dll
 C:\Users\yeanj\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\obj\Debug\GUI.pdb
-C:\Users\San\Source\Repos\ProyectoFinalLenguajes\ProyectoFinalLenguajes\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
