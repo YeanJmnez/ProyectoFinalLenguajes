@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
-using TAO;
+using TO;
 using System.Data.SqlClient;
 
 namespace DAO.Administration
@@ -14,9 +14,9 @@ namespace DAO.Administration
         public List<Dish> DishesList()
         {
             List<Dish> listDish = new List<Dish>();
-            using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+            using (DB_Project db = new DB_Project())
             {
-                listDish = db.Dishes.ToList();
+                listDish = db.Dish.ToList();
             }
             return listDish;
         }
@@ -25,9 +25,9 @@ namespace DAO.Administration
         {
             try
             {
-                using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+                using (DB_Project db = new DB_Project())
                 {
-                    Dish dis = db.Dishes.Find(dish.DishCode);
+                    Dish dis = db.Dish.Find(dish.DishCode);
                     if (dis != null)
                     {
                         dis.DishName = dish.DishName;
@@ -50,13 +50,9 @@ namespace DAO.Administration
         {
             try
             {
-                using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+                using (DB_Project db = new DB_Project())
                 {
-                    db.Dishes.Add(dish);
-                    DishPhoto photo = new DishPhoto();
-                    photo.DishCode = dish.DishCode;
-                    photo.PhotoPath = dish.DishPhoto;
-                    db.DishPhotoes.Add(photo);
+                    db.Dish.Add(dish);
                     db.SaveChanges();
                 }
             }
@@ -67,16 +63,16 @@ namespace DAO.Administration
 
         public void DeleteDish(String code)
         {
-            using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+            using (DB_Project db = new DB_Project())
             {
-                Dish dish = db.Dishes.Find(code);
+                Dish dish = db.Dish.Find(code);
                 DishPhoto photo = db.DishPhotoes.Find(code);
                 if (dish != null)
                 {
                     db.DishPhotoes.Attach(photo);
                     db.DishPhotoes.Remove(photo);
-                    db.Dishes.Attach(dish);
-                    db.Dishes.Remove(dish);
+                    db.Dish.Attach(dish);
+                    db.Dish.Remove(dish);
                     db.SaveChanges();
                 }
             }
@@ -86,9 +82,9 @@ namespace DAO.Administration
 
         public Dish ChargeDish(int code)
         {
-            using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+            using (DB_Project db = new DB_Project())
             {
-                var dish = db.Dishes.Find(code);
+                var dish = db.Dish.Find(code);
                 var photo = db.DishPhotoes.Find(code);
                 dish.DishPhoto = photo.PhotoPath;
                 return dish;
@@ -97,9 +93,9 @@ namespace DAO.Administration
 
         public List<Dish> ChargeRelatedDish(string word)
         {
-            using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+            using (DB_Project db = new DB_Project())
             {
-                IQueryable<Dish> results = from dish in db.Dishes where (dish.DishName == word || dish.DishDescription.Contains(word)) select dish;
+                IQueryable<Dish> results = from dish in db.Dish where (dish.DishName == word || dish.DishDescription.Contains(word)) select dish;
                 List<Dish> list = results.ToList();
                 return list;
             }

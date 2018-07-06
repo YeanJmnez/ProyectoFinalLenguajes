@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
-using TAO;
+using TO;
 using DAO.Administration;
 
 namespace BL.Admistration
@@ -46,8 +46,8 @@ namespace BL.Admistration
         public ArrayList DishesList()
         {
             DAODish dv = new DAODish();
-            List<TAO.Dish> list = dv.DishesList();
-            foreach (TAO.Dish dish in list)
+            List<Dish> list = dv.DishesList();
+            foreach (Dish dish in list)
             {
                 BLDish bldhs = new BLDish(dish.DishCode, dish.DishName, dish.DishDescription, dish.DishPrice, dish.DishAvailable, dish.DishPhoto);
                 DishesLists.Add(bldhs);

@@ -54,52 +54,53 @@
     <Compile Include="Administration\DAOClient.cs" />
     <Compile Include="Administration\DAODish.cs" />
     <Compile Include="Administration\DAOSystemUser.cs" />
+    <Compile Include="DB_Project_Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_Project_Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB_Project_Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_Project_Model.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="ProyectoLenguajes.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProyectoLenguajes.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProyectoLenguajes.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProyectoLenguajes.edmx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TAO\TAO.csproj">
-      <Project>{69578d6c-9f40-4613-9a8a-617364580465}</Project>
-      <Name>TAO</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <EntityDeploy Include="DB_Project_Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DB_Project_Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DB_Project_Model.edmx.diagram">
+      <DependentUpon>DB_Project_Model.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <EntityDeploy Include="ProyectoLenguajes.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ProyectoLenguajes.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="ProyectoLenguajes.edmx.diagram">
-      <DependentUpon>ProyectoLenguajes.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ProyectoLenguajes.Context.tt">
+    <ProjectReference Include="..\TO\TO.csproj">
+      <Project>{363932d9-276a-4ebb-8652-2c6972c56342}</Project>
+      <Name>TO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DB_Project_Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProyectoLenguajes.edmx</DependentUpon>
-      <LastGenOutput>ProyectoLenguajes.Context.cs</LastGenOutput>
+      <DependentUpon>DB_Project_Model.edmx</DependentUpon>
+      <LastGenOutput>DB_Project_Model.Context.cs</LastGenOutput>
+      <CustomToolNamespace>TO</CustomToolNamespace>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

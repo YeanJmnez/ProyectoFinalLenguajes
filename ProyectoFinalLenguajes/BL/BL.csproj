@@ -63,9 +63,9 @@
       <Project>{0689da63-be1a-4cbb-873e-978bf74968d8}</Project>
       <Name>DAO</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TAO\TAO.csproj">
-      <Project>{69578d6c-9f40-4613-9a8a-617364580465}</Project>
-      <Name>TAO</Name>
+    <ProjectReference Include="..\TO\TO.csproj">
+      <Project>{363932d9-276a-4ebb-8652-2c6972c56342}</Project>
+      <Name>TO</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

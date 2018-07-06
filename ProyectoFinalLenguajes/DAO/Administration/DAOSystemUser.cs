@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TAO;
+using TO;
 using System.Data.SqlClient;
 
 namespace DAO.Administration
@@ -17,9 +17,9 @@ namespace DAO.Administration
 
             SystemUser suFound = null;
 
-            using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+            using (DB_Project db = new DB_Project())
             {
-                suFound = db.SystemUsers.Find(su.SystemUserName);
+                suFound = db.SystemUser.Find(su.SystemUserName);
 
                 if (suFound != null)
                 {
@@ -51,9 +51,9 @@ namespace DAO.Administration
         public List<SystemUser> UserList()
         {
             List<SystemUser> systemUser = new List<SystemUser>();
-            using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+            using (DB_Project db = new DB_Project())
             {
-                systemUser = db.SystemUsers.ToList();
+                systemUser = db.SystemUser.ToList();
             }
             return systemUser;
         }
@@ -62,9 +62,9 @@ namespace DAO.Administration
         {
             try
             {
-                using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+                using (DB_Project db = new DB_Project())
                 {
-                    SystemUser User = db.SystemUsers.Find(systemUser.SystemUserName);
+                    SystemUser User = db.SystemUser.Find(systemUser.SystemUserName);
                     if (User != null)
                     {
                         User.SystemUserPassword = systemUser.SystemUserPassword;
@@ -84,9 +84,9 @@ namespace DAO.Administration
         {
             try
             {
-                using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+                using (DB_Project db = new DB_Project())
                 {
-                    db.SystemUsers.Add(user);
+                    db.SystemUser.Add(user);
                     db.SaveChanges();
                 }
             }
@@ -97,22 +97,22 @@ namespace DAO.Administration
 
         public void DeleteUser(String name)
         {
-            using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+            using (DB_Project db = new DB_Project())
             {
-                var user = db.SystemUsers.Find(name);
+                var user = db.SystemUser.Find(name);
                 if (user != null)
                 {
-                    db.SystemUsers.Attach(user);
-                    db.SystemUsers.Remove(user);
+                    db.SystemUser.Attach(user);
+                    db.SystemUser.Remove(user);
                     db.SaveChanges();
                 }
             }
         }
 
         public bool checkNameUser(string name) {
-            using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+            using (DB_Project db = new DB_Project())
             {
-                var user = db.SystemUsers.Find(name);
+                var user = db.SystemUser.Find(name);
                 if (user == null)
                 {
                     return true;
@@ -123,9 +123,9 @@ namespace DAO.Administration
 
         public SystemUser ChargeUser(String name)
         {
-            using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+            using (DB_Project db = new DB_Project())
             {
-                var user = db.SystemUsers.Find(name);
+                var user = db.SystemUser.Find(name);
                 return user;
             }
         }

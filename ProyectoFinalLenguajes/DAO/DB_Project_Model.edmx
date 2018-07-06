@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB_Project_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="ClientEmail" />
+          </Key>
+          <Property Name="ClientEmail" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="PhysicalAddress" Type="nvarchar" MaxLength="800" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="ClientEmail" />
+          </Key>
+          <Property Name="ClientEmail" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ClientName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ClientPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ClientAvailable" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClientOrder">
+          <Key>
+            <PropertyRef Name="OrderCode" />
+          </Key>
+          <Property Name="OrderCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderState" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TotalPrice" Type="money" Nullable="false" />
+          <Property Name="DateHourIn" Type="datetime" Nullable="false" />
+          <Property Name="DateHourOut" Type="datetime" />
+          <Property Name="DeliveryAddress" Type="nvarchar" MaxLength="800" />
+          <Property Name="ClientEmail" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dish">
+          <Key>
+            <PropertyRef Name="DishCode" />
+          </Key>
+          <Property Name="DishCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DishName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="DishDescription" Type="nvarchar" MaxLength="400" Nullable="false" />
+          <Property Name="DishPrice" Type="money" Nullable="false" />
+          <Property Name="DishPhoto" Type="nvarchar" MaxLength="400" Nullable="false" />
+          <Property Name="DishAvailable" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="OrderCode" />
+            <PropertyRef Name="DishCode" />
+          </Key>
+          <Property Name="OrderCode" Type="int" Nullable="false" />
+          <Property Name="DishCode" Type="int" Nullable="false" />
+          <Property Name="DishPrice" Type="money" Nullable="false" />
+          <Property Name="DishQuantity" Type="int" Nullable="false" />
+          <Property Name="SubTotal" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SystemUser">
+          <Key>
+            <PropertyRef Name="SystemUserName" />
+          </Key>
+          <Property Name="SystemUserName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="SystemUserPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SystemUserRole" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Address_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="ClientEmail" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="ClientEmail" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientOrder_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="ClientOrder" Type="Self.ClientOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="ClientEmail" />
+            </Principal>
+            <Dependent Role="ClientOrder">
+              <PropertyRef Name="ClientEmail" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_ClientOrder">
+          <End Role="ClientOrder" Type="Self.ClientOrder" Multiplicity="1" />
+          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClientOrder">
+              <PropertyRef Name="OrderCode" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="OrderCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_Dish">
+          <End Role="Dish" Type="Self.Dish" Multiplicity="1" />
+          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dish">
+              <PropertyRef Name="DishCode" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="DishCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_Project_ModelStoreContainer">
+          <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClientOrder" EntityType="Self.ClientOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dish" EntityType="Self.Dish" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SystemUser" EntityType="Self.SystemUser" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Address_Client" Association="Self.FK_Address_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Address" EntitySet="Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientOrder_Client" Association="Self.FK_ClientOrder_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="ClientOrder" EntitySet="ClientOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_ClientOrder" Association="Self.FK_OrderDetail_ClientOrder">
+            <End Role="ClientOrder" EntitySet="ClientOrder" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Dish" Association="Self.FK_OrderDetail_Dish">
+            <End Role="Dish" EntitySet="Dish" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_Project_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="ClientEmail" />
+          </Key>
+          <Property Name="ClientEmail" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PhysicalAddress" Type="String" MaxLength="800" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Client" Relationship="Self.FK_Address_Client" FromRole="Address" ToRole="Client" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="ClientEmail" />
+          </Key>
+          <Property Name="ClientEmail" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClientName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClientPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClientAvailable" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Address" Relationship="Self.FK_Address_Client" FromRole="Client" ToRole="Address" />
+          <NavigationProperty Name="ClientOrder" Relationship="Self.FK_ClientOrder_Client" FromRole="Client" ToRole="ClientOrder" />
+        </EntityType>
+        <EntityType Name="ClientOrder">
+          <Key>
+            <PropertyRef Name="OrderCode" />
+          </Key>
+          <Property Name="OrderCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TotalPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="DateHourIn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateHourOut" Type="DateTime" Precision="3" />
+          <Property Name="DeliveryAddress" Type="String" MaxLength="800" FixedLength="false" Unicode="true" />
+          <Property Name="ClientEmail" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Client" Relationship="Self.FK_ClientOrder_Client" FromRole="ClientOrder" ToRole="Client" />
+          <NavigationProperty Name="OrderDetail" Relationship="Self.FK_OrderDetail_ClientOrder" FromRole="ClientOrder" ToRole="OrderDetail" />
+        </EntityType>
+        <EntityType Name="Dish">
+          <Key>
+            <PropertyRef Name="DishCode" />
+          </Key>
+          <Property Name="DishCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DishName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DishDescription" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DishPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="DishPhoto" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DishAvailable" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="OrderDetail" Relationship="Self.FK_OrderDetail_Dish" FromRole="Dish" ToRole="OrderDetail" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="OrderCode" />
+            <PropertyRef Name="DishCode" />
+          </Key>
+          <Property Name="OrderCode" Type="Int32" Nullable="false" />
+          <Property Name="DishCode" Type="Int32" Nullable="false" />
+          <Property Name="DishPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="DishQuantity" Type="Int32" Nullable="false" />
+          <Property Name="SubTotal" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="ClientOrder" Relationship="Self.FK_OrderDetail_ClientOrder" FromRole="OrderDetail" ToRole="ClientOrder" />
+          <NavigationProperty Name="Dish" Relationship="Self.FK_OrderDetail_Dish" FromRole="OrderDetail" ToRole="Dish" />
+        </EntityType>
+        <EntityType Name="SystemUser">
+          <Key>
+            <PropertyRef Name="SystemUserName" />
+          </Key>
+          <Property Name="SystemUserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SystemUserPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SystemUserRole" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Address_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="ClientEmail" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="ClientEmail" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientOrder_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="ClientOrder" Type="Self.ClientOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="ClientEmail" />
+            </Principal>
+            <Dependent Role="ClientOrder">
+              <PropertyRef Name="ClientEmail" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_ClientOrder">
+          <End Role="ClientOrder" Type="Self.ClientOrder" Multiplicity="1" />
+          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClientOrder">
+              <PropertyRef Name="OrderCode" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="OrderCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_Dish">
+          <End Role="Dish" Type="Self.Dish" Multiplicity="1" />
+          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dish">
+              <PropertyRef Name="DishCode" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="DishCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_Project" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Address" EntityType="Self.Address" />
+          <EntitySet Name="Client" EntityType="Self.Client" />
+          <EntitySet Name="ClientOrder" EntityType="Self.ClientOrder" />
+          <EntitySet Name="Dish" EntityType="Self.Dish" />
+          <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" />
+          <EntitySet Name="SystemUser" EntityType="Self.SystemUser" />
+          <AssociationSet Name="FK_Address_Client" Association="Self.FK_Address_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Address" EntitySet="Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientOrder_Client" Association="Self.FK_ClientOrder_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="ClientOrder" EntitySet="ClientOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_ClientOrder" Association="Self.FK_OrderDetail_ClientOrder">
+            <End Role="ClientOrder" EntitySet="ClientOrder" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Dish" Association="Self.FK_OrderDetail_Dish">
+            <End Role="Dish" EntitySet="Dish" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_Project_ModelStoreContainer" CdmEntityContainer="DB_Project">
+          <EntitySetMapping Name="Address">
+            <EntityTypeMapping TypeName="DB_Project_Model.Address">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="ClientEmail" ColumnName="ClientEmail" />
+                <ScalarProperty Name="PhysicalAddress" ColumnName="PhysicalAddress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Client">
+            <EntityTypeMapping TypeName="DB_Project_Model.Client">
+              <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="ClientEmail" ColumnName="ClientEmail" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="ClientPassword" ColumnName="ClientPassword" />
+                <ScalarProperty Name="ClientAvailable" ColumnName="ClientAvailable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientOrder">
+            <EntityTypeMapping TypeName="DB_Project_Model.ClientOrder">
+              <MappingFragment StoreEntitySet="ClientOrder">
+                <ScalarProperty Name="OrderCode" ColumnName="OrderCode" />
+                <ScalarProperty Name="OrderState" ColumnName="OrderState" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="DateHourIn" ColumnName="DateHourIn" />
+                <ScalarProperty Name="DateHourOut" ColumnName="DateHourOut" />
+                <ScalarProperty Name="DeliveryAddress" ColumnName="DeliveryAddress" />
+                <ScalarProperty Name="ClientEmail" ColumnName="ClientEmail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dish">
+            <EntityTypeMapping TypeName="DB_Project_Model.Dish">
+              <MappingFragment StoreEntitySet="Dish">
+                <ScalarProperty Name="DishCode" ColumnName="DishCode" />
+                <ScalarProperty Name="DishName" ColumnName="DishName" />
+                <ScalarProperty Name="DishDescription" ColumnName="DishDescription" />
+                <ScalarProperty Name="DishPrice" ColumnName="DishPrice" />
+                <ScalarProperty Name="DishPhoto" ColumnName="DishPhoto" />
+                <ScalarProperty Name="DishAvailable" ColumnName="DishAvailable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetail">
+            <EntityTypeMapping TypeName="DB_Project_Model.OrderDetail">
+              <MappingFragment StoreEntitySet="OrderDetail">
+                <ScalarProperty Name="OrderCode" ColumnName="OrderCode" />
+                <ScalarProperty Name="DishCode" ColumnName="DishCode" />
+                <ScalarProperty Name="DishPrice" ColumnName="DishPrice" />
+                <ScalarProperty Name="DishQuantity" ColumnName="DishQuantity" />
+                <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemUser">
+            <EntityTypeMapping TypeName="DB_Project_Model.SystemUser">
+              <MappingFragment StoreEntitySet="SystemUser">
+                <ScalarProperty Name="SystemUserName" ColumnName="SystemUserName" />
+                <ScalarProperty Name="SystemUserPassword" ColumnName="SystemUserPassword" />
+                <ScalarProperty Name="SystemUserRole" ColumnName="SystemUserRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

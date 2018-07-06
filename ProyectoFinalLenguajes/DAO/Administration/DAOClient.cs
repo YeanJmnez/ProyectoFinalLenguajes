@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TAO;
+using TO;
 using System.Data.SqlClient;
 
 namespace DAO.Administration
@@ -14,9 +14,9 @@ namespace DAO.Administration
         public List<Client> ClientList()
         {
             List<Client> Clientes = new List<Client>();
-            using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+            using (DB_Project db = new DB_Project())
             {
-                Clientes = db.Clients.ToList();
+                Clientes = db.Client.ToList();
             }
             return Clientes;
         }
@@ -25,9 +25,9 @@ namespace DAO.Administration
         {
             try
             {
-                using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+                using (DB_Project db = new DB_Project())
                 {
-                    Client cliente = db.Clients.Find(client.ClientEmail);
+                    Client cliente = db.Client.Find(client.ClientEmail);
                     if (client != null)
                     {
                         cliente.ClientName = client.ClientEmail;
@@ -48,7 +48,7 @@ namespace DAO.Administration
         {
             try
             {
-                using (ProyectoLenguajes_Admin db = new ProyectoLenguajes_Admin())
+                using (DB_Project db = new DB_Project())
                 {
                     db.Clients.Add(client);
                     db.Addresses.Add(new Address() { ClientEmail = client.ClientEmail, PhysicalAddress = client.ClientAddress });
