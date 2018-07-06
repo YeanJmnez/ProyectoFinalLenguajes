@@ -105,6 +105,8 @@ namespace DAO.Administration
             }
         }
 
+        public DAODish() {
+        }
 
 
 
