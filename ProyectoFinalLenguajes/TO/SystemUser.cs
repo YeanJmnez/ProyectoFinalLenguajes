@@ -20,8 +20,7 @@ namespace TO
 
         public SystemUser() { }
 
-        public SystemUser(string SystemUserName, string SystemUserPassword, string SystemUserRole)
-        {
+        public SystemUser(string SystemUserName, string SystemUserPassword, string SystemUserRole) {
             this.SystemUserName = SystemUserName;
             this.SystemUserPassword = SystemUserPassword;
             this.SystemUserRole = SystemUserRole;

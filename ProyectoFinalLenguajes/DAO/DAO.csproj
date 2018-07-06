@@ -99,7 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TO\TO.csproj">
-      <Project>{363932d9-276a-4ebb-8652-2c6972c56342}</Project>
+      <Project>{fceac99f-64dd-476e-a523-b607fb18786f}</Project>
       <Name>TO</Name>
     </ProjectReference>
   </ItemGroup>
