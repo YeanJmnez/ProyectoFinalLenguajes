@@ -52,6 +52,7 @@
     <Compile Include="Admistration\BLClient.cs" />
     <Compile Include="Admistration\BLDish.cs" />
     <Compile Include="Admistration\BLSystemUser.cs" />
+    <Compile Include="Admistration\ManagerUserSystem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
