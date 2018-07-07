@@ -24,6 +24,26 @@ namespace BL.Admistration
             return auxList;
         }
 
+        public List<string> ListUserString()
+        {
+            List<string> stringList = new List<string>();
+            List<BLSystemUser> list = SystemUserList();
+            string role = "";
+            foreach (BLSystemUser user in list)
+            {
+                if (user.SystemUserRole.Equals("Admin"))
+                {
+                    role = "Administrator";
+                }
+                else
+                {
+                    role = "Kitchen User";
+                }
+                stringList.Add("UserName: " + user.SystemUserName + " ,Password: " + user.SystemUserPassword + " ,Role: " + role + ".");
+            }
+            return stringList;
+        }
+
         public String userLogIn(BLSystemUser userSystem)
         {
             DAOSystemUser dsu = new DAOSystemUser();

@@ -45,5 +45,10 @@ namespace GUI.Administration
             }
 
         }
+
+        protected void B_Cancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Index.aspx");
+        }
     }
 }

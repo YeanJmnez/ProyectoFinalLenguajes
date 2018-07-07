@@ -16,6 +16,8 @@
         <br />
         <br />
         <asp:Button ID="B_Find" CssClass="btn btn-primary boton"  runat="server" Text="Find" OnClick="B_Find_Click" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="B_Cancel"  CssClass="btn btn-primary boton"  runat="server" Text="Cancel" OnClick="B_Cancel_Click" />
         <br />
         <br />
         <asp:GridView AlternatingRowStyle-CssClass="alternarColores" CssClass="customGrid" ID="grid_User" runat="server" Width="368px"></asp:GridView>

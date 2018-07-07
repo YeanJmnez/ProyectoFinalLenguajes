@@ -26,7 +26,7 @@ namespace GUI
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) || Radio_Role.SelectedItem == null)
             {
                 L_State.Enabled = true;
-                L_State.Text = "No se puede dejar campos vacios.";
+                L_State.Text = "Don't leave empty fields.";
                 saveChange = false;
 
             }
@@ -34,19 +34,25 @@ namespace GUI
 
             if (saveChange)
             {
-                role = Radio_Role.SelectedItem.Text;
+                role = Radio_Role.SelectedItem.Value;
+             
                 ManagerUserSystem manager = new ManagerUserSystem();
                 bool state = manager.addUser(new BLSystemUser(username, password, role));
 
                 if (!state)
                 {
-                    L_State.Text = "Ya existe un usuario con el mismo nombre";
+                    L_State.Text = "user already exists";
                 }
                 else
                 {
                     Response.Redirect("AddSystemUser.aspx");
                 }
             }
+        }
+
+        protected void B_Cancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Index.aspx");
         }
     }
 }

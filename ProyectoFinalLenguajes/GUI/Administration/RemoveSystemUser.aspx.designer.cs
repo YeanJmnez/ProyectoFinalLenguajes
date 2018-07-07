@@ -10,43 +10,34 @@
 namespace GUI.Administration {
     
     
-    public partial class FindUserSystem {
+    public partial class RemoveSystemUser {
         
         /// <summary>
-        /// L_Informacion control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label L_Informacion;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// T_Code control.
+        /// List_User control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox T_Code;
+        protected global::System.Web.UI.WebControls.ListBox List_User;
         
         /// <summary>
-        /// L_State control.
+        /// B_Delete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label L_State;
-        
-        /// <summary>
-        /// B_Find control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button B_Find;
+        protected global::System.Web.UI.WebControls.Button B_Delete;
         
         /// <summary>
         /// B_Cancel control.
@@ -56,14 +47,5 @@ namespace GUI.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button B_Cancel;
-        
-        /// <summary>
-        /// grid_User control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grid_User;
     }
 }
