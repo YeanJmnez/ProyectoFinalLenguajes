@@ -23,8 +23,7 @@ namespace TO
         public string ClientEmail { get; set; }
         public string ClientName { get; set; }
         public string ClientPassword { get; set; }
-        public bool ClientAvailable { get; set; }
-    
+        public bool ClientAvailable { get; set; }  
         public virtual Address Address { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClientOrder> ClientOrder { get; set; }
