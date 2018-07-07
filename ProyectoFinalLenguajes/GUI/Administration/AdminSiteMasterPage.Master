@@ -89,7 +89,7 @@
                     <a href="#" data-toggle="collapse" data-target="#submenu-3"><i class="fa fa-fw fa-users"></i>  Manage Users <i class="fa fa-fw fa-angle-down pull-right"></i></a>
                     <ul id="submenu-3" class="collapse">
                         <li><a href="<%= Page.ResolveUrl("AddSystemUser.aspx") %>"><i class="fa fa-angle-double-right"></i> Add User</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Find User</a></li>
+                        <li><a href="<%= Page.ResolveUrl("FindUserSystem.aspx") %>">><i class="fa fa-angle-double-right"></i> Find User</a></li>
                         <li><a href="#"><i class="fa fa-angle-double-right"></i> Modify User</a></li>
                         <li><a href="#"><i class="fa fa-angle-double-right"></i> Remove User</a></li>
                     </ul>

@@ -35,8 +35,8 @@ namespace GUI
             if (saveChange)
             {
                 role = Radio_Role.SelectedItem.Text;
-                BLSystemUser lbUser = new BLSystemUser(username, password, role);
-                bool state = lbUser.addUser();
+                ManagerUserSystem manager = new ManagerUserSystem();
+                bool state = manager.addUser(new BLSystemUser(username, password, role));
 
                 if (!state)
                 {

@@ -33,12 +33,12 @@ namespace GUI.Administration
                 loginEmptyPassword.Visible = true;
             }
 
-            if (!string.IsNullOrEmpty(username) && 
+            if (!string.IsNullOrEmpty(username) &&
                 !string.IsNullOrEmpty(password) &&
                 !string.IsNullOrEmpty(role))
             {
-                BLSystemUser blSystemUser = new BLSystemUser(username, password, role);
-                String result = blSystemUser.userLogIn();
+                ManagerUserSystem manager = new ManagerUserSystem();
+                String result = manager.userLogIn(new BLSystemUser(username, password, role));
 
                 if (result.Equals("Correct"))
                 {
@@ -62,6 +62,6 @@ namespace GUI.Administration
             }
 
         }
-       
+
     }
 }
