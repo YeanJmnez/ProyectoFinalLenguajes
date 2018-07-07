@@ -6,24 +6,21 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BL.Admistration;
 
-namespace GUI
+namespace GUI.Administration
 {
-    public partial class AddSystemUser : System.Web.UI.Page
+    public partial class FindUserSystem : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             L_State.Enabled = false;
         }
 
-        protected void B_addUSer_Click(object sender, EventArgs e)
+        protected void B_Find_Click(object sender, EventArgs e)
         {
-
-            String username = Text_Name.Text.Trim();
-            String password = Text_Password.Text.Trim();
-            string role = null;
             bool saveChange = true;
+            ManagerUserSystem manager = new ManagerUserSystem();
 
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) || Radio_Role.SelectedItem == null)
+            if (string.IsNullOrEmpty(T_Code.Text.Trim()))
             {
                 L_State.Enabled = true;
                 L_State.Text = "Don't leave empty fields.";
@@ -31,23 +28,22 @@ namespace GUI
 
             }
 
-
             if (saveChange)
             {
-                role = Radio_Role.SelectedItem.Value;
-             
-                ManagerUserSystem manager = new ManagerUserSystem();
-                bool state = manager.addUser(new BLSystemUser(username, password, role));
-
-                if (!state)
+                BLSystemUser user = manager.ChargeUser(T_Code.Text.Trim());
+                if (user != null)
                 {
-                    L_State.Text = "user already exists";
+                    List<BLSystemUser> list = new List<BLSystemUser>();
+                    list.Add(user);
+                    grid_User.DataSource = list;
+                    grid_User.DataBind();
                 }
                 else
                 {
-                    Response.Redirect("AddSystemUser.aspx");
+                    L_State.Text = "This user doesn't exist.";
                 }
             }
+
         }
 
         protected void B_Cancel_Click(object sender, EventArgs e)

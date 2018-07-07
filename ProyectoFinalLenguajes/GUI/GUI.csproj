@@ -110,10 +110,13 @@
     <Content Include="Administration\Content\js\jquery-1.11.1.min.js" />
     <Content Include="Administration\Content\js\login.js" />
     <Content Include="Administration\FindDish.aspx" />
+    <Content Include="Administration\FindUserSystem.aspx" />
     <Content Include="Administration\Index.aspx" />
     <Content Include="Administration\Login.aspx" />
     <Content Include="Administration\RemoveDish.aspx" />
+    <Content Include="Administration\RemoveSystemUser.aspx" />
     <Content Include="Administration\UpdateDish.aspx" />
+    <Content Include="Administration\UpdateSystemUser.aspx" />
     <Content Include="DishesPicture\i79651-ceviche-de-poisson.jpg" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -166,6 +169,13 @@
     <Compile Include="Administration\FindDish.aspx.designer.cs">
       <DependentUpon>FindDish.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Administration\FindUserSystem.aspx.cs">
+      <DependentUpon>FindUserSystem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\FindUserSystem.aspx.designer.cs">
+      <DependentUpon>FindUserSystem.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Administration\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -187,12 +197,26 @@
     <Compile Include="Administration\RemoveDish.aspx.designer.cs">
       <DependentUpon>RemoveDish.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Administration\RemoveSystemUser.aspx.cs">
+      <DependentUpon>RemoveSystemUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\RemoveSystemUser.aspx.designer.cs">
+      <DependentUpon>RemoveSystemUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Administration\UpdateDish.aspx.cs">
       <DependentUpon>UpdateDish.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Administration\UpdateDish.aspx.designer.cs">
       <DependentUpon>UpdateDish.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\UpdateSystemUser.aspx.cs">
+      <DependentUpon>UpdateSystemUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\UpdateSystemUser.aspx.designer.cs">
+      <DependentUpon>UpdateSystemUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WSClient\IWSClient.cs" />

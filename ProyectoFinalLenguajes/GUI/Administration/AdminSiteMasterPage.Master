@@ -18,100 +18,101 @@
 </head>
 <body>
     <form runat="server">
-    <div id="throbber" style="display:none; min-height:120px;"></div>
-	<div id="noty-holder"></div>
-	<div id="wrapper">
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-static-top admin-panel-navbar" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header mobile-navbar">
-            <button type="button" class="mobile-button-menu navbar-toggle" data-toggle="collapse" data-target=".navbar-admin-panel-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="<%= Page.ResolveUrl("Index.aspx") %>">
-                <span>Admin</span>Panel
-            </a>
-        </div>
-        <!-- Top Menu Items -->
-        <ul class="nav navbar-right top-nav mobile-navbar-right">
-            <li><a href="#" data-placement="bottom" data-toggle="tooltip" data-original-title="Stats"><i class="fa fa-bar-chart-o"></i>
-                </a>
-            </li>            
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin User <b class="fa fa-angle-down"></b></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
-                    <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
-                    <li class="divider"></li>
-                    <li><asp:LinkButton runat="server" ID="lbLogOut" OnClick="lbLogOut_Click"><i class="fa fa-fw fa-power-off"></i> Log Out</asp:LinkButton></li>
-                </ul>
-            </li>
-        </ul>
-        <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-        <div class="collapse navbar-collapse navbar-admin-panel-collapse dashboard-navbar">
-            <ul class="nav navbar-nav side-nav">
-				
-                <div class="current-user">
-                    <div class="user-image">
-                        <img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="" />
-                    </div>
-                    <div class="user-data">
-                        <div class="user-name">
-                            <asp:Label ID="lblUserName" runat="server" Text="Username"></asp:Label>
-                        </div>
-                        <div class="user-status">
-                            <span class="session-indicator"></span>
-                            <span class="session-status">online</span>
-                        </div>
-                    </div>
+        <div id="throbber" style="display: none; min-height: 120px;"></div>
+        <div id="noty-holder"></div>
+        <div id="wrapper">
+            <!-- Navigation -->
+            <nav class="navbar navbar-inverse navbar-static-top admin-panel-navbar" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header mobile-navbar">
+                    <button type="button" class="mobile-button-menu navbar-toggle" data-toggle="collapse" data-target=".navbar-admin-panel-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="<%= Page.ResolveUrl("Index.aspx") %>">
+                        <span>Admin</span>Panel
+                    </a>
                 </div>
-				<li>
-                    <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-cutlery"></i> Manage Dishes <i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                    <ul id="submenu-1" class="collapse">
-                        <li><a href="<%= Page.ResolveUrl("AddDish.aspx") %>"><i class="fa fa-angle-double-right"></i> Add Dish</a></li>
-                        <li><a href="<%= Page.ResolveUrl("FindDish.aspx") %>"><i class="fa fa-angle-double-right"></i> Find Dish</a></li>
-                        <li><a href="<%= Page.ResolveUrl("UpdateDish.aspx") %>"><i class="fa fa-angle-double-right"></i> Update Dish</a></li>
-                        <li><a href="<%= Page.ResolveUrl("RemoveDish.aspx") %>"><i class="fa fa-angle-double-right"></i> Remove Dish</a></li>
+                <!-- Top Menu Items -->
+                <ul class="nav navbar-right top-nav mobile-navbar-right">
+                    <li><a href="#" data-placement="bottom" data-toggle="tooltip" data-original-title="Stats"><i class="fa fa-bar-chart-o"></i>
+                    </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin User <b class="fa fa-angle-down"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><i class="fa fa-fw fa-user"></i>Edit Profile</a></li>
+                            <li><a href="#"><i class="fa fa-fw fa-cog"></i>Change Password</a></li>
+                            <li class="divider"></li>
+                            <li>
+                                <asp:LinkButton runat="server" ID="lbLogOut" OnClick="lbLogOut_Click"><i class="fa fa-fw fa-power-off"></i> Log Out</asp:LinkButton></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                <div class="collapse navbar-collapse navbar-admin-panel-collapse dashboard-navbar">
+                    <ul class="nav navbar-nav side-nav">
+
+                        <div class="current-user">
+                            <div class="user-image">
+                                <img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="" />
+                            </div>
+                            <div class="user-data">
+                                <div class="user-name">
+                                    <asp:Label ID="lblUserName" runat="server" Text="Username"></asp:Label>
+                                </div>
+                                <div class="user-status">
+                                    <span class="session-indicator"></span>
+                                    <span class="session-status">online</span>
+                                </div>
+                            </div>
+                        </div>
+                        <li>
+                            <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-cutlery"></i>Manage Dishes <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                            <ul id="submenu-1" class="collapse">
+                                <li><a href="<%= Page.ResolveUrl("AddDish.aspx") %>"><i class="fa fa-angle-double-right"></i>Add Dish</a></li>
+                                <li><a href="<%= Page.ResolveUrl("FindDish.aspx") %>"><i class="fa fa-angle-double-right"></i>Find Dish</a></li>
+                                <li><a href="<%= Page.ResolveUrl("UpdateDish.aspx") %>"><i class="fa fa-angle-double-right"></i>Update Dish</a></li>
+                                <li><a href="<%= Page.ResolveUrl("RemoveDish.aspx") %>"><i class="fa fa-angle-double-right"></i>Remove Dish</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-th-list"></i>Manage Orders <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                            <ul id="submenu-2" class="collapse">
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i>SUBMENU 1.1</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i>SUBMENU 1.2</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i>SUBMENU 1.3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="collapse" data-target="#submenu-3"><i class="fa fa-fw fa-users"></i>Manage Users <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                            <ul id="submenu-3" class="collapse">
+                                <li><a href="<%= Page.ResolveUrl("AddSystemUser.aspx") %>"><i class="fa fa-angle-double-right"></i>Add User</a></li>
+                                <li><a href="<%= Page.ResolveUrl("FindUserSystem.aspx") %>"><i class="fa fa-angle-double-right"></i>Find User</a></li>
+                                <li><a href="<%= Page.ResolveUrl("UpdateSystemUser.aspx") %>"><i class="fa fa-angle-double-right"></i>Modify User</a></li>
+                                <li><a href="<%= Page.ResolveUrl("RemoveSystemUser.aspx") %>"><i class="fa fa-angle-double-right"></i>Remove User</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="investigaciones/favoritas"><i class="fa fa-fw fa-male"></i>Manage Clients</a>
+                        </li>
+                        <li>
+                            <a href="sugerencias"><i class="fa fa-fw fa-paper-plane-o"></i>MENU 4</a>
+                        </li>
+                        <li>
+                            <a href="faq"><i class="fa fa-fw fa fa-question-circle"></i>MENU 5</a>
+                        </li>
                     </ul>
-                </li>
-                <li>
-                    <a href="#" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-th-list"></i> Manage Orders <i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                    <ul id="submenu-2" class="collapse">
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.1</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.2</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.3</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" data-toggle="collapse" data-target="#submenu-3"><i class="fa fa-fw fa-users"></i>  Manage Users <i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                    <ul id="submenu-3" class="collapse">
-                        <li><a href="<%= Page.ResolveUrl("AddSystemUser.aspx") %>"><i class="fa fa-angle-double-right"></i> Add User</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Find User</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Modify User</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Remove User</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="investigaciones/favoritas"><i class="fa fa-fw fa-male"></i>  Manage Clients</a>
-                </li>
-                <li>
-                    <a href="sugerencias"><i class="fa fa-fw fa-paper-plane-o"></i> MENU 4</a>
-                </li>
-                <li>
-                    <a href="faq"><i class="fa fa-fw fa fa-question-circle"></i> MENU 5</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </nav>
-        <div class="page-content well flex-div" id="content">
-            <asp:ContentPlaceHolder ID="adminPanelContent" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+            <div class="page-content well flex-div" id="content">
+                <asp:ContentPlaceHolder ID="adminPanelContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
     </form>
-    <script type="text/javascript" src="Content/js/dashboard.js"></script>        
+    <script type="text/javascript" src="Content/js/dashboard.js"></script>
 </body>
 </html>

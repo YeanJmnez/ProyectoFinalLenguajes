@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
-using DAO.Administration;
-using TO;
+
 
 namespace BL.Admistration
 {
@@ -24,69 +23,5 @@ namespace BL.Admistration
             this.SystemUserRole = role;
         }
 
-        public List<SystemUser> SystemUserList()
-        {
-            DAOSystemUser Ds = new DAOSystemUser();
-            List<SystemUser> list = Ds.UserList();
-            foreach (SystemUser user in list)
-            {
-                SystemUser auxUser = new SystemUser(user.SystemUserName, user.SystemUserPassword, user.SystemUserRole);
-                list.Add(auxUser);
-            }
-            return list;
-        }
-
-        public String userLogIn()
-        {
-            DAOSystemUser dsu = new DAOSystemUser();
-            SystemUser user = new SystemUser(this.SystemUserName, this.SystemUserPassword, this.SystemUserRole);
-
-            String result = dsu.checkUserCredentials(user);
-
-            return result;
-        }
-
-        public void updateUser(SystemUser user)
-        {
-            List<SystemUser> list = SystemUserList();
-            DAOSystemUser dv = new DAOSystemUser();
-            foreach (SystemUser item in list)
-            {
-                if (user.SystemUserName == item.SystemUserName)
-                {
-                    SystemUser toUser = new SystemUser() { SystemUserName = user.SystemUserName, SystemUserPassword = user.SystemUserPassword, SystemUserRole = user.SystemUserRole };
-                    dv.updateUser(toUser);
-                    return;
-                }
-
-            }
-
-        }
-
-        public bool addUser()
-        {
-            DAOSystemUser dv = new DAOSystemUser();
-            SystemUser toUser = new SystemUser() { SystemUserName = SystemUserName, SystemUserPassword = SystemUserPassword, SystemUserRole = SystemUserRole };
-            if (dv.checkNameUser(toUser.SystemUserName))
-            {
-                dv.addUser(toUser);
-                return true;
-            }
-            return false;
-            
-        }
-
-        public void deleteUser(string name)
-        {
-            DAOSystemUser user = new DAOSystemUser();
-            user.DeleteUser(name);
-        }
-
-        public BLSystemUser ChargeUser(string code)
-        {
-            DAOSystemUser dv = new DAOSystemUser();
-            SystemUser user = dv.ChargeUser(code);
-            return new BLSystemUser(user.SystemUserName, user.SystemUserPassword, user.SystemUserRole);
-        }
     }
 }

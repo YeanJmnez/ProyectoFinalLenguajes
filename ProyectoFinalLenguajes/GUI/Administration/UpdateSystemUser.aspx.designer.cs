@@ -7,10 +7,46 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GUI {
+namespace GUI.Administration {
     
     
-    public partial class AddSystemUser {
+    public partial class UpdateSystemUser {
+        
+        /// <summary>
+        /// L_Informacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label L_Informacion;
+        
+        /// <summary>
+        /// T_Code control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox T_Code;
+        
+        /// <summary>
+        /// B_Find control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button B_Find;
+        
+        /// <summary>
+        /// L_State control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label L_State;
         
         /// <summary>
         /// L_Name control.
@@ -49,13 +85,22 @@ namespace GUI {
         protected global::System.Web.UI.WebControls.TextBox Text_Password;
         
         /// <summary>
-        /// L_State control.
+        /// L_Role control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label L_State;
+        protected global::System.Web.UI.WebControls.Label L_Role;
+        
+        /// <summary>
+        /// Text_Role control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Text_Role;
         
         /// <summary>
         /// L_Rol control.
@@ -85,12 +130,12 @@ namespace GUI {
         protected global::System.Web.UI.WebControls.Button B_addUSer;
         
         /// <summary>
-        /// B_Cancel control.
+        /// B_cancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button B_Cancel;
+        protected global::System.Web.UI.WebControls.Button B_cancel;
     }
 }
