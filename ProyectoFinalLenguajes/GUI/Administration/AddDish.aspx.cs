@@ -18,17 +18,28 @@ namespace GUI.Administration
         protected void BtAddDish_Click(object sender, EventArgs e)
         {
             bool state = true;
-            if(TxtState.Text.ToLower().Trim() == "habilitado")
+            if (TxtState.Text.ToLower().Trim() == "habilitado")
             {
                 state = true;
-            } else
+            }
+            else
             {
                 state = false;
             }
             BLDish newDish = new BLDish(TxtName.Text.Trim(), TxtDescription.Text.Trim(), decimal.Parse(TxtPrice.Text.ToLower().Trim()), state, FileUploadDish.FileName);
             FileUploadDish.SaveAs(Server.MapPath("../DishesPicture/").ToString() + FileUploadDish.FileName);
             newDish.addDish(newDish);
+
+            addDishForm.Visible = false;
+            String css = successRegistration.Attributes["class"];
+            String newCss = css.Replace("hidden", "");
+            successRegistration.Attributes.Add("class", newCss);
+        }
+
+        protected void btnAccept_Click(object sender, EventArgs e)
+        {
             Response.Redirect("AddDish.aspx");
+
         }
     }
 }
