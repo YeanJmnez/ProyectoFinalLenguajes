@@ -118,6 +118,8 @@
     <Content Include="Administration\UpdateDish.aspx" />
     <Content Include="Administration\UpdateSystemUser.aspx" />
     <Content Include="DishesPicture\i79651-ceviche-de-poisson.jpg" />
+    <Content Include="Kitchen\ActiveOrders.aspx" />
+    <Content Include="Kitchen\IndexKitchen.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -128,6 +130,7 @@
     <Content Include="Administration\Content\css\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Administration\Content\css\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="WSClient\WSClient.svc" />
+    <Content Include="Kitchen\KitchenSiteMasterPage.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -218,6 +221,27 @@
     <Compile Include="Administration\UpdateSystemUser.aspx.designer.cs">
       <DependentUpon>UpdateSystemUser.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Kitchen\ActiveOrders.aspx.cs">
+      <DependentUpon>ActiveOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Kitchen\ActiveOrders.aspx.designer.cs">
+      <DependentUpon>ActiveOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Kitchen\IndexKitchen.aspx.cs">
+      <DependentUpon>IndexKitchen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Kitchen\IndexKitchen.aspx.designer.cs">
+      <DependentUpon>IndexKitchen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Kitchen\KitchenSiteMasterPage.Master.cs">
+      <DependentUpon>KitchenSiteMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Kitchen\KitchenSiteMasterPage.Master.designer.cs">
+      <DependentUpon>KitchenSiteMasterPage.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WSClient\IWSClient.cs" />
     <Compile Include="WSClient\WSClient.svc.cs">
@@ -226,7 +250,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Administration\DishPicture\" />
-    <Folder Include="Kitchen\" />
     <Folder Include="Movil\" />
   </ItemGroup>
   <ItemGroup>

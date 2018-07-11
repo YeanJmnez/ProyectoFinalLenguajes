@@ -27,7 +27,8 @@ namespace TO
         public Nullable<System.DateTime> DateHourOut { get; set; }
         public string DeliveryAddress { get; set; }
         public string ClientEmail { get; set; }
-    
+        public List<OrderDetail> ListOrderDetails { get; set; }
+
         public virtual Client Client { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetail { get; set; }
