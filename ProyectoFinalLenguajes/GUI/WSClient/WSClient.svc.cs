@@ -33,5 +33,24 @@ namespace GUI.WSClient
             BLClient Cl = new BLClient();
             return Cl.DishesList();
         }
+
+        public List<BLDish> GetSelectedDishes(string[][] codes)
+        {
+            BLClient Cl = new BLClient();
+            List<BLDish> allDishes = Cl.DishesList();
+            List<BLDish> allSelectedDishes = new List<BLDish>();
+
+            for (int i = 0; i < codes[0].Length; i++) {
+                foreach (BLDish dish in allDishes)
+                {
+                    if (dish.Code == Int32.Parse(codes[i][1]))
+                    {
+                        allSelectedDishes.Add(dish);
+                    }
+                }
+            }
+
+            return allSelectedDishes;
+        }
     }
 }

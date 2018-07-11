@@ -17,7 +17,7 @@ namespace BL.Admistration
         public decimal Price { set; get; }
         public bool State { set; get; }
         public string Picture { set; get; }
-
+        
         ArrayList DishesLists = new ArrayList();
         public BLDish()
         {
