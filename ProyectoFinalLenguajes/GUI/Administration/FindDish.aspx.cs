@@ -18,6 +18,7 @@ namespace GUI.Administration
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+
             ArrayList list = new ArrayList();
             BLDish BLdish = new BLDish();
             int i;
@@ -28,10 +29,12 @@ namespace GUI.Administration
             {
                 list = BLdish.chargeRelatedDishes(tbFind.Text.Trim());
             }
+
    
             grid.DataSource = list;
             grid.DataBind();
-            
+
+
         }
     }
 }
