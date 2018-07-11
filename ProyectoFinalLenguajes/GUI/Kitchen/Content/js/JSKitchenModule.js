@@ -1,6 +1,6 @@
 ﻿function getAllOrder() {
     var request = $.ajax({
-        url: "/WSRest/WSRestKitchenModule.svc/listOrder",
+        url: "proyelenguajes-001-site1.gtempurl.com/WSRest/WSRestKitchenModule.svc/listOrder",
         timeout: 10000,
         datatype: "json"
     });
@@ -23,23 +23,13 @@ function processAllOrder(data) {
         var newTD2 = document.createElement("td");
         newTD2.innerHTML = this.ClientName;
 
-        $.each(this.dishOrder, function () {
+        //$.each(this.dishOrder, function () {
 
-        })
-
-        var newTD4 = document.createElement("td");
-        newTD4.innerHTML = this.OrderCode;
-        var newTD5 = document.createElement("td");
-        newTD5.innerHTML = this.OrderState;
-        var newTD6 = document.createElement("td");
-        newTD6.innerHTML = this.TotalPrice;
-
-     
+        //})
 
         newTR.appendChild(newTD1);
         newTR.appendChild(newTD2);
-        newTR.appendChild(newTD3);
 
-        $('#tbSystemUser').append(newTR);
+        $('#Order').append(newTR);
     }
 };

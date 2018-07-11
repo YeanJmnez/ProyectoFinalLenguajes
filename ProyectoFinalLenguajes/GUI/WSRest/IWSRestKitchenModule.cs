@@ -14,7 +14,8 @@ namespace GUI.WSRest
     public interface IWSRestKitchenModule
     {
         [OperationContract]
-        [WebGet(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        [WebGet(RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json)]
         List<InformationClient> ListKitchenModule();
     }
 }
