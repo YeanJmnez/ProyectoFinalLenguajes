@@ -31,7 +31,7 @@ namespace GUI.WSClient
         [OperationContract]
         [WebGet(RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json)]
-        BLDish FilterDishes(int code);
+        List<BLDish> FilterDishes(int code);
 
     }
 }
