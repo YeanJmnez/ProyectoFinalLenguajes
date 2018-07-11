@@ -53,7 +53,7 @@ namespace BL.Kitchen
 
             foreach (ClientOrder item in ListOrderByDate)
             {
-                FinalList.Add(new InformationClient(item.OrderCode, new BLClient().getNameClient(item.ClientEmail), ListDish(item.listOrderDetails)));
+                FinalList.Add(new InformationClient(item.OrderCode, new BLClient().getNameClient(item.ClientEmail), item.OrderState,ListDish(item.listOrderDetails)));
             }
             return FinalList;
         }

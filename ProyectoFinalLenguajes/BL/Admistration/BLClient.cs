@@ -202,44 +202,43 @@ namespace BL.Admistration
         public string enableStateDish(string email, bool state)
         {
             string transaction = "The client is already enabled";
-            ClientLists();
             DAOClient dc = new DAOClient();
-
-            foreach (BLClient blc in ClientListBL)
-            {
-                if (blc.ClientEmail == email)
-                {
-                    Client cl = new Client();
-                    cl.ClientName = blc.ClientName;
-                    cl.ClientPassword = blc.ClientPassword;
-                    cl.ClientAvailable = state;
-                    dc.updateClient(cl);
-                    return transaction = "The client was successfully enabled";
-                }
-            }
+            Client cl = new Client();
+            cl.ClientEmail = email;
+            cl.ClientAvailable = state;
+            dc.updateStateClient(cl);
             return transaction;
         }
 
         public string disableStateDish(string email, bool state)
         {
             string transaction = "The client is already disable";
-            ClientLists();
             DAOClient dc = new DAOClient();
-
-            foreach (BLClient blc in ClientListBL)
-            {
-                if (blc.ClientEmail == email)
-                {
-                    Client cl = new Client();
-                    cl.ClientName = blc.ClientName;
-                    cl.ClientPassword = blc.ClientPassword;
-                    cl.ClientAvailable = state;
-                    dc.updateClient(cl);
-                    return transaction = "The client was successfully disabled";
-                }
-            }
+            Client cl = new Client();
+            cl.ClientEmail = email;
+            cl.ClientAvailable = state;
+            dc.updateStateClient(cl);
             return transaction;
         }
 
+        public List<string> ListUserClient()
+        {
+            List<string> stringList = new List<string>();
+            List<BLClient> list = ChargeClientLists();
+            string Available = "";
+            foreach (BLClient user in list)
+            {
+                if (user.ClientAvailable == true)
+                {
+                    Available = "Habilitado";
+                }
+                else
+                {
+                    Available = "Deshabilitado";
+                }
+                stringList.Add("Email: " + user.ClientEmail + " ,Name: " + user.ClientName + " ,State: " + Available + ".");
+            }
+            return stringList;
+        }
     }
 }

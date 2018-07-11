@@ -98,7 +98,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="investigaciones/favoritas"><i class="fa fa-fw fa-male"></i>Manage Clients</a>
+                            <a href="<%= Page.ResolveUrl("UpdateClientState.aspx") %>"><i class="fa fa-fw fa-male"></i>Manage Clients</a>
                         </li>
                         <li>
                             <a href="sugerencias"><i class="fa fa-fw fa-paper-plane-o"></i>MENU 4</a>
