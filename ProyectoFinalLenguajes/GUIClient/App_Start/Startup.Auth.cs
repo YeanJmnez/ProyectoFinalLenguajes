@@ -54,9 +54,9 @@ namespace GUIClient
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "613533879013592",
+               appSecret: "0ef30b9c9f08012d9de9c591ecf43b6d");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
