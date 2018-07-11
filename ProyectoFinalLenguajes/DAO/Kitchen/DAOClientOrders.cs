@@ -34,19 +34,32 @@ namespace DAO.Kitchen
                     });
                 }
 
-
                 foreach (ClientOrder item in list)
                 {
                     item.listOrders = (from OrderDetail in db.OrderDetail
                                        where OrderDetail.OrderCode == item.OrderCode
                                        select OrderDetail).ToList();
                 }
-
-
             }
             return list;
         }
 
+
+        public void ChangeStateOrder(int OrderCode, String state)
+        {
+            using (DB_Project db = new DB_Project())
+            {
+                ClientOrder client = db.ClientOrder.Find(OrderCode);
+
+                if (client != null)
+                {
+                    client.OrderState = state;
+                    db.SaveChanges();
+                }
+            }
+
+
+        }
         //public List<OrderDetail> listOrderDetails()
         //{
         //    List<OrderDetail> list = new List<OrderDetail>();

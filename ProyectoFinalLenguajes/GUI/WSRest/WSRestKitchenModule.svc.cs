@@ -12,6 +12,12 @@ namespace GUI.WSRest
     // NOTE: In order to launch WCF Test Client for testing this service, please select WSRestKitchenModule.svc or WSRestKitchenModule.svc.cs at the Solution Explorer and start debugging.
     public class WSRestKitchenModule : IWSRestKitchenModule
     {
+        public void ChangeStateOrder(int OrderCode, string state)
+        {
+            ManagerOrder manager = new ManagerOrder();
+            manager.ChangeStateOrder(OrderCode, state);
+        }
+
         public List<InformationClient> ListKitchenModule()
         {
             return new ManagerOrder().ListKitchenModule();
