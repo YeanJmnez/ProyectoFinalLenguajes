@@ -114,6 +114,7 @@
     <Content Include="Administration\Content\css\updateDish.css" />
     <Content Include="Administration\Content\css\login.css" />
     <Content Include="Administration\Content\img\checkIcon.png" />
+    <Content Include="Administration\Content\img\welcome.jpg" />
     <Content Include="Administration\Content\js\bootstrap.min.js" />
     <Content Include="Administration\Content\js\dashboard.js" />
     <Content Include="Administration\Content\js\jquery-1.11.1.min.js" />
