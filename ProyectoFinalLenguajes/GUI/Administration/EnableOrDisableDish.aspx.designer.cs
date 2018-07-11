@@ -31,21 +31,12 @@ namespace GUI {
         protected global::System.Web.UI.WebControls.ListBox List_User;
         
         /// <summary>
-        /// B_Disable control.
+        /// B_change control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button B_Disable;
-        
-        /// <summary>
-        /// B_Enable control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button B_Enable;
+        protected global::System.Web.UI.WebControls.Button B_change;
     }
 }

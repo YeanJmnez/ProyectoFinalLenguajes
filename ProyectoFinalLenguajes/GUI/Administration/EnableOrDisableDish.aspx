@@ -10,9 +10,8 @@
         <asp:ListBox ID="List_User" runat="server" Height="167px" Width="508px" BackColor="#CCFFFF" ForeColor="Black" Rows="10"></asp:ListBox>
         <br />
         <br />
-        <asp:Button ID="B_Disable" CssClass="btn btn-primary boton" runat="server" Text="Disable" Width="149px" OnClick="B_disable_Click" />
+        <asp:Button ID="B_change" CssClass="btn btn-primary boton" runat="server" Text="Change State" Width="149px" OnClick="B_change_Click" />
         &nbsp;&nbsp;&nbsp
-        <asp:Button ID="B_Enable" CssClass="btn btn-primary boton" runat="server" Text="Enable" OnClick="B_enable_Click" />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<a href="index.aspx">Back</a>
     </div>
 </asp:Content>
