@@ -5,12 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="c7ff3769909145aa9e557d8b349ab997" Name="Diagram1">
-        <EntityTypeShape EntityType="DB_Project_Model.Address" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Project_Model.Address" Width="1.5" PointX="3" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DB_Project_Model.Client" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_Project_Model.ClientOrder" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_Project_Model.Dish" Width="1.5" PointX="7.5" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_Project_Model.OrderDetail" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_Project_Model.SystemUser" Width="1.5" PointX="5.375" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Project_Model.ClientOrder" Width="1.5" PointX="3.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Project_Model.Dish" Width="1.5" PointX="7.375" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Project_Model.OrderDetail" Width="1.5" PointX="5.375" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Project_Model.SystemUser" Width="1.5" PointX="5.375" PointY="0.5" IsExpanded="true" />
         <AssociationConnector Association="DB_Project_Model.FK_Address_Client" ManuallyRouted="false" />
         <AssociationConnector Association="DB_Project_Model.FK_ClientOrder_Client" ManuallyRouted="false" />
         <AssociationConnector Association="DB_Project_Model.FK_OrderDetail_ClientOrder" ManuallyRouted="false" />
