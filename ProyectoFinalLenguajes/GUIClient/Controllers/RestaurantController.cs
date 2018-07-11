@@ -13,5 +13,10 @@ namespace GUIClient.Controllers
         {
             return View();
         }
+
+        public ActionResult ClientOrder()
+        {
+            return View();
+        }
     }
 }
