@@ -15,12 +15,34 @@ namespace DAO.Kitchen
             List<ClientOrder> list = new List<ClientOrder>();
             using (DB_Project db = new DB_Project())
             {
-                list = db.ClientOrder.ToList();
+                var listDB = (from ClientOrder in db.ClientOrder
+                              where !(ClientOrder.OrderState == "Entregado" || ClientOrder.OrderState == "Anulado")
+                              orderby (ClientOrder.DateHourIn) descending
+                              select ClientOrder).Take(10);
 
-                foreach (ClientOrder item in list) {
-                    item.listOrders = (from OrderDetail in db.OrderDetail where OrderDetail.OrderCode == item.OrderCode
-                                             select OrderDetail).ToList();
+
+                foreach (var item in listDB)
+                {
+                    list.Add(new ClientOrder()
+                    {
+                        OrderCode = item.OrderCode,
+                        OrderState = item.OrderState,
+                        TotalPrice = item.TotalPrice,
+                        DateHourIn = item.DateHourIn,
+                        DeliveryAddress = item.DeliveryAddress,
+                        ClientEmail = item.ClientEmail
+                    });
                 }
+
+
+                foreach (ClientOrder item in list)
+                {
+                    item.listOrders = (from OrderDetail in db.OrderDetail
+                                       where OrderDetail.OrderCode == item.OrderCode
+                                       select OrderDetail).ToList();
+                }
+
+
             }
             return list;
         }
@@ -32,7 +54,7 @@ namespace DAO.Kitchen
         //    {
         //        list = db.OrderDetail.ToList();
 
- 
+
         //    }
         //    return list;
         //}

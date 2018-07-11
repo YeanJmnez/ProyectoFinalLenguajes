@@ -22,14 +22,18 @@ namespace BL.Kitchen
             {
                 foreach (TO.ClientOrder order in clientOrder)
                 {
-                    if (!(order.OrderState == "Anulado" || order.OrderState == "Entregado"))
-                    {
-                        finalList.Add(new ClientOrder(order.OrderCode, order.OrderState,
-                            order.TotalPrice, order.DateHourIn, order.DeliveryAddress, order.ClientEmail, ConvertListOrderDetails(order.listOrders)));
-                    }
+                    //if (!(order.OrderState == "Anulado" || order.OrderState == "Entregado"))
+                    //{
+                    finalList.Add(new ClientOrder(order.OrderCode, order.OrderState,
+                        order.TotalPrice, order.DateHourIn, order.DeliveryAddress, order.ClientEmail, ConvertListOrderDetails(order.listOrders)));
+                    //}
                 }
             }
+
+            //finalList.Sort(new Comparison<ClientOrder>(delegate (ClientOrder a, ClientOrder b) { return DateTime.Compare((DateTime)a.DateHourIn, (DateTime)b.DateHourIn); }));
             return finalList;
+
+
         }
 
         public List<OrderDetails> ConvertListOrderDetails(List<OrderDetail> orderDetails)
@@ -49,11 +53,9 @@ namespace BL.Kitchen
         {
             List<InformationClient> FinalList = new List<InformationClient>();
             List<ClientOrder> ListOrderByDate = ListOrders();
-            ListOrderByDate.Sort(new Comparison<ClientOrder>(delegate (ClientOrder a, ClientOrder b) { return DateTime.Compare((DateTime)a.DateHourIn, (DateTime)b.DateHourIn); }));
-
             foreach (ClientOrder item in ListOrderByDate)
             {
-                FinalList.Add(new InformationClient(item.OrderCode, new BLClient().getNameClient(item.ClientEmail), item.OrderState,ListDish(item.listOrderDetails)));
+                FinalList.Add(new InformationClient(item.OrderCode, new BLClient().getNameClient(item.ClientEmail), item.OrderState, ListDish(item.listOrderDetails)));
             }
             return FinalList;
         }
