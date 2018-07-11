@@ -37,9 +37,10 @@
                 </div>
                 <asp:Button ID="btUpdateDish" CssClass="btn btn-primary" runat="server" OnClick="btUpdateDish_Click" Text="Modificar Plato" />
             </div>
-            <div id="dishes-list-div-column" class="col-sm-4">
+           
+             <div id="dishes-list-div-column" class="col-sm-4">
                 <h3>Lista General de Platos</h3>
-                <asp:GridView AlternatingRowStyle-CssClass="alternarColores" CssClass="customGrid" ID="GridCompleteDishesList" runat="server"></asp:GridView>
+                <asp:GridView AlternatingRowStyle-CssClass="alternarColores" CssClass="customGrid table-responsive" ID="GridCompleteDishesList" runat="server" ></asp:GridView>
             </div>
         </div>
     </div>

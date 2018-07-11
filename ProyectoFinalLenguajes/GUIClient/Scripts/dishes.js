@@ -1,6 +1,9 @@
 ﻿$(document).ready(function() {
     GetDishesList();
 });
+var clientOrderDishes = new Array();
+localStorage.setItem("clientOrderDishes", clientOrderDishes);
+
 function GetDishesList() {
     var request = $.ajax({
         url: "http://proyelenguajes-001-site1.gtempurl.com/WSClient/WSClient.svc/DishesList",
@@ -42,16 +45,30 @@ function ShowDishDetail(item) {
         datatype: "jsonp"
     });
     request.done(function (data) {
-        alert("CODE: " + item);
-        var newH2 = "<h2>Dish Information</h2>";
-        var newH3 = document.createElement("h3");
-        var newBtn = "<button class='btn btn-primary' onclick='ReturnToDishesList()'>Return to Dishes List</button>"
-        newH3.innerHTML = "Dish Name: " + this.Name;
+        $.each(data, function () {
+            var newH2 = "<h2>Dish Information</h2>";
+            var newH3 = document.createElement("h3");
+            var newBtn1 = "<button class='btn btn-primary' onclick='ReturnToDishesList()'>Return to Dishes List</button>"
+            newH3.innerHTML = "Dish Name: " + this.Name;
 
-        $('#dishInformationContainer').append(newH2);
-        $('#dishInformationContainer').append(newH3);
-        $('#dishInformationContainer').append(newBtn);
-        $('#dishInformationContainer').removeClass('hidden');
+            var newP = document.createElement("p");
+            newP.innerHTML =
+                "<strong>Description: </strong>" + this.Description + "<br />"
+                + "<strong>Price: </strong> ₡" + this.Price + "<br />"
+                + "<strong>Photo: </strong><br />";
+
+            var newImg = "<img class='dish-image' src='http://proyelenguajes-001-site1.gtempurl.com/DishesPicture/" + this.Picture + "' /><br /><br />";
+            
+            var newBtn2 = "<button class='btn btn-primary' onclick='AddDishToOrder(" + this.Code + ")'>Add To My Order</button><br /><br />"
+            
+            $('#dishInformationContainer').append(newH2);
+            $('#dishInformationContainer').append(newH3);
+            $('#dishInformationContainer').append(newP);
+            $('#dishInformationContainer').append(newImg);
+            $('#dishInformationContainer').append(newBtn2);
+            $('#dishInformationContainer').append(newBtn1);
+            $('#dishInformationContainer').removeClass('hidden');
+        });        
     });
     request.fail(function () {
         alert("ERROR: Something went wrong");
@@ -62,4 +79,26 @@ function ReturnToDishesList() {
     $('#dishInformationContainer').empty();
     $('#dishInformationContainer').addClass('hidden');
     $('#dishesListContainer').removeClass('hidden');
+}
+
+function AddDishToOrder(code) {
+    var exist = false;
+    var count = 0;
+    var index = 0;
+    for (var i = 0; i < clientOrderDishes.length; i++) {
+        if (code == clientOrderDishes[i][0]) {
+            count = clientOrderDishes[i][1];
+            exist = true;
+            index = i;
+            break;
+        }
+    }
+    count = count + 1;
+    if (exist) {
+        clientOrderDishes[index] = [code, count];
+    } else {
+        clientOrderDishes.push([code, count]);
+    }
+    localStorage.setItem("clientOrderDishes", clientOrderDishes);
+    alert(clientOrderDishes.toString());
 }

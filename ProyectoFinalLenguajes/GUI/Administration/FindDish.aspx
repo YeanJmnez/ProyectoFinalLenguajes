@@ -4,7 +4,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="adminPanelContent" runat="server">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <div  class="center-block">
       
 
@@ -20,7 +20,7 @@
         <br />
         <br />
        
-         <div id="divfind" class="center-block">
+         <div id="divfind" >
             <asp:GridView AlternatingRowStyle-CssClass="alternarColores" CssClass="customGrid" ID="grid" runat="server" Width="368px">
                 <Columns>
 

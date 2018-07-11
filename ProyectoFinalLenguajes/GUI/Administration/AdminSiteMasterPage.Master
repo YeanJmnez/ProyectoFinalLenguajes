@@ -81,12 +81,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-th-list"></i>Manage Orders <i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                            <ul id="submenu-2" class="collapse">
-                                <li><a href="#"><i class="fa fa-angle-double-right"></i>SUBMENU 1.1</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-right"></i>SUBMENU 1.2</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-right"></i>SUBMENU 1.3</a></li>
-                            </ul>
+                             <a href="<%= Page.ResolveUrl("ManageOrders.aspx") %>"><i class="fa fa-fw fa-male"></i>Manage Orders</a>
                         </li>
                         <li>
                             <a href="#" data-toggle="collapse" data-target="#submenu-3"><i class="fa fa-fw fa-users"></i>Manage Users <i class="fa fa-fw fa-angle-down pull-right"></i></a>
