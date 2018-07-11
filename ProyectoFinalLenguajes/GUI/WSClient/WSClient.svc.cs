@@ -21,5 +21,17 @@ namespace GUI.WSClient
         {
             BLClient client = new BLClient(name, password);
         }
+
+        public BLDish FilterDishes(int code)
+        {
+            BLClient Cl = new BLClient();
+            return Cl.FilterDishes(code);
+        }
+
+        public List<BLDish> DishesList()
+        {
+            BLClient Cl = new BLClient();
+            return Cl.DishesList();
+        }
     }
 }

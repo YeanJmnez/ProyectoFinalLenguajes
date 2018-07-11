@@ -23,5 +23,15 @@ namespace GUI.WSClient
             ResponseFormat = WebMessageFormat.Json)]
         void UpdateWSClient(string name, string password);
 
+        [OperationContract]
+        [WebGet(RequestFormat = WebMessageFormat.Json,
+    ResponseFormat = WebMessageFormat.Json)]
+        List<BLDish> DishesList();
+
+        [OperationContract]
+        [WebGet(RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json)]
+        BLDish FilterDishes(int code);
+
     }
 }

@@ -17,7 +17,7 @@ namespace BL.Admistration
         public bool ClientAvailable { get; set; }
 
         List<BLClient> ClientListBL = new List<BLClient>();
-
+        List<OrderDetail> TemporaryDishList = new List<OrderDetail>();
 
         public BLClient(string ClientEmail, string ClientName, string ClientPassword, bool ClientAvailable) {
             this.ClientEmail = ClientEmail;
@@ -113,6 +113,67 @@ namespace BL.Admistration
             }
             return update;
         }
+
+        public List<BLDish> DishesList()
+        {
+            List<BLDish> ListD = new List<BLDish>();
+            BLDish bld = new BLDish();
+            foreach (BLDish dish in bld.DishesList())
+            {
+                if (dish.State == true)
+                {
+                    ListD.Add(dish);
+                }
+            }
+            return ListD;
+        }
+
+        public BLDish FilterDishes(int code)
+        {
+            List<BLDish> ListD = DishesList();
+            BLDish bld = new BLDish();
+            foreach (BLDish dish in bld.DishesList())
+            {
+                if (dish.Code == code)
+                {
+                    bld = dish;
+                }
+            }
+            return bld;
+        }
+
+        public void ShoppingDishCar(BLDish bldish, int quantity)
+        {
+            OrderDetail TemporaryOrder = new OrderDetail();
+            TemporaryOrder.DishCode = bldish.Code;
+            TemporaryOrder.DishPrice = bldish.Price;
+            TemporaryOrder.DishQuantity = quantity;
+            TemporaryOrder.SubTotal = CalculateSubtotalOrderDetail(quantity, bldish.Price);
+            TemporaryOrder.Dish = GetDish(bldish);
+            TemporaryDishList.Add(TemporaryOrder);
+        }
+
+        public decimal CalculateSubtotalOrderDetail(int quantity, decimal unitPrice)
+        {
+            decimal mount = quantity * unitPrice;
+            return mount;
+        }
+
+        public Dish GetDish(BLDish bldish)
+        {
+            BLDish bldsh = new BLDish();
+            bldsh = bldish.ChargeDish(bldish.Code);
+            Dish dsh = new Dish();
+            dsh.DishCode = bldsh.Code;
+            dsh.DishName = bldsh.Name;
+            dsh.DishDescription = bldsh.Description;
+            dsh.DishPrice = bldsh.Price;
+            dsh.DishPhoto = bldsh.Picture;
+            dsh.DishAvailable = bldsh.State;
+            return dsh;
+        }
+
+
 
     }
 }
