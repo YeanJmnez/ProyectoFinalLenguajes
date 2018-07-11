@@ -17,5 +17,11 @@ namespace GUI.WSRest
         [WebGet(RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json)]
         List<InformationClient> ListKitchenModule();
+
+        [OperationContract]
+        [WebGet(RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json)]
+        void ChangeStateOrder(int OrderCode, String state);
+
     }
 }

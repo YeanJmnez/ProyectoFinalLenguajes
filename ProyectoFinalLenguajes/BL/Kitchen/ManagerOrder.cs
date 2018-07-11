@@ -70,5 +70,11 @@ namespace BL.Kitchen
             }
             return list;
         }
+
+        public void ChangeStateOrder(int OrderCode, String state)
+        {
+            DAOClientOrders daoOrders = new DAOClientOrders();
+            daoOrders.ChangeStateOrder(OrderCode, state);
+        }
     }
 }
