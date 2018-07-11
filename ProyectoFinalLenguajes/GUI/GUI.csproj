@@ -113,6 +113,7 @@
     <Content Include="Administration\Content\css\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Administration\Content\css\updateDish.css" />
     <Content Include="Administration\Content\css\login.css" />
+    <Content Include="Administration\Content\img\checkIcon.png" />
     <Content Include="Administration\Content\js\bootstrap.min.js" />
     <Content Include="Administration\Content\js\dashboard.js" />
     <Content Include="Administration\Content\js\jquery-1.11.1.min.js" />
@@ -126,6 +127,7 @@
     <Content Include="Administration\UpdateDish.aspx" />
     <Content Include="Administration\UpdateSystemUser.aspx" />
     <Content Include="DishesPicture\i79651-ceviche-de-poisson.jpg" />
+    <Content Include="Administration\EnableOrDisableDish.aspx" />
     <Content Include="Kitchen\ActiveOrders.aspx" />
     <Content Include="Kitchen\Content\js\JSKitchenModule.js" />
     <Content Include="Kitchen\IndexKitchen.aspx" />
@@ -234,6 +236,13 @@
     </Compile>
     <Compile Include="Administration\UpdateSystemUser.aspx.designer.cs">
       <DependentUpon>UpdateSystemUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\EnableOrDisableDish.aspx.cs">
+      <DependentUpon>EnableOrDisableDish.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\EnableOrDisableDish.aspx.designer.cs">
+      <DependentUpon>EnableOrDisableDish.aspx</DependentUpon>
     </Compile>
     <Compile Include="Kitchen\ActiveOrders.aspx.cs">
       <DependentUpon>ActiveOrders.aspx</DependentUpon>

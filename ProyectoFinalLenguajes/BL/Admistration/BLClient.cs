@@ -152,18 +152,20 @@ namespace BL.Admistration
             return ListD;
         }
 
-        public BLDish FilterDishes(int code)
+        public List<BLDish> FilterDishes(int code)
         {
             List<BLDish> ListD = DishesList();
+            List<BLDish> dishToReturn = new List<BLDish>();
             BLDish bld = new BLDish();
+
             foreach (BLDish dish in bld.DishesList())
             {
                 if (dish.Code == code)
                 {
-                    bld = dish;
+                    dishToReturn.Add(dish);
                 }
             }
-            return bld;
+            return dishToReturn;
         }
 
         public void ShoppingDishCar(BLDish bldish, int quantity)

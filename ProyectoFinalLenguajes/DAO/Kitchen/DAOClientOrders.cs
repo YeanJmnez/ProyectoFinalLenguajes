@@ -24,5 +24,17 @@ namespace DAO.Kitchen
             }
             return list;
         }
+
+        //public List<OrderDetail> listOrderDetails()
+        //{
+        //    List<OrderDetail> list = new List<OrderDetail>();
+        //    using (DB_Project db = new DB_Project())
+        //    {
+        //        list = db.OrderDetail.ToList();
+
+ 
+        //    }
+        //    return list;
+        //}
     }
 }

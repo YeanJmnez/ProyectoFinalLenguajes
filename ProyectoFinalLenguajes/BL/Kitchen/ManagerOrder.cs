@@ -17,6 +17,7 @@ namespace BL.Kitchen
             DAOClientOrders daoOrders = new DAOClientOrders();
 
             List<TO.ClientOrder> clientOrder = daoOrders.listOrder();
+
             if (clientOrder != null)
             {
                 foreach (TO.ClientOrder order in clientOrder)
