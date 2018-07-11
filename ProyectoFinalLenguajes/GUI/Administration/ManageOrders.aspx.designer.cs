@@ -13,13 +13,13 @@ namespace GUI.Administration {
     public partial class ManageOrders {
         
         /// <summary>
-        /// RadioButtonList1 control.
+        /// rblRoleSelector control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
+        protected global::System.Web.UI.WebControls.RadioButtonList rblRoleSelector;
         
         /// <summary>
         /// GridCompleteDishesList control.

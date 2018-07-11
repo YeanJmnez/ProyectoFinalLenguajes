@@ -34,16 +34,16 @@ namespace GUI.WSClient
             return Cl.DishesList();
         }
 
-        public List<BLDish> GetSelectedDishes(string[][] codes)
+        public List<BLDish> GetSelectedDishes(List<string> Codes)
         {
             BLClient Cl = new BLClient();
             List<BLDish> allDishes = Cl.DishesList();
             List<BLDish> allSelectedDishes = new List<BLDish>();
 
-            for (int i = 0; i < codes[0].Length; i++) {
+            foreach (string dishCode in Codes) {
                 foreach (BLDish dish in allDishes)
                 {
-                    if (dish.Code == Int32.Parse(codes[i][1]))
+                    if (dishCode.Equals(dish.Code))
                     {
                         allSelectedDishes.Add(dish);
                     }

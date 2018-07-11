@@ -52,6 +52,7 @@
     <Compile Include="Admistration\BLClient.cs" />
     <Compile Include="Admistration\BLDish.cs" />
     <Compile Include="Admistration\BLSystemUser.cs" />
+    <Compile Include="Admistration\BLManagerOrders.cs" />
     <Compile Include="Admistration\ManagerUserSystem.cs" />
     <Compile Include="Kitchen\ClientOrder.cs" />
     <Compile Include="Kitchen\InformationClient.cs" />

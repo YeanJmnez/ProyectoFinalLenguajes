@@ -1,4 +1,5 @@
-﻿var dishesCodes = new Array(localStorage.getItem("clientOrderDishes"));
+﻿var dishesCodesQuantities = new Array(localStorage.getItem("clientOrderDishes"));
+var dishesCodes = new Array();
 
 $(document).ready(function () {
     alert(dishesCodes);
@@ -6,14 +7,28 @@ $(document).ready(function () {
 });
 
 $(document).on('click', 'button.btnRemoveDish', function () {
-    alert("Removiendo");
+    
     $(this).closest('tr').remove();
     return false;
 });
 
+function RemoveDish(code) {
+    var index = dishesCodesQuantities.indexOf(code);
+
+    dishesCodesQuantities.splice(index, 1);
+    dishesCodes.splice(index, 1);
+
+    alert(dishesCodesQuantities);
+    alert(dishesCodes);
+}
+
 function GetSelectedDishes() {
+    for (var i = 0; i < dishesCodesQuantities.length; i++) {
+        dishesCodes.push(dishesCodesQuantities[i][0]);
+    }
+
     var request = $.ajax({
-        url: "http://proyelenguajes-001-site1.gtempurl.com/WSClient/WSClient.svc/GetSelectedDishes?codes=" + dishesCodes,
+        url: "http://proyelenguajes-001-site1.gtempurl.com/WSClient/WSClient.svc/GetSelectedDishes?Codes=" + dishesCodes,
         timeout: 10000,
         datatype: "jsonp"
     });
@@ -57,9 +72,9 @@ function GetSelectedDishes() {
 }
 
 function GetDishQuantity(code) {
-    for (var i = 0; i < dishesCodes.length; i++) {
-        if (code == dishesCodes[i][0]) {
-            return dishesCodes[i][1];
+    for (var i = 0; i < dishesCodesQuantities.length; i++) {
+        if (code == dishesCodesQuantities[i][0]) {
+            return dishesCodesQuantities[i][1];
         }
     }
 }
