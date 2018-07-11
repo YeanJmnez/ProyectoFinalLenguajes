@@ -123,6 +123,7 @@
     <Content Include="Administration\FindUserSystem.aspx" />
     <Content Include="Administration\Index.aspx" />
     <Content Include="Administration\Login.aspx" />
+    <Content Include="Administration\ManageOrders.aspx" />
     <Content Include="Administration\RemoveDish.aspx" />
     <Content Include="Administration\RemoveSystemUser.aspx" />
     <Content Include="Administration\UpdateClientState.aspx" />
@@ -210,6 +211,13 @@
     </Compile>
     <Compile Include="Administration\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\ManageOrders.aspx.cs">
+      <DependentUpon>ManageOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\ManageOrders.aspx.designer.cs">
+      <DependentUpon>ManageOrders.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administration\RemoveDish.aspx.cs">
       <DependentUpon>RemoveDish.aspx</DependentUpon>

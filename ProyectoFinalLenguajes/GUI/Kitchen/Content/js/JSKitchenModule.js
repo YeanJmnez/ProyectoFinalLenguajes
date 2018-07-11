@@ -3,11 +3,15 @@ $(document).ready(function () {
     getAllOrder();
 });
 
+function reloadSystemUsersTable() {
+    setInterval(getAllOrder, 1000);
+}
+
 function getAllOrder() {
     var request = $.ajax({
         url: "http://localhost:12021/WSRest/WSRestKitchenModule.svc/ListKitchenModule",
         timeout: 10000,
-        datatype: "json"
+        datatype: "jsonp"
     });
 
     request.done(function (data) {
@@ -19,40 +23,12 @@ function getAllOrder() {
     });
 }
 
-//function processAllOrder(data) {
-//    $('#user').empty();
-
-//    var newTitu = document.createElement("h3");
-//    newTitu.innerHTML = "List Of Orders";
-//    $('#user').append(newTitu);
-//    $.each(data, function () {
-//        var newLi = document.createElement("li");
-//        var newInfo = document.createElement("h5");
-//        newInfo.innerHTML = "Order Code: " + this.OrderCode + ". Name Client: " + this.ClientName + ". Dishes: " + this.dishOrder;
-//        newLi.appendChild(newInfo);
-//        var boton = document.createElement('input');
-//        boton.type = 'button';
-//        boton.id = 'B';
-//        boton.value = 'Entregar';
-//        boton.onclick = "";
-
-//        newLi.appendChild(boton);
-//        newLi.appendChild(document.createElement("hr"));
-
-//        $('#user').append(newLi);
-//    });
-//};
-
 function processAllOrder(data) {
-    //$('#user').empty();
-
-    //var newTitu = document.createElement("h3");
-    //newTitu.innerHTML = "List Of Orders";
-    //$('#user').append(newTitu);
+    $('#user').empty();
     $.each(data, function () {
         var newTR = document.createElement("tr");
 
-        switch(this.OrderState) {
+        switch (this.OrderState) {
             case "A tiempo":
                 newTR.style.background = "#01DF01";
                 break;
@@ -62,7 +38,6 @@ function processAllOrder(data) {
             default:
                 newTR.style.background = "#FF0000";
                 break;
-                
         }
         var newTD1 = document.createElement("td");
         newTD1.innerHTML = this.OrderCode;
@@ -76,20 +51,20 @@ function processAllOrder(data) {
         newTR.appendChild(newTD3);
 
         var newTD4 = document.createElement("td");
-        var boton = document.createElement('input');
-        boton.type = 'button';
-        boton.id = 'B';
-        boton.value = 'Deliver';
-        boton.onclick = "";
+        var boton = "<button class='btn btn-primary' onclick='changeDeliver(" + this.OrderCode + ")'>Deliver</button>";
 
-        newTD4.appendChild(boton);
+        newTD4.innerHTML = boton;
         newTR.appendChild(newTD4);
         $('#user').append(newTR);
     });
 }
 
-function reloadSystemUsersTable() {
-    setInterval(getAllSystemUsers, 1000);
+function changeDeliver(orderCode) {
+    var request = $.ajax({
+        url: "http://localhost:12021/WSRest/WSRestKitchenModule.svc/ChangeStateOrder?OrderCode=" + orderCode + "&state=Entregado",
+        timeout: 10000,
+        datatype: "jsonp"
+    });
 }
 
 
