@@ -61,7 +61,7 @@ namespace DAO.Administration
             }
         }
 
-        public void DeleteDish(String code)
+        public void DeleteDish(int code)
         {
             using (DB_Project db = new DB_Project())
             {

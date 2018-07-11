@@ -79,7 +79,7 @@ namespace BL.Admistration
             dv.addDish(todish);
         }
 
-        public void deleteDish(string code)
+        public void deleteDish(int code)
         {
             DAODish dish = new DAODish();
             dish.DeleteDish(code);
