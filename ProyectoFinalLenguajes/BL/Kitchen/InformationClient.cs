@@ -11,7 +11,7 @@ namespace BL.Kitchen
         public int OrderCode { get; set; }
         public string ClientName { get; set; }
         public string OrderState { get; set; }
-        List<string> dishOrder { get; set; }
+        public List<string> dishOrder { get; set; }
 
         public InformationClient() { }
         public InformationClient(int code, string name, string OrderState, List<string> dishes)

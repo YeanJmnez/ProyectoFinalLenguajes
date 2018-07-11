@@ -4,8 +4,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="KitchenPanelContent" runat="server">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="content/js/SystemUser.js"></script>
-    <div onload="getAllOrder()">
+    <script src="Content/js/JSKitchenModule.js"></script>
+    <div ">
         <br />
         <br />
         <h5>List Of Pending Orders</h5>
@@ -15,8 +15,8 @@
             <thead>
                 <tr>
                     <th>Code Order</th>
-                    <th>Password</th>
-                    <th>Role</th>
+                    <th>Name Client</th>
+                    <th>List Dishes</th>
                 </tr>
             </thead>
             <tbody id="tbSystemUser">
