@@ -23,6 +23,10 @@ function processAllOrder(data) {
         var newTD2 = document.createElement("td");
         newTD2.innerHTML = this.ClientName;
 
+        $.each(this.dishOrder, function () {
+
+        })
+
         var newTD4 = document.createElement("td");
         newTD4.innerHTML = this.OrderCode;
         var newTD5 = document.createElement("td");
@@ -30,9 +34,7 @@ function processAllOrder(data) {
         var newTD6 = document.createElement("td");
         newTD6.innerHTML = this.TotalPrice;
 
-        $.each(this.dishOrder, function () {
-
-        })
+     
 
         newTR.appendChild(newTD1);
         newTR.appendChild(newTD2);
