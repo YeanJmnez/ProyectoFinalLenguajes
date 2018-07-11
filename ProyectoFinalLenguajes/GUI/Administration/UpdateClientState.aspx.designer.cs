@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GUI {
+namespace GUI.Administration {
     
     
-    public partial class EnableOrDisableDish {
+    public partial class UpdateClientState {
         
         /// <summary>
         /// Label1 control.
@@ -31,12 +31,21 @@ namespace GUI {
         protected global::System.Web.UI.WebControls.ListBox List_User;
         
         /// <summary>
-        /// B_change control.
+        /// BtEnable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button B_change;
+        protected global::System.Web.UI.WebControls.Button BtEnable;
+        
+        /// <summary>
+        /// BtDisable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtDisable;
     }
 }

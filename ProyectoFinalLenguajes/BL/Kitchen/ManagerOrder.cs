@@ -51,10 +51,10 @@ namespace BL.Kitchen
             List<ClientOrder> ListOrderByDate = ListOrders();
             ListOrderByDate.Sort(new Comparison<ClientOrder>(delegate (ClientOrder a, ClientOrder b) { return DateTime.Compare((DateTime)a.DateHourIn, (DateTime)b.DateHourIn); }));
 
-                foreach (ClientOrder item in ListOrderByDate)
-                {
-                    FinalList.Add(new InformationClient(item.OrderCode, new BLClient().getNameClient(item.ClientEmail), item.OrderState, ListDish(item.listOrderDetails)));
-                }
+            foreach (ClientOrder item in ListOrderByDate)
+            {
+                FinalList.Add(new InformationClient(item.OrderCode, new BLClient().getNameClient(item.ClientEmail), item.OrderState,ListDish(item.listOrderDetails)));
+            }
            
             return FinalList;
         }

@@ -59,6 +59,26 @@ namespace DAO.Administration
             {
             }
         }
+        public void updateStateClient(Client client)
+        {
+            try
+            {
+                using (DB_Project db = new DB_Project())
+                {
+                    Client cliente = db.Client.Find(client.ClientEmail);
+                    if (client != null)
+                    {
+                        cliente.ClientAvailable = client.ClientAvailable;
+                        db.SaveChanges();
+                    }
+
+                }
+            }
+            catch
+            {
+
+            }
+        }
 
         public void DeleteClient(String email)
         {

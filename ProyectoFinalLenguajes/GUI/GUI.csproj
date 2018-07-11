@@ -114,6 +114,7 @@
     <Content Include="Administration\Content\css\updateDish.css" />
     <Content Include="Administration\Content\css\login.css" />
     <Content Include="Administration\Content\img\checkIcon.png" />
+    <Content Include="Administration\Content\img\welcome.jpg" />
     <Content Include="Administration\Content\js\bootstrap.min.js" />
     <Content Include="Administration\Content\js\dashboard.js" />
     <Content Include="Administration\Content\js\jquery-1.11.1.min.js" />
@@ -124,6 +125,7 @@
     <Content Include="Administration\Login.aspx" />
     <Content Include="Administration\RemoveDish.aspx" />
     <Content Include="Administration\RemoveSystemUser.aspx" />
+    <Content Include="Administration\UpdateClientState.aspx" />
     <Content Include="Administration\UpdateDish.aspx" />
     <Content Include="Administration\UpdateSystemUser.aspx" />
     <Content Include="DishesPicture\i79651-ceviche-de-poisson.jpg" />
@@ -222,6 +224,13 @@
     </Compile>
     <Compile Include="Administration\RemoveSystemUser.aspx.designer.cs">
       <DependentUpon>RemoveSystemUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\UpdateClientState.aspx.cs">
+      <DependentUpon>UpdateClientState.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\UpdateClientState.aspx.designer.cs">
+      <DependentUpon>UpdateClientState.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administration\UpdateDish.aspx.cs">
       <DependentUpon>UpdateDish.aspx</DependentUpon>

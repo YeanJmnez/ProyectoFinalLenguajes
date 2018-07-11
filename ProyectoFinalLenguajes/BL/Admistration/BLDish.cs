@@ -69,6 +69,20 @@ namespace BL.Admistration
                 }
 
             }
+        }
+
+        public void ChangeState(int code)
+        {
+            DAODish dv = new DAODish();
+            Dish dish = dv.ChargeDish(code);
+            if (dish.DishAvailable)
+            {
+                dish.DishAvailable = false;            }
+            else
+            {
+                dish.DishAvailable = true;
+                 }
+            dv.updateDish(dish);
 
         }
 
@@ -94,6 +108,8 @@ namespace BL.Admistration
             BLDish bldish = new BLDish(dish.DishCode, dish.DishName, dish.DishDescription, dish.DishPrice, dish.DishAvailable, dish.DishPhoto);
             return bldish;
         }
+
+
 
         public string getNameDish(int code)
         {
@@ -129,7 +145,7 @@ namespace BL.Admistration
                     state = "disable";
                 }
 
-                stringList.Add("Code: " + dish.Code + ", Name: " + dish.Name + ", Description: " + dish.Description + ", State: " + state);
+                stringList.Add("Code: " + dish.Code + " ,Name: " + dish.Name + " ,Description: " + dish.Description + " ,State: " + state +".");
             }
             return stringList;
         }

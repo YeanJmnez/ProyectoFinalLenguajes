@@ -38,6 +38,24 @@ namespace BL.Admistration
             this.ClientAvailable = ClientAvailable;
         }
 
+        public List<BLClient> ChargeClientLists()
+        {
+            DAOClient doc = new DAOClient();
+
+            List<Client> ClientList = new List<Client>();
+            List<BLClient> ListC = new List<BLClient>();
+
+            ClientList = doc.ClientList();
+
+            foreach (Client client in ClientList)
+            {
+                BLClient bldCt = new BLClient(client.ClientEmail, client.ClientName, client.ClientPassword, client.ClientAvailable);
+                ListC.Add(bldCt);
+            }
+
+            return ListC;
+        }
+
         public void ClientLists()
         {
             DAOClient doc = new DAOClient();
@@ -181,7 +199,46 @@ namespace BL.Admistration
             return dsh;
         }
 
+        public string enableStateDish(string email, bool state)
+        {
+            string transaction = "The client is already enabled";
+            DAOClient dc = new DAOClient();
+            Client cl = new Client();
+            cl.ClientEmail = email;
+            cl.ClientAvailable = state;
+            dc.updateStateClient(cl);
+            return transaction;
+        }
 
+        public string disableStateDish(string email, bool state)
+        {
+            string transaction = "The client is already disable";
+            DAOClient dc = new DAOClient();
+            Client cl = new Client();
+            cl.ClientEmail = email;
+            cl.ClientAvailable = state;
+            dc.updateStateClient(cl);
+            return transaction;
+        }
 
+        public List<string> ListUserClient()
+        {
+            List<string> stringList = new List<string>();
+            List<BLClient> list = ChargeClientLists();
+            string Available = "";
+            foreach (BLClient user in list)
+            {
+                if (user.ClientAvailable == true)
+                {
+                    Available = "Habilitado";
+                }
+                else
+                {
+                    Available = "Deshabilitado";
+                }
+                stringList.Add("Email: " + user.ClientEmail + " ,Name: " + user.ClientName + " ,State: " + Available + ".");
+            }
+            return stringList;
+        }
     }
 }
