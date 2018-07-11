@@ -113,6 +113,27 @@ namespace BL.Admistration
             return array;
         }
 
+        public List<string> ListDishString()
+        {
+            List<string> stringList = new List<string>();
+            ArrayList list = DishesList();
+            foreach (BLDish dish in list)
+            {
+                string state = "";
+                if (dish.State)
+                {
+                    state = "enable";
+                }
+                else
+                {
+                    state = "disable";
+                }
+
+                stringList.Add("Code: " + dish.Code + ", Name: " + dish.Name + ", Description: " + dish.Description + ", State: " + state);
+            }
+            return stringList;
+        }
+
     }
 
 }

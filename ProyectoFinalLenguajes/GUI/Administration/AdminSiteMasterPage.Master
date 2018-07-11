@@ -76,6 +76,8 @@
                                 <li><a href="<%= Page.ResolveUrl("FindDish.aspx") %>"><i class="fa fa-angle-double-right"></i>Find Dish</a></li>
                                 <li><a href="<%= Page.ResolveUrl("UpdateDish.aspx") %>"><i class="fa fa-angle-double-right"></i>Update Dish</a></li>
                                 <li><a href="<%= Page.ResolveUrl("RemoveDish.aspx") %>"><i class="fa fa-angle-double-right"></i>Remove Dish</a></li>
+                                <li><a href="<%= Page.ResolveUrl("EnableOrDisableDish.aspx") %>"><i class="fa fa-angle-double-right"></i>Enable or disable Dish</a></li>
+
                             </ul>
                         </li>
                         <li>
