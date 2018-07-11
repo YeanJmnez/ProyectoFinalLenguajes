@@ -38,6 +38,24 @@ namespace BL.Admistration
             this.ClientAvailable = ClientAvailable;
         }
 
+        public List<BLClient> ChargeClientLists()
+        {
+            DAOClient doc = new DAOClient();
+
+            List<Client> ClientList = new List<Client>();
+            List<BLClient> ListC = new List<BLClient>();
+
+            ClientList = doc.ClientList();
+
+            foreach (Client client in ClientList)
+            {
+                BLClient bldCt = new BLClient(client.ClientEmail, client.ClientName, client.ClientPassword, client.ClientAvailable);
+                ListC.Add(bldCt);
+            }
+
+            return ListC;
+        }
+
         public void ClientLists()
         {
             DAOClient doc = new DAOClient();
@@ -179,7 +197,47 @@ namespace BL.Admistration
             return dsh;
         }
 
+        public string enableStateDish(string email, bool state)
+        {
+            string transaction = "The client is already enabled";
+            ClientLists();
+            DAOClient dc = new DAOClient();
 
+            foreach (BLClient blc in ClientListBL)
+            {
+                if (blc.ClientEmail == email)
+                {
+                    Client cl = new Client();
+                    cl.ClientName = blc.ClientName;
+                    cl.ClientPassword = blc.ClientPassword;
+                    cl.ClientAvailable = state;
+                    dc.updateClient(cl);
+                    return transaction = "The client was successfully enabled";
+                }
+            }
+            return transaction;
+        }
+
+        public string disableStateDish(string email, bool state)
+        {
+            string transaction = "The client is already disable";
+            ClientLists();
+            DAOClient dc = new DAOClient();
+
+            foreach (BLClient blc in ClientListBL)
+            {
+                if (blc.ClientEmail == email)
+                {
+                    Client cl = new Client();
+                    cl.ClientName = blc.ClientName;
+                    cl.ClientPassword = blc.ClientPassword;
+                    cl.ClientAvailable = state;
+                    dc.updateClient(cl);
+                    return transaction = "The client was successfully disabled";
+                }
+            }
+            return transaction;
+        }
 
     }
 }
