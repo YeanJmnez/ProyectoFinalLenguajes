@@ -23,5 +23,10 @@ namespace GUI.WSRest
             ResponseFormat = WebMessageFormat.Json)]
         void ChangeStateOrder(int OrderCode, String state);
 
+        [OperationContract]
+        [WebGet(RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json)]
+        int QuantityOrders();
+
     }
 }

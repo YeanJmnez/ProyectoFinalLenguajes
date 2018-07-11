@@ -22,5 +22,10 @@ namespace GUI.WSRest
         {
             return new ManagerOrder().ListKitchenModule();
         }
+
+        public int QuantityOrders()
+        {
+            return new ManagerOrder().QuantityOrders();
+        }
     }
 }
