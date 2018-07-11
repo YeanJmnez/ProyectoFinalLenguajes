@@ -114,6 +114,12 @@ namespace BL.Admistration
             return update;
         }
 
+        public string getNameClient(string email)
+        {
+            DAOClient client = new DAOClient();
+            return client.ChargeClient(email).ClientName.ToString();
+        }
+
         public List<BLDish> DishesList()
         {
             List<BLDish> ListD = new List<BLDish>();

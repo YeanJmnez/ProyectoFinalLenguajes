@@ -11,7 +11,7 @@ namespace TO
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class ClientOrder
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,7 +19,7 @@ namespace TO
         {
             this.OrderDetail = new HashSet<OrderDetail>();
         }
-    
+
         public int OrderCode { get; set; }
         public string OrderState { get; set; }
         public decimal TotalPrice { get; set; }
@@ -27,7 +27,8 @@ namespace TO
         public Nullable<System.DateTime> DateHourOut { get; set; }
         public string DeliveryAddress { get; set; }
         public string ClientEmail { get; set; }
-        public List<OrderDetail> ListOrderDetails { get; set; }
+
+        public List<OrderDetail> listOrders { get; set; }
 
         public virtual Client Client { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

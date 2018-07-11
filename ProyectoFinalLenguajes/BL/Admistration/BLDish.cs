@@ -95,10 +95,15 @@ namespace BL.Admistration
             return bldish;
         }
 
+        public string getNameDish(int code)
+        {
+            DAODish dv = new DAODish();
+            return dv.ChargeDish(code).DishName.ToString();
+        }
         public ArrayList chargeRelatedDishes(string word)
         {
             DAODish dv = new DAODish();
-        List<Dish> dishes = dv.ChargeRelatedDish(word);
+            List<Dish> dishes = dv.ChargeRelatedDish(word);
             ArrayList array = new ArrayList();
             foreach (var item in dishes)
             {

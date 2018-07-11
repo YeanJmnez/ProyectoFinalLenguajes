@@ -54,6 +54,7 @@
     <Compile Include="Admistration\BLSystemUser.cs" />
     <Compile Include="Admistration\ManagerUserSystem.cs" />
     <Compile Include="Kitchen\ClientOrder.cs" />
+    <Compile Include="Kitchen\InformationClient.cs" />
     <Compile Include="Kitchen\ManagerOrder.cs" />
     <Compile Include="Kitchen\OrderDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

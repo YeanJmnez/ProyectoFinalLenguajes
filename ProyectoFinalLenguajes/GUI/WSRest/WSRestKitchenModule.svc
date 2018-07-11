@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="GUI.WSRest.WSRestKitchenModule" CodeBehind="WSRestKitchenModule.svc.cs" %>

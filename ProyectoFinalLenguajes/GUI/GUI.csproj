@@ -44,6 +44,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -119,6 +127,7 @@
     <Content Include="Administration\UpdateSystemUser.aspx" />
     <Content Include="DishesPicture\i79651-ceviche-de-poisson.jpg" />
     <Content Include="Kitchen\ActiveOrders.aspx" />
+    <Content Include="Kitchen\Content\js\JSKitchenModule.js" />
     <Content Include="Kitchen\IndexKitchen.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -131,6 +140,11 @@
     <Content Include="Administration\Content\css\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="WSClient\WSClient.svc" />
     <Content Include="Kitchen\KitchenSiteMasterPage.Master" />
+    <Content Include="WSRest\WSRestKitchenModule.svc" />
+    <None Include="Properties\PublishProfiles\Default Settings %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\Default Settings %283%29.pubxml" />
+    <None Include="Properties\PublishProfiles\Default Settings %284%29.pubxml" />
+    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -246,6 +260,10 @@
     <Compile Include="WSClient\IWSClient.cs" />
     <Compile Include="WSClient\WSClient.svc.cs">
       <DependentUpon>WSClient.svc</DependentUpon>
+    </Compile>
+    <Compile Include="WSRest\IWSRestKitchenModule.cs" />
+    <Compile Include="WSRest\WSRestKitchenModule.svc.cs">
+      <DependentUpon>WSRestKitchenModule.svc</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -43,7 +43,15 @@ namespace GUI.Administration
                 if (result.Equals("Correct"))
                 {
                     Session["username"] = username;
-                    Response.Redirect("Index.aspx");
+                    if (role.Equals("Admin"))
+                    {
+                        Response.Redirect("Index.aspx");
+                    }
+                    else
+                    {
+                        Response.Redirect("../Kitchen/IndexKitchen.aspx");
+                    }
+
                 }
                 else if (result.Equals("IncorrectUserName"))
                 {

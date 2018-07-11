@@ -18,7 +18,7 @@ namespace DAO.Kitchen
                 list = db.ClientOrder.ToList();
 
                 foreach (ClientOrder item in list) {
-                    item.ListOrderDetails = (from OrderDetail in db.OrderDetail where OrderDetail.OrderCode == item.OrderCode
+                    item.listOrders = (from OrderDetail in db.OrderDetail where OrderDetail.OrderCode == item.OrderCode
                                              select OrderDetail).ToList();
                 }
             }
