@@ -9,37 +9,35 @@
     <div class="col-md-8">
         <h4>Use a local account to log in</h4>
         <hr />
-        <form novalidate="novalidate">
-            <div class="form-group input-group">
-                <span class="input-group-addon">
-                    <span class="fa fa-envelope"></span>
-                </span>
-                <input id="txtLoginUserEmail" class="form-control" type="text" name="userName" placeholder="User Name" required="required" />
-                <span class="input-group-addon warn hidden" id="loginEmptyUserName">Complete this field</span>
-                <span class="input-group-addon warn hidden" id="wrongUserName">Username not found</span>
-            </div>
-            <div class="form-group input-group">
-                <span class="input-group-addon">
-                    <span class="fa fa-lock" style="font-size: 20px;"></span>
-                </span>
-                <input id="txtLoginUserPassword" class="form-control" type="password" name="userPassword" placeholder="Password" required="required" />
-                <span class="input-group-addon warn hidden" id="loginEmptyPassword">Complete this field</span>
-                <span class="input-group-addon warn hidden" id="wrongPassword">Wrong password</span>
-            </div>
-            <div class="form-group">
-                <button class="btn custom-btn-blue" id="btnLogIn" onclick="UserLogin()">Log In</button>
-            </div>
-            <div class="form-group">
-                <span class="left-span-separator"></span><span class="span-text-separator">OR</span><span class="right-span-separator"></span>
-            </div>
-            <div class="form-group">
-                <a href="@Url.Action("Register")" class="btn custom-btn-blue btn-block">Register as a new user</a>
-                @* Enable this once you have account confirmation enabled for password reset functionality
-                    <p>
-                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                    </p>*@
-            </div>
-        </form>
+        <div class="form-group input-group">
+            <span class="input-group-addon">
+                <span class="fa fa-envelope"></span>
+            </span>
+            <input id="txtLoginUserEmail" class="form-control" type="text" name="userName" placeholder="User Name" required="required" />
+            <span class="input-group-addon warn hidden" id="loginEmptyUserName">Complete this field</span>
+            <span class="input-group-addon warn hidden" id="wrongUserName">Username not found</span>
+        </div>
+        <div class="form-group input-group">
+            <span class="input-group-addon">
+                <span class="fa fa-lock" style="font-size: 20px;"></span>
+            </span>
+            <input id="txtLoginUserPassword" class="form-control" type="password" name="userPassword" placeholder="Password" required="required" />
+            <span class="input-group-addon warn hidden" id="loginEmptyPassword">Complete this field</span>
+            <span class="input-group-addon warn hidden" id="wrongPassword">Wrong password</span>
+        </div>
+        <div class="form-group">
+            <button class="btn custom-btn-blue" id="btnLogIn" onclick="UserLogin()">Log In</button>
+        </div>
+        <div class="form-group">
+            <span class="left-span-separator"></span><span class="span-text-separator">OR</span><span class="right-span-separator"></span>
+        </div>
+        <div class="form-group">
+            <a href="@Url.Action("Register")" class="btn custom-btn-blue btn-block">Register as a new user</a>
+            @* Enable this once you have account confirmation enabled for password reset functionality
+                <p>
+                    @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                </p>*@
+        </div>
     </div>
     <div class="col-md-4">
         <section id="socialLoginForm">

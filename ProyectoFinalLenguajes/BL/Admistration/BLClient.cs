@@ -263,8 +263,8 @@ namespace BL.Admistration
             }
             else
             {
-                clBL.ClientEmail = cl.ClientEmail;
-                clBL.ClientPassword = cl.ClientPassword;
+                clBL.ClientEmail = clFound.ClientEmail;
+                clBL.ClientPassword = clFound.ClientPassword;
 
                 return clBL;
             }
