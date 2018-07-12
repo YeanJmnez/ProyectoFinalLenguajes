@@ -47,8 +47,7 @@ function UserLogin() {
     });
 
     request.done(function (data) {
-        var length = data.length;
-        alert(length);
+        alert(data);
 
         $.each(data, function () {
 

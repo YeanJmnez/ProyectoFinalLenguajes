@@ -16,7 +16,7 @@ namespace DAO.Administration
             {
                 Client clientFound = db.Client.Find(client.ClientEmail);
 
-                if (clientFound.ClientPassword.Equals(client.ClientPassword))
+                if (!clientFound.ClientPassword.Equals(client.ClientPassword))
                 {
                     client = null;
                 }
