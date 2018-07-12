@@ -41,6 +41,9 @@ namespace GUI.Administration
             {
                 List_User.Items.Add(item);
             }
+            String css = box.Attributes["style"];
+            String newCss = css.Replace("none", "block");
+            box.Attributes.Add("style", newCss);
         }
        
         
@@ -64,6 +67,19 @@ namespace GUI.Administration
             }
             Button1.Visible = false;
 
+
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            List<string> listString = manager.ListOrderStatus(DropDownList1.Text.Trim());
+            foreach (string item in listString)
+            {
+                List_User.Items.Add(item);
+            }
+            String css = box.Attributes["style"];
+            String newCss = css.Replace("none", "block");
+            box.Attributes.Add("style", newCss);
 
         }
     }

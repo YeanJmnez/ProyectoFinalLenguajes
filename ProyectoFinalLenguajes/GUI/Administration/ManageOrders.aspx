@@ -62,10 +62,26 @@
                     </div>
                 </div>
 
-                <div id="dishes-list-div-column" class="col-sm-4" style="display: none">
-                    <h3>Lista de Ordenes</h3>
-                    <asp:ListBox ID="List_User" runat="server" CssClass="table-responsive" BackColor="#CCFFFF" ForeColor="Black" Rows="10"></asp:ListBox>
+                <div runat="server" id="box" class="table-responsive" style="display: none">
+                    <asp:Label ID="Label1" runat="server" CssClass="label" Text="Order List"></asp:Label>
+                    <asp:ListBox ID="List_User" runat="server" BackColor="#CCFFFF" ForeColor="Black" Rows="10"></asp:ListBox>
                 </div>
+
+               <div >
+                  
+                   <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control" Width="200">
+                       <asp:ListItem Value="0">on_time</asp:ListItem>
+                       <asp:ListItem Value="1">about_time</asp:ListItem>
+                       <asp:ListItem Value="2">late</asp:ListItem>
+                       <asp:ListItem Value="3">canceled</asp:ListItem>
+                       <asp:ListItem Value="4">committed</asp:ListItem>
+                   </asp:DropDownList>
+                    <br />
+                    <asp:Button ID="Button3" CssClass="btn btn-primary" runat="server" Height="28px" Text="apply filter" Width="116px" OnClick="Button3_Click"  />
+                    <br />
+                    <br />
+               </div>
+
             </div>
         </div>
     </div>
