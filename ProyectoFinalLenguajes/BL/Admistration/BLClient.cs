@@ -247,5 +247,27 @@ namespace BL.Admistration
             }
             return stringList;
         }
+
+        public BLClient GetUserLoginValidation(string email, string password) {
+            DAOClient da = new DAOClient();
+            BLClient clBL = new BLClient();
+            Client cl = new Client();
+            cl.ClientEmail = email;
+            cl.ClientPassword = password;
+
+            da.UserLoginValidation(cl);
+
+            if (cl == null)
+            {
+                clBL = null;
+            }
+            else
+            {
+                clBL.ClientEmail = cl.ClientEmail;
+                clBL.ClientPassword = cl.ClientPassword;
+            }
+
+            return clBL;
+        }
     }
 }

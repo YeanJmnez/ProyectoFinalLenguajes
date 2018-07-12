@@ -38,5 +38,10 @@ namespace GUI.WSClient
             ResponseFormat = WebMessageFormat.Json)]
         List<BLDish> GetSelectedDishes(string codes);
 
+        [OperationContract]
+        [WebGet(RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json)]
+        List<BLClient> UserLoginValidation(string email, string password);
+
     }
 }

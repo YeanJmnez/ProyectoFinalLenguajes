@@ -6,7 +6,6 @@
 <h4>Create a new User Account</h4>
 <br />
 <div id="registration-form-container">
-    <form>
         <div class="form-group input-group">
             <span class="input-group-addon">
                 <span class="fa fa-envelope"></span>
@@ -34,7 +33,6 @@
         <div class="form-group">
             <button class="btn btn-primary" id="btnLogIn" onclick="UserSignUp()">Sign Up</button>
         </div>
-    </form>
 </div>
 <div style="padding: 0;">
     <div id="success-registration-message" class="hidden" style="padding: 0; text-align: center;">
@@ -54,6 +52,5 @@
     <link href="@Url.Content("~/Content/register.css")" rel="stylesheet" type="text/css" />
 }
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
     <script src="~/Scripts/registration.js"></script>
 }
