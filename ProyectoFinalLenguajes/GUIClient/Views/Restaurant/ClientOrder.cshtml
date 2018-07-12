@@ -3,34 +3,49 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>My Order</h2>
-<div class="table-responsive">
-    <table class="table table-bordered table-hover">
-        <thead>
-            <tr>
-                <th>Dish Name</th>
-                <th>Dish Description</th>
-                <th>Quantity</th>
-                <th>SubTotal Price</th>
-                <th>Remove Dish From Order</th>
-            </tr>
-        </thead>
-        <tbody id="TableOrderDishesBody"></tbody>
-    </table>
+<div id="dishes-container">
+    <h2>My Order</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Dish Name</th>
+                    <th>Dish Description</th>
+                    <th>Quantity</th>
+                    <th>SubTotal Price</th>
+                    <th>Remove Dish From Order</th>
+                </tr>
+            </thead>
+            <tbody id="TableOrderDishesBody"></tbody>
+        </table>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered table-responsive">
+            <tbody id="TableTotalPriceBody">
+                <tr>
+                    <th>Total Price</th>
+                    <td id="TotalPriceColumn"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <button id="btnSendOrder" class="btn btn-primary" onclick="SendOrder()">Send Order</button>
 </div>
-<div class="table-responsive">
-    <table class="table table-bordered table-responsive">
-        <tbody id="TableTotalPriceBody">
-            <tr>
-                <th>Total Price</th>
-                <td id="TotalPriceColumn"></td>
-            </tr>
-        </tbody>
-    </table>
+<div id="success-order-added" class="hidden" style="padding: 0; text-align: center;">
+    <div class="form-group">
+        <span class="input-group-addon correct" id="successRegistration">
+            <img src="~/Content/img/checkIcon.png" class="img-responsive center-block" alt="Successfull registration">
+            <br />Successfull Registration<br />
+        </span>
+    </div>
+    <div class="form-group">
+        <a class="btn btn-primary" href="@Url.Action("Dishes")">Accept</a>
+    </div>
 </div>
 
-
-<button id="btnSendOrder" class="btn btn-primary" onclick="SendOrder()">Send Order</button>
+@section Styles {
+    <link href="@Url.Content("~/Content/order.css")" rel="stylesheet" type="text/css" />
+}
 
 @section Scripts {
     <script type="text/javascript" src="~/Scripts/ClientOrder.js"></script>
