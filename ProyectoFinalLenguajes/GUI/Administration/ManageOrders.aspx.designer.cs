@@ -130,6 +130,24 @@ namespace GUI.Administration {
         protected global::System.Web.UI.WebControls.ListBox List_User;
         
         /// <summary>
+        /// change control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList change;
+        
+        /// <summary>
+        /// Button2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
+        
+        /// <summary>
         /// div3 control.
         /// </summary>
         /// <remarks>
@@ -155,6 +173,15 @@ namespace GUI.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button3;
+        
+        /// <summary>
+        /// datesCale control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl datesCale;
         
         /// <summary>
         /// divBDate control.

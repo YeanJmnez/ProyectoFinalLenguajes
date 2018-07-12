@@ -61,9 +61,9 @@ namespace GUI.Administration
 
             if (int.Parse(dropDownone.SelectedValue) == 1)
             {
-                String css = divBDate.Attributes["style"];
+                String css = datesCale.Attributes["style"];
                 String newCss = css.Replace("none", "block");
-                divBDate.Attributes.Add("style", newCss);
+                datesCale.Attributes.Add("style", newCss);
             }
             Button1.Visible = false;
 
@@ -119,8 +119,8 @@ namespace GUI.Administration
             txt2 = txt2.Trim();
 
             lbfinDate.Text = txt2;
-            DateTime begin = DateTime.Parse(lbBeginDate.Text.ToString());
-            DateTime end = DateTime.Parse(txt2);
+            DateTime begin = DateTime.Parse(lbBeginDate.Text.ToString().Trim());
+            DateTime end = DateTime.Parse(txt2.Trim());
 
             List<string> listString = manager.ListOrderDate(begin, end);
             foreach (string item in listString)
@@ -131,6 +131,15 @@ namespace GUI.Administration
             String newCss = css.Replace("none", "block");
             box.Attributes.Add("style", newCss);
             Button5.Visible = false;
+        }
+
+        protected void clickChange(object sender, EventArgs e)
+        {
+            string[] words = List_User.SelectedItem.ToString().Split();
+            manager.ChangeOrderStatus(words[2], change.SelectedItem.Text.Trim());
+            
+
+            Response.Redirect("ManageOrders.aspx");
         }
     }
 }
