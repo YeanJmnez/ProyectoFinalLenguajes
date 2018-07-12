@@ -98,8 +98,8 @@ namespace BL.Admistration
             List<BLManagerOrders> list = ListByClientEmail(email);
             foreach (BLManagerOrders order in list)
             {
-                stringList.Add("Order Code: " + order.OrderCode + ", Client: " + order.ClientEmail + ", Total Price: " + order.TotalPrice + 
-                    ", Date: " + order.DateHourIn + ", Status: " + order.OrderState);
+                stringList.Add("Order Code: " + order.OrderCode + " ,Client: " + order.ClientEmail + " ,Total Price: " + order.TotalPrice + 
+                    " ,Date: " + order.DateHourIn + " ,Status: " + order.OrderState);
             }
             return stringList;
         }
@@ -110,8 +110,8 @@ namespace BL.Admistration
             List<BLManagerOrders> list = ListByOrderStatus(status);
             foreach (BLManagerOrders order in list)
             {
-                stringList.Add("Order Code: " + order.OrderCode + ", Client: " + order.ClientEmail + ", Total Price: " + order.TotalPrice +
-                    ", Date: " + order.DateHourIn + ", Status: " + order.OrderState);
+                stringList.Add("Order Code: " + order.OrderCode + " ,Client: " + order.ClientEmail + " ,Total Price: " + order.TotalPrice +
+                    " ,Date: " + order.DateHourIn + " ,Status: " + order.OrderState);
             }
             return stringList;
         }
@@ -122,8 +122,8 @@ namespace BL.Admistration
             List<BLManagerOrders> list = ListByDate(Initialdate, finalDate);
             foreach (BLManagerOrders order in list)
             {
-                stringList.Add("Order Code: " + order.OrderCode + ", Client: " + order.ClientEmail + ", Total Price: " + order.TotalPrice +
-                    ", Date: " + order.DateHourIn + ", Status: " + order.OrderState);
+                stringList.Add("Order Code: " + order.OrderCode + " ,Client: " + order.ClientEmail + " ,Total Price: " + order.TotalPrice +
+                    " ,Date: " + order.DateHourIn + " ,Status: " + order.OrderState);
             }
             return stringList;
         }
@@ -134,8 +134,8 @@ namespace BL.Admistration
             List<BLManagerOrders> list = ListUniversalOrder(email, status, Initialdate, finalDate, option);
             foreach (BLManagerOrders order in list)
             {
-                stringList.Add("Order Code: " + order.OrderCode + ", Client: " + order.ClientEmail + ", Total Price: " + order.TotalPrice +
-                    ", Date: " + order.DateHourIn + ", Status: " + order.OrderState);
+                stringList.Add("Order Code: " + order.OrderCode + " ,Client: " + order.ClientEmail + " ,Total Price: " + order.TotalPrice +
+                    " ,Date: " + order.DateHourIn + " ,Status: " + order.OrderState);
             }
             return stringList;
         }
