@@ -100,29 +100,21 @@ namespace BL.Admistration
             return verification;
         }
 
-        public string AddNewClient(BLClient client)
+        public void AddNewClient()
         {
-            ClientLists();
-            string transsaction = "Ingreso exitoso del cliente";
             DAOClient dc = new DAOClient();
-            
-            if (VerifiyEmail(client.ClientEmail))
-            {
-                transsaction = "Ya existe una cuenta de cliente asociada al correo ingresado";
-                return transsaction;
-            }
+
             Client cl = new Client();
-            cl.ClientEmail = client.ClientEmail;
-            cl.ClientName = client.ClientName;
-            cl.ClientPassword = client.ClientPassword;
-            cl.ClientAvailable = client.ClientAvailable;
+            cl.ClientEmail = ClientEmail;
+            cl.ClientName = ClientName;
+            cl.ClientPassword = ClientPassword;
+            cl.ClientAvailable = ClientAvailable;
 
             Address ad = new Address();
-            ad.ClientEmail = this.ClientEmail;
-            ad.PhysicalAddress = this.ClientAddress;
+            ad.ClientEmail = ClientEmail;
+            ad.PhysicalAddress = ClientAddress;
 
             dc.addClient(cl, ad);
-            return transsaction;
         }
 
         public string UpdateClient (BLClient client)

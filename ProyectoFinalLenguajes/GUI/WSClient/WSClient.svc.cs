@@ -15,7 +15,7 @@ namespace GUI.WSClient
         public void AddNewWSClient(string email, string name, string address, string password)
         {
             BLClient client = new BLClient(email, name, address, password, true);
-            client.AddNewClient(client);
+            client.AddNewClient();
         }
 
         public void UpdateWSClient(string name, string address, string password)

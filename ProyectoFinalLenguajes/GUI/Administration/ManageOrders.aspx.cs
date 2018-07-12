@@ -45,8 +45,8 @@ namespace GUI.Administration
             String newCss = css.Replace("none", "block");
             box.Attributes.Add("style", newCss);
         }
-       
-        
+
+
 
 
 
