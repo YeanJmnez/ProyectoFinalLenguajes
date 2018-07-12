@@ -1,16 +1,29 @@
 ﻿@using Microsoft.AspNet.Identity
-@if (Request.IsAuthenticated)
+@{Boolean IsUserAuthenticated;}
+@{string UserEmail;}'
+<script type="text/javascript">
+    function UserLogOut() {
+        localStorage.setItem("UserEmail", "");
+        window.location.href = '@Url.Action("Login", "Account")';
+    }
+    var email = localStorage.getItem("UserEmail");
+    if (email != null)
+    {
+        @{IsUserAuthenticated = true;}
+        @{UserEmail = "SAN";}
+    }
+    else
+    {
+        @{IsUserAuthenticated = false;}
+    }
+</script>
+@if (IsUserAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
-        @Html.AntiForgeryToken()
-
         <ul class="nav navbar-nav navbar-right">
             <li>
-                <script type="text/javascript">
-                    localStorage.setItem("UserEmail", @User.Identity.GetUserName().ToString());
-                </script>
-                @Html.ActionLink("Welcome " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                @Html.ActionLink("Welcome " + @UserEmail + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
             </li>
             <li><a href="javascript:document.getElementById('logoutForm').submit()">Log out</a></li>
         </ul>
@@ -19,7 +32,8 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li><a onclick="UserLogOut()" style="cursor: pointer;">Log out</a></li>
     </ul>
 }

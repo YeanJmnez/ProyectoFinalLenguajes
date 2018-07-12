@@ -33,8 +33,6 @@ namespace GUI.Administration
             bt1.Visible = false;
         }
 
-
-
         protected void btfindbyClient(object sender, EventArgs e)
         {
             List<string> listString = manager.ListClientEmail(TxtClientEmail.Text.Trim());
@@ -46,10 +44,6 @@ namespace GUI.Administration
             String newCss = css.Replace("none", "block");
             box.Attributes.Add("style", newCss);
         }
-
-
-
-
 
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -92,8 +86,6 @@ namespace GUI.Administration
             String newCss = css.Replace("none", "block");
             box.Attributes.Add("style", newCss);
         }
-
-
 
         protected void Button4_Click(object sender, EventArgs e)
         {

@@ -122,6 +122,7 @@
     <Content Include="Administration\Content\js\login.js" />
     <Content Include="Administration\FindDish.aspx" />
     <Content Include="Administration\FindUserSystem.aspx" />
+    <Content Include="Administration\GUIManagerOrdes.aspx" />
     <Content Include="Administration\Index.aspx" />
     <Content Include="Administration\Login.aspx" />
     <Content Include="Administration\ManageOrders.aspx" />
@@ -203,6 +204,13 @@
     </Compile>
     <Compile Include="Administration\FindUserSystem.aspx.designer.cs">
       <DependentUpon>FindUserSystem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\GUIManagerOrdes.aspx.cs">
+      <DependentUpon>GUIManagerOrdes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\GUIManagerOrdes.aspx.designer.cs">
+      <DependentUpon>GUIManagerOrdes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administration\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
