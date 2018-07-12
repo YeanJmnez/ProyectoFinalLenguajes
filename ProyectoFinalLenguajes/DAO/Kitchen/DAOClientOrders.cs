@@ -54,12 +54,16 @@ namespace DAO.Kitchen
                 if (client != null)
                 {
                     client.OrderState = state;
+                    if (state == "committed")
+                    {
+                        client.DateHourOut = DateTime.Now;
+                    }
                     db.SaveChanges();
                 }
             }
 
 
         }
-       
+
     }
 }
