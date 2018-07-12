@@ -64,7 +64,7 @@
 
                 <div id="dishes-list-div-column" class="col-sm-4" style="display: none">
                     <h3>Lista de Ordenes</h3>
-                    <asp:GridView AlternatingRowStyle-CssClass="alternarColores" CssClass="customGrid table-responsive" ID="GridCompleteDishesList" runat="server"></asp:GridView>
+                    <asp:ListBox ID="List_User" runat="server" CssClass="table-responsive" BackColor="#CCFFFF" ForeColor="Black" Rows="10"></asp:ListBox>
                 </div>
             </div>
         </div>
