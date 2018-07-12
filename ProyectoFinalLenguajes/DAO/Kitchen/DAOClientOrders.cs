@@ -45,7 +45,7 @@ namespace DAO.Kitchen
         }
 
 
-        public void ChangeStateOrder(int OrderCode, String state)
+        public void ChangeStateOrder(int OrderCode, string state)
         {
             using (DB_Project db = new DB_Project())
             {

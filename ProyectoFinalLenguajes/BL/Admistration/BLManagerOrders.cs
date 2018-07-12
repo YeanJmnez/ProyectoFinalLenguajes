@@ -145,7 +145,7 @@ namespace BL.Admistration
             string transaction = "The status Order is already changed";
             DAOClientOrders DcOrders = new DAOClientOrders();
             ClientOrder order = new ClientOrder();
-            DcOrders.ChangeStateOrder(int.Parse(code), status);
+            DcOrders.ChangeStateOrder(Int32.Parse(code), status);
             return transaction;
         }
 
