@@ -36,7 +36,7 @@ namespace GUI.Administration
 
         protected void btfindbyClient(object sender, EventArgs e)
         {
-            manager.ListByClientEmail();
+            //manager.ListByClientEmail(TxtClientEmail.Text);
         }
 
 
