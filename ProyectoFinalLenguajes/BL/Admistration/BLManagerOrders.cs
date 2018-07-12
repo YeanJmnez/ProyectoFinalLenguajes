@@ -92,18 +92,51 @@ namespace BL.Admistration
             return ListDate;
         }
 
-        public List<string> ListUserClient()
+        public List<string> ListClientEmail(string email)
         {
             List<string> stringList = new List<string>();
-            List<BLManagerOrders> list = CompleteOrderList();
+            List<BLManagerOrders> list = ListByClientEmail(email);
             foreach (BLManagerOrders order in list)
             {
-
                 stringList.Add("Order Code: " + order.OrderCode + ", Client: " + order.ClientEmail + ", Total Price: " + order.TotalPrice + 
                     ", Date: " + order.DateHourIn + ", Status: " + order.OrderState);
             }
             return stringList;
         }
+
+        public List<string> ListOrderStatus(string status)
+        {
+            List<string> stringList = new List<string>();
+            List<BLManagerOrders> list = ListByOrderStatus(status);
+            foreach (BLManagerOrders order in list)
+            {
+                stringList.Add("Order Code: " + order.OrderCode + ", Client: " + order.ClientEmail + ", Total Price: " + order.TotalPrice +
+                    ", Date: " + order.DateHourIn + ", Status: " + order.OrderState);
+            }
+            return stringList;
+        }
+
+        public List<string> ListOrderDate(DateTime Initialdate, DateTime finalDate)
+        {
+            List<string> stringList = new List<string>();
+            List<BLManagerOrders> list = ListByDate(Initialdate, finalDate);
+            foreach (BLManagerOrders order in list)
+            {
+                stringList.Add("Order Code: " + order.OrderCode + ", Client: " + order.ClientEmail + ", Total Price: " + order.TotalPrice +
+                    ", Date: " + order.DateHourIn + ", Status: " + order.OrderState);
+            }
+            return stringList;
+        }
+
+        public string ChangeOrderStatus(string code, string status)
+        {
+            string transaction = "The client is already enabled";
+            DAOClientOrders DcOrders = new DAOClientOrders();
+            ClientOrder order = new ClientOrder();
+            DcOrders.ChangeStateOrder(int.Parse(code), status);
+            return transaction;
+        }
+
     }
 }
 
