@@ -44,14 +44,14 @@ namespace DAO.Administration
             }
         }
 
-        public void addClient(Client client)
+        public void addClient(Client client, Address address)
         {
             try
             {
                 using (DB_Project db = new DB_Project())
                 {
                     db.Client.Add(client);
-                    //db.Address.Add(new Address() { ClientEmail = client.ClientEmail, PhysicalAddress = client.ClientAddress });
+                    db.Address.Add(address);
                     db.SaveChanges();
                 }
             }

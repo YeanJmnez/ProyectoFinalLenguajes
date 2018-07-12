@@ -1,10 +1,11 @@
 ﻿var dishesCodesQuantitiesString = localStorage.getItem("clientOrderDishes");
-
+var userEmailString = localStorage.getItem("UserEmail");
 var dishesCodesQuantitiesArray = new Array();
 var dishesCodesArray = new Array();
 
 $(document).ready(function () {
-    if (dishesCodesQuantitiesString != null) {
+    alert(userEmailString);
+    if (dishesCodesQuantitiesString != null || userEmailString != null) {
         for (var i = 0; i < dishesCodesQuantitiesString.length; i = i + 4) {
             var code = dishesCodesQuantitiesString[i];
             var quantity = dishesCodesQuantitiesString[i + 2];
@@ -12,7 +13,7 @@ $(document).ready(function () {
             dishesCodesArray.push(code);
         }
     }
-    if (dishesCodesArray.length == 0) {
+    if (dishesCodesArray.length == 0 || userEmailString == null) {
         $('#btnSendOrder').prop("disabled", true);
     } else {
         $('#btnSendOrder').prop("disabled", false);
@@ -72,7 +73,7 @@ function GetSelectedDishes() {
 
         $('#TotalPriceColumn').html("₡" + totalPrice);
 
-        if (dishesCodesArray.length == 0) {
+        if (dishesCodesArray.length == 0 || userEmailString == null) {
             $('#btnSendOrder').prop("disabled", true);
         } else {
             $('#btnSendOrder').prop("disabled", false);

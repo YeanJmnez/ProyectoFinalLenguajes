@@ -12,14 +12,15 @@ namespace GUI.WSClient
     // NOTE: In order to launch WCF Test Client for testing this service, please select WSClient.svc or WSClient.svc.cs at the Solution Explorer and start debugging.
     public class WSClient : IWSClient
     {
-        public void AddNewWSClient(string email, string name, string password)
+        public void AddNewWSClient(string email, string name, string address, string password)
         {
-            BLClient client = new BLClient(email, name, password, true);
+            BLClient client = new BLClient(email, name, address, password, true);
+            client.AddNewClient(client);
         }
 
-        public void UpdateWSClient(string name, string password)
+        public void UpdateWSClient(string name, string address, string password)
         {
-            BLClient client = new BLClient(name, password);
+            BLClient client = new BLClient(name, address, password);
         }
 
         public List<BLDish> FilterDishes(int code)

@@ -3,45 +3,58 @@
     ViewBag.Title = "Register";
 }
 
-<h2>@ViewBag.Title.</h2>
+<h2>@ViewBag.Title</h2>
+<h4>Create a new User Account</h4>
+<br />
+<div id="registration-form-container">
+    <form>
+        <div class="form-group input-group">
+            <span class="input-group-addon">
+                <span class="fa fa-envelope"></span>
+            </span>
+            <input id="txtUserName" class="form-control" type="email" name="userEmail" placeholder="Email" required="required" />
+        </div>
+        <div class="form-group input-group">
+            <span class="input-group-addon">
+                <span class="fa fa-user"></span>
+            </span>
+            <input id="txtUserEmail" class="form-control" type="text" placeholder="Name" required="required" />
+        </div>
+        <div class="form-group input-group">
+            <span class="input-group-addon">
+                <span class="fa fa-map-marker"></span>
+            </span>
+            <input id="txtUserAddress" class="form-control" type="text" placeholder="Address" required="required" />
+        </div>
+        <div class="form-group input-group">
+            <span class="input-group-addon">
+                <span class="fa fa-lock" style="font-size: 20px;"></span>
+            </span>
+            <input id="txtUserPassword" class="form-control" type="password" name="userPassword" placeholder="Password" required="required" />
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" id="btnLogIn" onclick="UserSignUp()">Sign Up</button>
+        </div>
+    </form>
+</div>
+<div style="padding: 0;">
+    <div id="success-registration-message" style="padding: 0; text-align: center;">
+        <div class="form-group">
+            <span class="input-group-addon correct" id="successRegistration">
+                <img src="~/Content/img/checkIcon.png" class="img-responsive center-block" alt="Successfull registration">
+                <br />Successfull Registration<br />
+            </span>
+        </div>
+        <div class="form-group">
+            <a class="btn btn-primary" href="@Url.Action("Login")">Accept</a>
+        </div>
+    </div>
+</div>
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
+@section Styles {
+    <link href="@Url.Content("~/Content/register.css")" rel="stylesheet" type="text/css" />
 }
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript" src="~/Scripts/registration.js"></script>
 }

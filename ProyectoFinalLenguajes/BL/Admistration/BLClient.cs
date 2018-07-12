@@ -13,30 +13,40 @@ namespace BL.Admistration
     {
         public string ClientEmail { get; set; }
         public string ClientName { get; set; }
+        public string ClientAddress { get; set; }
         public string ClientPassword { get; set; }
         public bool ClientAvailable { get; set; }
 
         List<BLClient> ClientListBL = new List<BLClient>();
         List<OrderDetail> TemporaryDishList = new List<OrderDetail>();
+        public BLClient()
+        {
 
-        public BLClient(string ClientEmail, string ClientName, string ClientPassword, bool ClientAvailable) {
+        }
+        public BLClient(string ClientEmail, string ClientName, string ClientAddress, string ClientPassword, bool ClientAvailable) {
             this.ClientEmail = ClientEmail;
             this.ClientName = ClientName;
+            this.ClientAddress = ClientAddress;
             this.ClientPassword = ClientPassword;
             this.ClientAvailable = ClientAvailable;
         }
 
-        public BLClient() {
-
+        public BLClient(string ClientName, string ClientAddress, string ClientPassword)
+        {
+            this.ClientName = ClientName;
+            this.ClientAddress = ClientAddress;
+            this.ClientPassword = ClientPassword;
         }
 
-        public BLClient(string ClientName, string ClientPassword)
+        public BLClient(string ClientEmail, string ClientName, string ClientPassword, bool ClientAvailable)
         {
             this.ClientEmail = ClientEmail;
             this.ClientName = ClientName;
             this.ClientPassword = ClientPassword;
             this.ClientAvailable = ClientAvailable;
         }
+
+
 
         public List<BLClient> ChargeClientLists()
         {
@@ -106,7 +116,12 @@ namespace BL.Admistration
             cl.ClientName = client.ClientName;
             cl.ClientPassword = client.ClientPassword;
             cl.ClientAvailable = client.ClientAvailable;
-            dc.addClient(cl);
+
+            Address ad = new Address();
+            ad.ClientEmail = this.ClientEmail;
+            ad.PhysicalAddress = this.ClientAddress;
+
+            dc.addClient(cl, ad);
             return transsaction;
         }
 

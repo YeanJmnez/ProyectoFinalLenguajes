@@ -16,12 +16,12 @@ namespace GUI.WSClient
         [OperationContract]
         [WebGet(RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json)]
-        void AddNewWSClient(string email, string name, string password);
+        void AddNewWSClient(string email, string name, string address, string password);
 
         [OperationContract]
         [WebGet(RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json)]
-        void UpdateWSClient(string name, string password);
+        void UpdateWSClient(string name, string address, string password);
 
         [OperationContract]
         [WebGet(RequestFormat = WebMessageFormat.Json,

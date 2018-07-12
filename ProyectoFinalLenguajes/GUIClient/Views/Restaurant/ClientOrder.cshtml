@@ -1,31 +1,34 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "ClientOrder";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>My Order</h2>
-<table class="table table-bordered table-responsive table-hover">
-    <thead>
-        <tr>
-            <th>Dish Name</th>
-            <th>Dish Description</th>
-            <th>Quantity</th>
-            <th>SubTotal Price</th>
-            <th>Remove Dish From Order</th>
-        </tr>
-    </thead>
-    <tbody id="TableOrderDishesBody"></tbody>
-</table>
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Dish Name</th>
+                <th>Dish Description</th>
+                <th>Quantity</th>
+                <th>SubTotal Price</th>
+                <th>Remove Dish From Order</th>
+            </tr>
+        </thead>
+        <tbody id="TableOrderDishesBody"></tbody>
+    </table>
+</div>
+<div class="table-responsive">
+    <table class="table table-bordered table-responsive">
+        <tbody id="TableTotalPriceBody">
+            <tr>
+                <th>Total Price</th>
+                <td id="TotalPriceColumn"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-<table class="table table-bordered table-responsive">
-    <tbody id="TableTotalPriceBody">
-        <tr>
-            <th>Total Price</th>
-            <td id="TotalPriceColumn"></td>
-        </tr>
-    </tbody>
-</table>
 
 <button id="btnSendOrder" class="btn btn-primary" onclick="SendOrder()">Send Order</button>
 
