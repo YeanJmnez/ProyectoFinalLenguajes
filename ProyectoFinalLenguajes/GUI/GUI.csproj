@@ -122,10 +122,10 @@
     <Content Include="Administration\Content\js\login.js" />
     <Content Include="Administration\FindDish.aspx" />
     <Content Include="Administration\FindUserSystem.aspx" />
+    <Content Include="Administration\GuiManagerOrderStatus.aspx" />
     <Content Include="Administration\GUIManagerOrdes.aspx" />
     <Content Include="Administration\Index.aspx" />
     <Content Include="Administration\Login.aspx" />
-    <Content Include="Administration\ManageOrders.aspx" />
     <Content Include="Administration\RemoveDish.aspx" />
     <Content Include="Administration\RemoveSystemUser.aspx" />
     <Content Include="Administration\UpdateClientState.aspx" />
@@ -205,6 +205,13 @@
     <Compile Include="Administration\FindUserSystem.aspx.designer.cs">
       <DependentUpon>FindUserSystem.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Administration\GuiManagerOrderStatus.aspx.cs">
+      <DependentUpon>GuiManagerOrderStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\GuiManagerOrderStatus.aspx.designer.cs">
+      <DependentUpon>GuiManagerOrderStatus.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Administration\GUIManagerOrdes.aspx.cs">
       <DependentUpon>GUIManagerOrdes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -225,13 +232,6 @@
     </Compile>
     <Compile Include="Administration\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Administration\ManageOrders.aspx.cs">
-      <DependentUpon>ManageOrders.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Administration\ManageOrders.aspx.designer.cs">
-      <DependentUpon>ManageOrders.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administration\RemoveDish.aspx.cs">
       <DependentUpon>RemoveDish.aspx</DependentUpon>
