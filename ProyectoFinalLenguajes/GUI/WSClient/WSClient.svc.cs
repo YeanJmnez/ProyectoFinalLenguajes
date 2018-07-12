@@ -60,9 +60,10 @@ namespace GUI.WSClient
         public List<BLClient> UserLoginValidation(string email, string password)
         {
             List<BLClient> clientFound = new List<BLClient>();
-            BLClient blCl = new BLClient().GetUserLoginValidation(email, password);
-
-            if (blCl != null)
+            BLClient blCl = new BLClient();
+            BLClient blClFound = blCl.GetUserLoginValidation(email, password);
+            
+            if (blClFound != null)
             {
                 clientFound.Add(blCl);
             }

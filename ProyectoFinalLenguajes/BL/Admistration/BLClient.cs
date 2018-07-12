@@ -255,19 +255,19 @@ namespace BL.Admistration
             cl.ClientEmail = email;
             cl.ClientPassword = password;
 
-            da.UserLoginValidation(cl);
+            Client clFound = da.UserLoginValidation(cl);
 
-            if (cl == null)
+            if (clFound == null)
             {
-                clBL = null;
+                return null;
             }
             else
             {
                 clBL.ClientEmail = cl.ClientEmail;
                 clBL.ClientPassword = cl.ClientPassword;
-            }
 
-            return clBL;
+                return clBL;
+            }
         }
     }
 }
