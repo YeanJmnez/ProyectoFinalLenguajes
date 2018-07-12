@@ -71,9 +71,9 @@
 
                 </div>
 
-                <div runat="server" id="div3" style="display: block">
+                <div runat="server" id="div3" style="display: none">
                     <span class="input-group-addon">Status
-                        <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control" Width="200">
+                        <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control" Width="200" OnSelectedIndexChanged="ss">
                             <asp:ListItem Value="0">on_Time</asp:ListItem>
                             <asp:ListItem Value="1">about_Time</asp:ListItem>
                             <asp:ListItem Value="2">late</asp:ListItem>
