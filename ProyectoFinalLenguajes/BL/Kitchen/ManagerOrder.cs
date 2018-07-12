@@ -89,33 +89,34 @@ namespace BL.Kitchen
                 DAOClientOrders DaoOrders = new DAOClientOrders();
                 foreach (ClientOrder item in ListOrders)
                 {
-                    if (!(item.OrderState.Equals("committed")) || !(item.OrderState.Equals("canceled")))
+                    DateTime start = item.DateHourIn;
+                    DateTime final = DateTime.Now;
+
+                    TimeSpan result = final.Subtract(start);
+
+                    int minute = int.Parse(Convert.ToString(result.TotalMinutes));
+                    switch (item.OrderState)
                     {
-                        TimeSpan result = DateTime.Now.Subtract(item.DateHourIn);
-                        int minute = int.Parse(result.TotalMinutes.ToString());
-                        switch (item.OrderState)
-                        {
-                            case "on_Time":
-                                if (1 <= minute)
-                                {
-                                    DaoOrders.ChangeStateOrder(item.OrderCode, "about_Time");
-                                }
-                                break;
-                            case "about_Time":
-                                if (2 <= minute)
-                                {
-                                    DaoOrders.ChangeStateOrder(item.OrderCode, "late");
-                                }
-                                break;
-                            case "late":
-                                if (3 <= minute)
-                                {
-                                    DaoOrders.ChangeStateOrder(item.OrderCode, "canceled");
-                                }
-                                break;
-                            default:
-                                break;
-                        }
+                        case "on_Time":
+                            if (2 <= minute)
+                            {
+                                DaoOrders.ChangeStateOrder(item.OrderCode, "about_Time");
+                            }
+                            break;
+                        case "about_Time":
+                            if (4 <= minute)
+                            {
+                                DaoOrders.ChangeStateOrder(item.OrderCode, "late");
+                            }
+                            break;
+                        case "late":
+                            if (6 <= minute)
+                            {
+                                DaoOrders.ChangeStateOrder(item.OrderCode, "canceled");
+                            }
+                            break;
+                        default:
+                            break;
                     }
                 }
             }

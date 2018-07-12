@@ -10,10 +10,14 @@ namespace GUI.Administration
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Timer_State.Enabled = true;
             
         }
-
+        
+        protected void Timer_State_Tick(object sender, EventArgs e)
+        {
+            //ManagerOrder manager = new ManagerOrder();
+            //manager.run();
+        }
 
         protected void btnLogIn_Click(object sender, EventArgs e)
         {
@@ -71,14 +75,5 @@ namespace GUI.Administration
 
         }
 
-        protected void Timer_State_Tick(object sender, EventArgs e)
-        {
-            AutomationStatus();
-        }
-        private void AutomationStatus()
-        {
-            ManagerOrder manager = new ManagerOrder();
-            manager.run();
-        }
     }
 }
