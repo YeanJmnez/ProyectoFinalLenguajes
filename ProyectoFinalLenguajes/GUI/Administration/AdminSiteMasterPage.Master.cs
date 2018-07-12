@@ -11,7 +11,6 @@ namespace GUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*
             if (Session["username"] == null)
             {
                 Response.Redirect("login.aspx");
@@ -19,7 +18,7 @@ namespace GUI
             else
             {
                 lblUserName.Text = Session["username"].ToString();
-            }*/
+            }
         }
         protected void lbLogOut_Click(object sender, EventArgs e)
         {

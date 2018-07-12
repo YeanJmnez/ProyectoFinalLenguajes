@@ -11,6 +11,7 @@ namespace GUI.Administration
     public partial class ManageOrders : System.Web.UI.Page
     {
         BLManagerOrders manager = new BLManagerOrders();
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -43,7 +44,7 @@ namespace GUI.Administration
             String newCss = css.Replace("none", "block");
             box.Attributes.Add("style", newCss);
         }
-        
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             if (int.Parse(dropDownone.SelectedValue) == 0)
@@ -74,8 +75,9 @@ namespace GUI.Administration
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            string status = DropDownList1.SelectedItem.Text.Trim();
-            List<string> listString = manager.ListOrderStatus("late");
+            string status = "";
+            status = DropDownList1.SelectedItem.Text;
+            List<string> listString = manager.ListOrderStatus(status);
             foreach (string item in listString)
             {
                 List_User.Items.Add(item);
@@ -84,7 +86,7 @@ namespace GUI.Administration
             String newCss = css.Replace("none", "block");
             box.Attributes.Add("style", newCss);
         }
-        
+
         protected void Button4_Click(object sender, EventArgs e)
         {
          
@@ -131,6 +133,17 @@ namespace GUI.Administration
             
 
             Response.Redirect("ManageOrders.aspx");
+        }
+
+        protected void ss(object sender, EventArgs e)
+        {
+            string status = "";
+            status = DropDownList1.SelectedItem.Text;
+            List<string> listString = manager.ListOrderStatus(status);
+            foreach (string item in listString)
+            {
+                List_User.Items.Add(item);
+            }
         }
     }
 }

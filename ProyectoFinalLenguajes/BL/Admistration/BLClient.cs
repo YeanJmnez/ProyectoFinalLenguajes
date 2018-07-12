@@ -290,6 +290,7 @@ namespace BL.Admistration
                 int quantity = dishesQuantities[i];
 
                 OrderDetail orderDetail = new OrderDetail();
+                orderDetail.OrderCode = orderCode;
                 orderDetail.DishCode = dish.DishCode;
                 orderDetail.DishPrice = dish.DishPrice;
                 orderDetail.DishQuantity = quantity;
