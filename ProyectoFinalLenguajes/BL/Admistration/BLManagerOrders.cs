@@ -30,8 +30,21 @@ namespace BL.Admistration
             this.DeliveryAddress = DeliveryAddress;
             this.ClientEmail = ClientEmail;
         }
-    
-    public List<BLManagerOrders> ListByClientEmail(string email)
+
+        public List<BLManagerOrders> CompleteOrderList()
+        {
+            List<BLManagerOrders> OrderList = new List<BLManagerOrders>();
+            DAOClientOrders DaoOrder = new DAOClientOrders();
+
+            foreach (ClientOrder clientorder in DaoOrder.listOrder())
+            {
+                    BLManagerOrders Order = new BLManagerOrders(clientorder.OrderCode, clientorder.OrderState, clientorder.TotalPrice, clientorder.DateHourIn, clientorder.DeliveryAddress, clientorder.ClientEmail);
+                    OrderList.Add(Order);   
+            }
+            return OrderList;
+        }
+
+        public List<BLManagerOrders> ListByClientEmail(string email)
         {
             List<BLManagerOrders> ListByEmail = new List<BLManagerOrders>();
             DAOClientOrders DaoOrder = new DAOClientOrders();
@@ -49,7 +62,7 @@ namespace BL.Admistration
 
         public List<BLManagerOrders> ListByOrderStatus(string status)
         {
-            List<BLManagerOrders> ListByEmail = new List<BLManagerOrders>();
+            List<BLManagerOrders> ListByStatus = new List<BLManagerOrders>();
             DAOClientOrders DaoOrder = new DAOClientOrders();
 
             foreach (ClientOrder clientorder in DaoOrder.listOrder())
@@ -57,26 +70,40 @@ namespace BL.Admistration
                 if (clientorder.OrderState.Equals(status))
                 {
                     BLManagerOrders Order = new BLManagerOrders(clientorder.OrderCode, clientorder.OrderState, clientorder.TotalPrice, clientorder.DateHourIn, clientorder.DeliveryAddress, clientorder.ClientEmail);
-                    ListByEmail.Add(Order);
+                    ListByStatus.Add(Order);
                 } 
             }
-            return ListByEmail;
+            return ListByStatus;
         }
 
-        //public List<BLManagerOrders> ListByDate(string status)
-        //{
-        //    List<BLManagerOrders> ListByEmail = new List<BLManagerOrders>();
-        //    DAOClientOrders DaoOrder = new DAOClientOrders();
+        public List<BLManagerOrders> ListByDate(DateTime Initialdate, DateTime finalDate)
+        {
+            List<BLManagerOrders> ListDate = new List<BLManagerOrders>();
+            DAOClientOrders DaoOrder = new DAOClientOrders();
 
-        //    foreach (ClientOrder clientorder in DaoOrder.listOrder())
-        //    {
-        //        if (clientorder.OrderState.Equals(status))
-        //        {
-        //            BLManagerOrders Order = new BLManagerOrders(clientorder.OrderCode, clientorder.OrderState, clientorder.TotalPrice, clientorder.DateHourIn, clientorder.DeliveryAddress, clientorder.ClientEmail);
-        //            ListByEmail.Add(Order);
-        //        }
-        //    }
-        //    return ListByEmail;
-        //}
+            foreach (ClientOrder clientorder in DaoOrder.listOrder())
+            {
+                if (clientorder.DateHourIn <= Initialdate && clientorder.DateHourOut <= finalDate)
+                {
+                    BLManagerOrders Order = new BLManagerOrders(clientorder.OrderCode, clientorder.OrderState, clientorder.TotalPrice, clientorder.DateHourIn, clientorder.DeliveryAddress, clientorder.ClientEmail);
+                    ListDate.Add(Order);
+                }
+            }
+            return ListDate;
+        }
+
+        public List<string> ListUserClient()
+        {
+            List<string> stringList = new List<string>();
+            List<BLManagerOrders> list = CompleteOrderList();
+            foreach (BLManagerOrders order in list)
+            {
+
+                stringList.Add("Order Code: " + order.OrderCode + ", Client: " + order.ClientEmail + ", Total Price: " + order.TotalPrice + 
+                    ", Date: " + order.DateHourIn + ", Status: " + order.OrderState);
+            }
+            return stringList;
+        }
     }
 }
+
