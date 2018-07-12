@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using BL.Admistration;
+
 using DAO.Kitchen;
 using TO;
 
@@ -78,60 +79,46 @@ namespace BL.Kitchen
             daoOrders.ChangeStateOrder(OrderCode, state);
         }
 
-        public void AutomaticState(int onTime, int AbTime, int Delayed, List<ClientOrder> ListOrders)
-        {
-            int abTimeFinal = onTime + AbTime;
-            int DelayedFinal = onTime + AbTime + Delayed;
-
-            DAOClientOrders DaoOrders = new DAOClientOrders();
-            foreach (ClientOrder item in ListOrders)
-            {
-                if (!(item.OrderState.Equals("Entregado")) || !(item.OrderState.Equals("Anulado")))
-                {
-                    TimeSpan result = DateTime.Now.Subtract(item.DateHourIn);
-                    int minute = int.Parse(result.TotalMinutes.ToString());
-                    switch (item.OrderState)
-                    {
-                        case "A Tiempo":
-                            if (onTime >= minute)
-                            {
-                                DaoOrders.ChangeStateOrder(item.OrderCode, "Sobre Tiempo");
-                            }
-                            break;
-                        case "Sobre Tiempo":
-                            if (abTimeFinal >= minute)
-                            {
-                                DaoOrders.ChangeStateOrder(item.OrderCode, "Demorado");
-                            }
-                            break;
-                        case "Demorado":
-                            if (DelayedFinal >= minute)
-                            {
-                                DaoOrders.ChangeStateOrder(item.OrderCode, "Anulado");
-                            }
-                            break;
-                        default:
-                            break;
-                    }
-                }
-                Thread.Sleep(3000);
-            }
-
-        }
-
-        public bool checkList()
+        public void run()
         {
             ManagerOrder manager = new ManagerOrder();
-            if (manager.ListOrders().Count > 0)
+            List<ClientOrder> ListOrders = manager.ListOrders();
+
+            if (ListOrders != null)
             {
-                return true;
-            }
-            else
-            {
-                return false;
+                DAOClientOrders DaoOrders = new DAOClientOrders();
+                foreach (ClientOrder item in ListOrders)
+                {
+                    if (!(item.OrderState.Equals("committed")) || !(item.OrderState.Equals("canceled")))
+                    {
+                        TimeSpan result = DateTime.Now.Subtract(item.DateHourIn);
+                        int minute = int.Parse(result.TotalMinutes.ToString());
+                        switch (item.OrderState)
+                        {
+                            case "on_Time":
+                                if (1 <= minute)
+                                {
+                                    DaoOrders.ChangeStateOrder(item.OrderCode, "about_Time");
+                                }
+                                break;
+                            case "about_Time":
+                                if (2 <= minute)
+                                {
+                                    DaoOrders.ChangeStateOrder(item.OrderCode, "late");
+                                }
+                                break;
+                            case "late":
+                                if (3 <= minute)
+                                {
+                                    DaoOrders.ChangeStateOrder(item.OrderCode, "canceled");
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
             }
         }
-
-
     }
 }

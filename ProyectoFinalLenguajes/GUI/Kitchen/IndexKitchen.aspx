@@ -3,11 +3,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="KitchenPanelContent" runat="server">
     <div>
-        <asp:GridView ID="GridView1" runat="server"></asp:GridView>
-
-
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-        <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
-
+      
     </div>
 </asp:Content>

@@ -16,7 +16,7 @@ namespace DAO.Kitchen
             using (DB_Project db = new DB_Project())
             {
                 var listDB = (from ClientOrder in db.ClientOrder
-                              where !(ClientOrder.OrderState == "Entregado" || ClientOrder.OrderState == "Anulado")
+                              where !(ClientOrder.OrderState == "committed" || ClientOrder.OrderState == "canceled")
                               orderby (ClientOrder.DateHourIn) descending
                               select ClientOrder).Take(10);
 
@@ -60,16 +60,6 @@ namespace DAO.Kitchen
 
 
         }
-        //public List<OrderDetail> listOrderDetails()
-        //{
-        //    List<OrderDetail> list = new List<OrderDetail>();
-        //    using (DB_Project db = new DB_Project())
-        //    {
-        //        list = db.OrderDetail.ToList();
-
-
-        //    }
-        //    return list;
-        //}
+       
     }
 }

@@ -1,19 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using BL.Admistration;
+using BL.Kitchen;
 
 namespace GUI.Administration
 {
     public partial class Login : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Timer_State.Enabled = true;
+            
         }
+
 
         protected void btnLogIn_Click(object sender, EventArgs e)
         {
@@ -71,5 +71,14 @@ namespace GUI.Administration
 
         }
 
+        protected void Timer_State_Tick(object sender, EventArgs e)
+        {
+            AutomationStatus();
+        }
+        private void AutomationStatus()
+        {
+            ManagerOrder manager = new ManagerOrder();
+            manager.run();
+        }
     }
 }

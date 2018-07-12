@@ -80,7 +80,8 @@ namespace GUI.Administration
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            List<string> listString = manager.ListOrderStatus(DropDownList1.Text.Trim());
+            string status = DropDownList1.SelectedItem.Text;
+            List<string> listString = manager.ListOrderStatus(status);
             foreach (string item in listString)
             {
                 List_User.Items.Add(item);
@@ -91,14 +92,18 @@ namespace GUI.Administration
 
         }
 
-        protected void beginDate_SelectionChanged(object sender, EventArgs e)
-        {
-            lbBeginDate.Text = beginDate.SelectedDate.ToShortDateString();
-        }
+
 
         protected void Button4_Click(object sender, EventArgs e)
         {
-            lbBeginDate.Text = beginDate.SelectedDate.ToString();
+         
+            string txt = beginDate.SelectedDate.ToString();
+            txt = txt.Replace("a", "");
+            txt = txt.Replace("m", "");
+            txt = txt.Replace(".", "");
+            txt = txt.Trim();
+            lbBeginDate.Text = txt;
+
             String css = divFdate.Attributes["style"];
             String newCss = css.Replace("none", "block");
             divFdate.Attributes.Add("style", newCss);
@@ -107,10 +112,15 @@ namespace GUI.Administration
 
         protected void Button5_Click(object sender, EventArgs e)
         {
-           
-            lbfinDate.Text = finalDate.SelectedDate.ToString();
+            string txt2 = finalDate.SelectedDate.ToString();
+            txt2 = txt2.Replace("a", "");
+            txt2 = txt2.Replace("m", "");
+            txt2 = txt2.Replace(".", "");
+            txt2 = txt2.Trim();
+
+            lbfinDate.Text = txt2;
             DateTime begin = DateTime.Parse(lbBeginDate.Text.ToString());
-            DateTime end = DateTime.Parse(lbfinDate.Text.ToString());
+            DateTime end = DateTime.Parse(txt2);
 
             List<string> listString = manager.ListOrderDate(begin, end);
             foreach (string item in listString)
