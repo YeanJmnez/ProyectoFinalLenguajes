@@ -128,6 +128,18 @@ namespace BL.Admistration
             return stringList;
         }
 
+        public List<string> ListMultiOrder(string email, string status, DateTime Initialdate, DateTime finalDate, int option)
+        {
+            List<string> stringList = new List<string>();
+            List<BLManagerOrders> list = ListUniversalOrder(email, status, Initialdate, finalDate, option);
+            foreach (BLManagerOrders order in list)
+            {
+                stringList.Add("Order Code: " + order.OrderCode + ", Client: " + order.ClientEmail + ", Total Price: " + order.TotalPrice +
+                    ", Date: " + order.DateHourIn + ", Status: " + order.OrderState);
+            }
+            return stringList;
+        }
+
         public string ChangeOrderStatus(string code, string status)
         {
             string transaction = "The status Order is already changed";
@@ -144,15 +156,59 @@ namespace BL.Admistration
             {
                 case 1:
 
+                    List<BLManagerOrders> ListOrderEmail = ListByClientEmail(email);
+                    
+                    foreach(BLManagerOrders order in ListOrderEmail)
+                    {
+                        if(order.OrderState.Equals(status))
+                        {
+                            ListOrder.Add(order);
+                        }
+                    }
                     break;
                 case 2:
+                    List<BLManagerOrders> ListOrderStatus = ListByOrderStatus(status);
 
+                    foreach (BLManagerOrders order in ListOrderStatus)
+                    {
+                        if (order.ClientEmail.Equals(email))
+                        {
+                            ListOrder.Add(order);
+                        }
+                    }
                     break;
                 case 3:
+                    List<BLManagerOrders> ListOrderDate = ListByDate(Initialdate, finalDate);
 
+                    foreach (BLManagerOrders order in ListOrderDate)
+                    {
+                        if (order.ClientEmail.Equals(email))
+                        {
+                            ListOrder.Add(order);
+                        }
+                    }
                     break;
                 case 4:
-                   
+                    List<BLManagerOrders> ListOrderDate2 = ListByDate(Initialdate, finalDate);
+
+                    foreach (BLManagerOrders order in ListOrderDate2)
+                    {
+                        if (order.OrderState.Equals(status))
+                        {
+                            ListOrder.Add(order);
+                        }
+                    }
+                    break;
+                case 5:
+                    List<BLManagerOrders> ListMultiOrder = ListByDate(Initialdate, finalDate);
+
+                    foreach (BLManagerOrders order in ListMultiOrder)
+                    {
+                        if (order.ClientEmail.Equals(email) && order.OrderState.Equals(status))
+                        {
+                            ListOrder.Add(order);
+                        }
+                    }
                     break;
                 default:
                     break;
