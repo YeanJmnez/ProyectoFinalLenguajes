@@ -10,11 +10,10 @@
             + "&name=" + userName 
             + "&address=" + userAddress 
             + "&password=" + userPassword,
-        timeout: 10000,
-        datatype: "jsonp"
+        timeout: 10000
     });
 
-    request.done(function (data) {
+    request.done(function () {
         $('#registration-form-container').addClass('hidden');
         $('#success-registration-message').removeClass('hidden');
     });
