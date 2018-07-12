@@ -70,5 +70,27 @@ namespace GUI.WSClient
 
             return clientFound;
         }
+
+        public void AddOrderWithDetails(string email, int totalPrice, string codes, string quantities)
+        {
+            String[] separator = { "," };
+            List<int> dishesCodesList = new List<int>();
+            List<int> dishesQuantitiesList = new List<int>();
+
+            string[] codesArray = codes.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+            string[] quantitiesArray = quantities.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+
+            for (int i = 0; i < codesArray.Length; i++)
+            {
+                dishesCodesList.Add(Int32.Parse(codesArray[i]));
+            }
+            for (int i = 0; i < quantitiesArray.Length; i++)
+            {
+                dishesQuantitiesList.Add(Int32.Parse(quantitiesArray[i]));
+            }
+
+            BLClient clBl = new BLClient();
+            clBl.AddOrderWithDetails(email, totalPrice, dishesCodesList, dishesQuantitiesList);
+        }
     }
 }

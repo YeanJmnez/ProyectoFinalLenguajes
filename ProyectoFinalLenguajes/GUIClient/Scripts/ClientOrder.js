@@ -1,16 +1,18 @@
 ﻿var dishesCodesQuantitiesString = localStorage.getItem("clientOrderDishes");
+alert("Session Email: " + localStorage.getItem("UserEmail"));
 var userEmailString = localStorage.getItem("UserEmail");
 var dishesCodesQuantitiesArray = new Array();
 var dishesCodesArray = new Array();
+var dishesQuantitiesArray = new Array();
 
 $(document).ready(function () {
-    alert(userEmailString);
     if (dishesCodesQuantitiesString != null || userEmailString != null) {
         for (var i = 0; i < dishesCodesQuantitiesString.length; i = i + 4) {
             var code = dishesCodesQuantitiesString[i];
             var quantity = dishesCodesQuantitiesString[i + 2];
             dishesCodesQuantitiesArray.push([code, quantity]);
             dishesCodesArray.push(code);
+            dishesQuantitiesArray.push(quantity);
         }
     }
     if (dishesCodesArray.length == 0 || userEmailString == null) {
@@ -71,6 +73,7 @@ function GetSelectedDishes() {
             $('#TableOrderDishesBody').append(newTr);
         });
 
+        localStorage.setItem("TotalPrice", totalPrice);
         $('#TotalPriceColumn').html("₡" + totalPrice);
 
         if (dishesCodesArray.length == 0 || userEmailString == null) {
@@ -95,5 +98,22 @@ function GetDishQuantity(code) {
 }
 
 function SendOrder() {
-    
+    var request = $.ajax({
+        url: "http://proyelenguajes-001-site1.gtempurl.com/WSClient/WSClient.svc/AddOrderWithDetails?email="
+            + userEmailString 
+            + "&totalPrice=" + localStorage.getItem("TotalPrice") 
+            + "&codes=" + dishesCodesArray.toString() 
+            + "&quantities=" + dishesQuantitiesArray.toString(),
+        timeout: 10000,
+        datatype: "jsonp"
+    });
+
+    request.done(function (data) {
+        alert("orderAdded");
+        localStorage.setItem("clientOrderDishes", "");
+    });
+
+    request.fail(function () {
+        alert("ERROR");
+    });
 }

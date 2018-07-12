@@ -43,5 +43,9 @@ namespace GUI.WSClient
             ResponseFormat = WebMessageFormat.Json)]
         List<BLClient> UserLoginValidation(string email, string password);
 
+        [OperationContract]
+        [WebGet(RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json)]
+        void AddOrderWithDetails(string email, int totalPrice, string codes, string quantities);
     }
 }
