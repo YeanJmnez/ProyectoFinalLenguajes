@@ -46,7 +46,7 @@ namespace GUI.WSClient
             for (int i = 0; i < codesArray.Length; i++) {
                 foreach (BLDish dish in allDishes)
                 {
-                    if ((codesArray[i]).Equals(dish.Code))
+                    if (dish.Code == Int32.Parse(codesArray[i]))
                     {
                         allSelectedDishes.Add(dish);
                     }

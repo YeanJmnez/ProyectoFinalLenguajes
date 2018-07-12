@@ -1,13 +1,21 @@
-﻿var dishesCodesQuantities = new Array(localStorage.getItem("clientOrderDishes"));
+﻿var dishesCodesQuantitiesString = localStorage.getItem("clientOrderDishes");
+
+var dishesCodesQuantitiesArray = new Array();
 var dishesCodes = new Array();
 
 $(document).ready(function () {
-    alert(dishesCodes);
+    for (var i = 0; i < dishesCodesQuantitiesString.length; i = i + 4) {
+        var code = dishesCodesQuantitiesString[i];
+        var quantity = dishesCodesQuantitiesString[i + 2];
+        dishesCodesQuantitiesArray.push([code, quantity]);
+        dishesCodes.push(code);
+    }
+    alert("LENGTH: " + dishesCodesQuantitiesArray.length);
+    alert("DISHES CODES: " + dishesCodes.toString());
     GetSelectedDishes();
 });
 
 $(document).on('click', 'button.btnRemoveDish', function () {
-    
     $(this).closest('tr').remove();
     return false;
 });
@@ -23,10 +31,6 @@ function RemoveDish(code) {
 }
 
 function GetSelectedDishes() {
-    for (var i = 0; i < dishesCodesQuantities.length; i++) {
-        dishesCodes.push(dishesCodesQuantities[i][0]);
-    }
-
     var request = $.ajax({
         url: "http://proyelenguajes-001-site1.gtempurl.com/WSClient/WSClient.svc/GetSelectedDishes?Codes=" + dishesCodes.toString(),
         timeout: 10000,
