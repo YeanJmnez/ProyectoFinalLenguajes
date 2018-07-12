@@ -1,8 +1,18 @@
 ﻿$(document).ready(function() {
     GetDishesList();
 });
-var clientOrderDishes = new Array();
-localStorage.setItem("clientOrderDishes", clientOrderDishes);
+var clientOrderDishesArray = new Array();
+
+if (localStorage.getItem("clientOrderDishes") == null) {
+    localStorage.setItem("clientOrderDishes", clientOrderDishesArray);
+} else {
+    var orderDishesLocalStorage = localStorage.getItem("clientOrderDishes");
+    for (var i = 0; i < orderDishesLocalStorage.length; i = i + 4) {
+        var code = orderDishesLocalStorage[i];
+        var quantity = orderDishesLocalStorage[i + 2];
+        clientOrderDishesArray.push([code, quantity]);
+    }
+}
 
 function GetDishesList() {
     var request = $.ajax({
@@ -85,20 +95,21 @@ function AddDishToOrder(code) {
     var exist = false;
     var count = 0;
     var index = 0;
-    for (var i = 0; i < clientOrderDishes.length; i++) {
-        if (code == clientOrderDishes[i][0]) {
-            count = clientOrderDishes[i][1];
+    for (var i = 0; exist == false && i < clientOrderDishesArray.length; i++) {
+        if (code == clientOrderDishesArray[i][0]) {
+            count = clientOrderDishesArray[i][1];
             exist = true;
             index = i;
-            break;
         }
     }
-    count = count + 1;
+
+    count++;
+
     if (exist) {
-        clientOrderDishes[index] = [code, count];
+        clientOrderDishesArray[index][1] = count;
     } else {
-        clientOrderDishes.push([code, count]);
+        clientOrderDishesArray.push([code, count]);
     }
-    localStorage.setItem("clientOrderDishes", clientOrderDishes);
-    alert(clientOrderDishes.toString());
+    localStorage.clear();
+    localStorage.setItem("clientOrderDishes", clientOrderDishesArray);
 }

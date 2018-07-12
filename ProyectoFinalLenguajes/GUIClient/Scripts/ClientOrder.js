@@ -1,34 +1,40 @@
-﻿var dishesCodesQuantities = new Array(localStorage.getItem("clientOrderDishes"));
-var dishesCodes = new Array();
+﻿var dishesCodesQuantitiesString = localStorage.getItem("clientOrderDishes");
+
+var dishesCodesQuantitiesArray = new Array();
+var dishesCodesArray = new Array();
 
 $(document).ready(function () {
-    alert(dishesCodes);
+    if (dishesCodesQuantitiesString != null) {
+        for (var i = 0; i < dishesCodesQuantitiesString.length; i = i + 4) {
+            var code = dishesCodesQuantitiesString[i];
+            var quantity = dishesCodesQuantitiesString[i + 2];
+            dishesCodesQuantitiesArray.push([code, quantity]);
+            dishesCodesArray.push(code);
+        }
+    }
+    if (dishesCodesArray.length == 0) {
+        $('#btnSendOrder').prop("disabled", true);
+    } else {
+        $('#btnSendOrder').prop("disabled", false);
+    }
     GetSelectedDishes();
 });
 
-$(document).on('click', 'button.btnRemoveDish', function () {
-    
-    $(this).closest('tr').remove();
-    return false;
-});
-
 function RemoveDish(code) {
-    var index = dishesCodesQuantities.indexOf(code);
+    //$('#btnRemoveDish').parent().parent().remove();
 
-    dishesCodesQuantities.splice(index, 1);
-    dishesCodes.splice(index, 1);
+    var index = dishesCodesArray.indexOf(code);
 
-    alert(dishesCodesQuantities);
-    alert(dishesCodes);
+    dishesCodesQuantitiesArray.splice(index, 1);
+    dishesCodesArray.splice(index, 1);
+
+    $('#TableOrderDishesBody').empty();
+    GetSelectedDishes();
 }
 
 function GetSelectedDishes() {
-    for (var i = 0; i < dishesCodesQuantities.length; i++) {
-        dishesCodes.push(dishesCodesQuantities[i][0]);
-    }
-
     var request = $.ajax({
-        url: "http://proyelenguajes-001-site1.gtempurl.com/WSClient/WSClient.svc/GetSelectedDishes?Codes=" + dishesCodes,
+        url: "http://proyelenguajes-001-site1.gtempurl.com/WSClient/WSClient.svc/GetSelectedDishes?Codes=" + dishesCodesArray.toString(),
         timeout: 10000,
         datatype: "jsonp"
     });
@@ -53,17 +59,25 @@ function GetSelectedDishes() {
             var newTd4 = document.createElement("td");
             newTd4.innerHTML = subTotal;
             var newTd5 = document.createElement("td");
-            newTd5.innerHTML = "<button class='btn btn-primary' id='btnRemoveDish'></button>";
+            newTd5.innerHTML = "<button class='btn btn-primary' id='btnRemoveDish' onclick='RemoveDish(" + this.Code + ")'>Remove</button>";
 
             newTr.appendChild(newTd1);
             newTr.appendChild(newTd2);
             newTr.appendChild(newTd3);
             newTr.appendChild(newTd4);
+            newTr.appendChild(newTd5);
 
             $('#TableOrderDishesBody').append(newTr);
         });
 
         $('#TotalPriceColumn').html("₡" + totalPrice);
+
+        if (dishesCodesArray.length == 0) {
+            $('#btnSendOrder').prop("disabled", true);
+        } else {
+            $('#btnSendOrder').prop("disabled", false);
+        }
+        localStorage.setItem("clientOrderDishes", dishesCodesQuantitiesArray);
     });
 
     request.fail(function () {
@@ -72,9 +86,13 @@ function GetSelectedDishes() {
 }
 
 function GetDishQuantity(code) {
-    for (var i = 0; i < dishesCodesQuantities.length; i++) {
-        if (code == dishesCodesQuantities[i][0]) {
-            return dishesCodesQuantities[i][1];
+    for (var i = 0; i < dishesCodesQuantitiesArray.length; i++) {
+        if (code == dishesCodesQuantitiesArray[i][0]) {
+            return dishesCodesQuantitiesArray[i][1];
         }
     }
+}
+
+function SendOrder() {
+    
 }
