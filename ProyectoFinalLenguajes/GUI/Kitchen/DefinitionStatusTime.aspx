@@ -9,17 +9,17 @@
         <br />
         <asp:Label ID="L_State" runat="server" CssClass="label label-primary labels" Text=""></asp:Label>
         <br />
-        <h4>Definition of the time of the status "A Tiempo - Sobre Tiempo"</h4>
+        <h4>Definition of the time of the status "On Time - About Time"</h4>
         <asp:Label ID="L_M1" runat="server" Text="Label">Minutes: </asp:Label>&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="T_Minu1" runat="server" Width="80px"></asp:TextBox><br />
         <br />
 
-        <h4>Definition of the time of the status "Sobre Tiempo - Demorado"</h4>
+        <h4>Definition of the time of the status "About Time - Lated"</h4>
         <asp:Label ID="L_M2" runat="server" Text="Label">Minutes: </asp:Label>&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="T_Minu2" runat="server" Width="82px"></asp:TextBox><br />
         <br />
 
-        <h4>Definition of the time of the status "Demorado - Anulado"</h4>
+        <h4>Definition of the time of the status "Lated- Canceled"</h4>
         <asp:Label ID="L_M3" runat="server" Text="Label">Minutes: </asp:Label>&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="T_Minute3" runat="server" Width="75px"></asp:TextBox><br />
         <br />

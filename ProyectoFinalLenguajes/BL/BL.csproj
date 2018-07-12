@@ -57,7 +57,6 @@
     <Compile Include="Kitchen\ClientOrder.cs" />
     <Compile Include="Kitchen\InformationClient.cs" />
     <Compile Include="Kitchen\ManagerOrder.cs" />
-    <Compile Include="Kitchen\ManagerStatusOrder.cs" />
     <Compile Include="Kitchen\OrderDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

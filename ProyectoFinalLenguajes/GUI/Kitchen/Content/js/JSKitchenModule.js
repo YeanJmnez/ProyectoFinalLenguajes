@@ -13,14 +13,9 @@ function getAllOrder() {
         datatype: "jsonp"
     });
 
-   
+
     request.done(function (data) {
         processAllOrder(data);
-        getQuantity();
-    });
-
-    request.fail(function () {
-        alert("ERROR: Something went wrong!");
     });
 }
 
@@ -30,10 +25,10 @@ function processAllOrder(data) {
         var newTR = document.createElement("tr");
 
         switch (this.OrderState) {
-            case "A tiempo":
+            case "on_Time":
                 newTR.classList.add("success");
                 break;
-            case "Sobre Tiempo":
+            case "about_Time":
                 newTR.classList.add("warning");
                 break;
             default:
@@ -77,7 +72,7 @@ function getQuantity() {
 
 function changeDeliver(orderCode, stateOrder) {
     var request = $.ajax({
-        url: "http://proyelenguajes-001-site1.gtempurl.com/WSRest/WSRestKitchenModule.svc/ChangeStateOrder?OrderCode=" + orderCode + "&state=Entregado",
+        url: "http://proyelenguajes-001-site1.gtempurl.com/WSRest/WSRestKitchenModule.svc/ChangeStateOrder?OrderCode=" + orderCode + "&state=committed",
         timeout: 10000,
         datatype: "jsonp"
     });
