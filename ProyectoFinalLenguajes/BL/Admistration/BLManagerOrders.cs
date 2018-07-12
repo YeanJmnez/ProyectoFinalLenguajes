@@ -83,7 +83,7 @@ namespace BL.Admistration
 
             foreach (ClientOrder clientorder in DaoOrder.listOrder())
             {
-                if (clientorder.DateHourIn <= Initialdate && clientorder.DateHourOut <= finalDate)
+                if ((clientorder.DateHourIn >= Initialdate) && (clientorder.DateHourOut <= finalDate))
                 {
                     BLManagerOrders Order = new BLManagerOrders(clientorder.OrderCode, clientorder.OrderState, clientorder.TotalPrice, clientorder.DateHourIn, clientorder.DeliveryAddress, clientorder.ClientEmail);
                     ListDate.Add(Order);
