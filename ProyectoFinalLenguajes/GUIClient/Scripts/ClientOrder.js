@@ -28,7 +28,7 @@ function GetSelectedDishes() {
     }
 
     var request = $.ajax({
-        url: "http://proyelenguajes-001-site1.gtempurl.com/WSClient/WSClient.svc/GetSelectedDishes?Codes=" + dishesCodes,
+        url: "http://proyelenguajes-001-site1.gtempurl.com/WSClient/WSClient.svc/GetSelectedDishes?Codes=" + dishesCodes.toString(),
         timeout: 10000,
         datatype: "jsonp"
     });
