@@ -1,20 +1,20 @@
 ﻿$(document).ready(function () {
     $('#txtLoginUserEmail').keyup(function () {
         if ($(this).val() == "") {
-            $('#wrongUserName').addClass('hidden');
+            $('#wrongCredentials').addClass('hidden');
             $('#loginEmptyUserName').removeClass('hidden');
         } else {
             $('#loginEmptyUserName').addClass('hidden');
-            $('#wrongUserName').addClass('hidden');
+            $('#wrongCredentials').addClass('hidden');
         }
     }),
     $('#txtLoginUserPassword').keyup(function () {
         if ($(this).val() == "") {
-            $('#wrongPassword').addClass('hidden');
+            $('#wrongCredentials').addClass('hidden');
             $('#loginEmptyPassword').removeClass('hidden');
         } else {
             $('#loginEmptyPassword').addClass('hidden');
-            $('#wrongPassword').addClass('hidden');
+            $('#wrongCredentials').addClass('hidden');
         }
     });
 });
@@ -36,25 +36,40 @@ function checkTextBoxes() {
 }
 
 function UserLogin() {
-    var userEmail = document.getElementById("txtLoginUserEmail");
-    var userPassword = document.getElementById("txtLoginUserPassword");
+    var userEmail = document.getElementById("txtLoginUserEmail").value;
+    var userPassword = document.getElementById("txtLoginUserPassword").value;
+    var emptyData = false;
 
-    var request = $.ajax({
-        url: "http://proyelenguajes-001-site1.gtempurl.com/WSClient/WSClient.svc/UserLoginValidation?email="
-            + userEmail + "&password=" + userPassword,
-        timeout: 10000,
-        datatype: "jsonp"
-    });
+    if (userEmail == '') {
+        $('#loginEmptyUserName').removeClass('hidden');
+        emptyData = true;
+    }
+    if (userPassword == '') {
+        $('#loginEmptyPassword').removeClass('hidden');
+        emptyData = true;
+    }
 
-    request.done(function (data) {
-        alert(data);
-
-        $.each(data, function () {
-
+    if (!emptyData) { 
+        var request = $.ajax({
+            url: "http://proyelenguajes-001-site1.gtempurl.com/WSClient/WSClient.svc/UserLoginValidation?email="
+                + userEmail + "&password=" + userPassword,
+            timeout: 10000,
+            datatype: "jsonp"
         });
-    });
 
-    request.fail(function () {
-        alert("ERROR");
-    });
+        request.done(function (data) {
+            if (data.length == 0) {
+                $('#wrongCredentials').removeClass('hidden');
+            } else {
+                $.each(data, function () {
+                    alert(this.ClientEmail);
+                    localStorage.setItem("UserEmail", this.ClientEmail);
+                });
+            }
+        });
+
+        request.fail(function () {
+            alert("ERROR");
+        });
+    }
 }

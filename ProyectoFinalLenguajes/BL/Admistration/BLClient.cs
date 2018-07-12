@@ -248,7 +248,8 @@ namespace BL.Admistration
             return stringList;
         }
 
-        public BLClient GetUserLoginValidation(string email, string password) {
+        public BLClient GetUserLoginValidation(string email, string password)
+        {
             DAOClient da = new DAOClient();
             BLClient clBL = new BLClient();
             Client cl = new Client();
@@ -267,6 +268,34 @@ namespace BL.Admistration
                 clBL.ClientPassword = clFound.ClientPassword;
 
                 return clBL;
+            }
+        }
+
+        public void AddOrderWithDetails(string email, int totalPrice, List<int> dishesCodes, List<int> dishesQuantities)
+        {
+            ClientOrder clOrder = new ClientOrder();
+            clOrder.OrderState = "on_Time";
+            clOrder.TotalPrice = totalPrice;
+            clOrder.DateHourIn = DateTime.Now;
+            clOrder.ClientEmail = email;
+
+            DAOClient daoClient = new DAOClient();
+            DAODish daoDish = new DAODish();
+            
+            int orderCode = daoClient.AddOrder(clOrder);
+
+            for (int i = 0; i < dishesCodes.Count; i++)
+            {
+                Dish dish = daoDish.ChargeDish(dishesCodes[i]) ;
+                int quantity = dishesQuantities[i];
+
+                OrderDetail orderDetail = new OrderDetail();
+                orderDetail.DishCode = dish.DishCode;
+                orderDetail.DishPrice = dish.DishPrice;
+                orderDetail.DishQuantity = quantity;
+                orderDetail.SubTotal = dish.DishPrice * quantity;
+
+                daoClient.AddOrderDetail(orderDetail);
             }
         }
     }

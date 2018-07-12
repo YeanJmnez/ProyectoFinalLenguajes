@@ -110,6 +110,5 @@ function AddDishToOrder(code) {
     } else {
         clientOrderDishesArray.push([code, count]);
     }
-    localStorage.clear();
     localStorage.setItem("clientOrderDishes", clientOrderDishesArray);
 }

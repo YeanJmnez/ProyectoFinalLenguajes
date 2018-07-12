@@ -10,8 +10,35 @@ namespace DAO.Administration
 {
     public class DAOClient
     {
+        public int AddOrder(ClientOrder order)
+        {
+            int orderCode = 0;
 
-        public Client UserLoginValidation(Client client) {
+            using (DB_Project db = new DB_Project())
+            {
+                db.ClientOrder.Add(order);
+                db.SaveChanges();
+
+                ClientOrder orderFound = (from dbOrder in db.ClientOrder
+                                          where dbOrder.ClientEmail == order.ClientEmail
+                                          select dbOrder).First();
+                orderCode = orderFound.OrderCode;
+            }
+
+            return orderCode;
+        }
+
+        public void AddOrderDetail(OrderDetail orderDetail)
+        {
+            using (DB_Project db = new DB_Project())
+            {
+                db.OrderDetail.Add(orderDetail);
+                db.SaveChanges();
+            }
+        }
+
+        public Client UserLoginValidation(Client client)
+        {
             using (DB_Project db = new DB_Project())
             {
                 Client clientFound = db.Client.Find(client.ClientEmail);
