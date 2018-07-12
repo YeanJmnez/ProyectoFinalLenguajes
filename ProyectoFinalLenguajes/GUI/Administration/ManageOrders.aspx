@@ -53,34 +53,105 @@
                 </div>
 
 
-                <div runat="server" id="div3" style="display: none">
-                    <div class="form-group input-group">
-                        <span class="input-group-addon">Status:  
-                             <asp:RadioButton ID="RadioButton1" runat="server" Text="Enable" />
-                        </span>
-                        <asp:Button ID="Button2" CssClass="btn btn-primary" runat="server" Text="apply filter" OnClick="btfindbyClient" />
-                    </div>
-                </div>
+
 
                 <div runat="server" id="box" class="table-responsive" style="display: none">
-                    <asp:Label ID="Label1" runat="server" CssClass="label" Text="Order List"></asp:Label>
+                    <asp:Label ID="Label1" runat="server" CssClass="label label-primary" Text="Order List"></asp:Label>
                     <asp:ListBox ID="List_User" runat="server" BackColor="#CCFFFF" ForeColor="Black" Rows="10"></asp:ListBox>
                 </div>
 
-               <div >
-                  
-                   <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control" Width="200">
-                       <asp:ListItem Value="0">on_time</asp:ListItem>
-                       <asp:ListItem Value="1">about_time</asp:ListItem>
-                       <asp:ListItem Value="2">late</asp:ListItem>
-                       <asp:ListItem Value="3">canceled</asp:ListItem>
-                       <asp:ListItem Value="4">committed</asp:ListItem>
-                   </asp:DropDownList>
+                <div runat="server" id="div3" style="display: none">
+                    <span class="input-group-addon">Status
+                        <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control" Width="200">
+                            <asp:ListItem Value="0">on_time</asp:ListItem>
+                            <asp:ListItem Value="1">about_time</asp:ListItem>
+                            <asp:ListItem Value="2">late</asp:ListItem>
+                            <asp:ListItem Value="3">canceled</asp:ListItem>
+                            <asp:ListItem Value="4">committed</asp:ListItem>
+                        </asp:DropDownList>
+                    </span>
+                    <asp:Button ID="Button3" CssClass="btn btn-primary" runat="server" Height="28px" Text="apply filter" Width="116px" OnClick="Button3_Click" />
+
                     <br />
-                    <asp:Button ID="Button3" CssClass="btn btn-primary" runat="server" Height="28px" Text="apply filter" Width="116px" OnClick="Button3_Click"  />
+                </div>
+                <br />
+
+                <div id="divBDate" runat="server" style="display: block">
+                    <asp:Calendar ID="beginDate" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="182px" OnSelectionChanged="beginDate_SelectionChanged">
+                        <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
+                        <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
+                        <OtherMonthDayStyle ForeColor="#999999" />
+                        <SelectedDayStyle BackColor="#333399" ForeColor="White" />
+                        <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
+                        <TodayDayStyle BackColor="#CCCCCC" />
+                    </asp:Calendar>
+                    <asp:Label ID="lbBeginDate" runat="server" Text="Begin date"></asp:Label>
                     <br />
                     <br />
-               </div>
+                    <asp:Label ID="lbbegin" runat="server" Text="hour"></asp:Label>
+                    &nbsp;  &nbsp;<asp:DropDownList ID="DropDownList2" runat="server">
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
+                        <asp:ListItem>3</asp:ListItem>
+                        <asp:ListItem>4</asp:ListItem>
+                        <asp:ListItem>5</asp:ListItem>
+                        <asp:ListItem>6</asp:ListItem>
+                        <asp:ListItem>7</asp:ListItem>
+                        <asp:ListItem>8</asp:ListItem>
+                        <asp:ListItem>9</asp:ListItem>
+                        <asp:ListItem>10</asp:ListItem>
+                        <asp:ListItem>11</asp:ListItem>
+                        <asp:ListItem>12</asp:ListItem>
+                    </asp:DropDownList>
+                    &nbsp;&nbsp; 
+                    <asp:DropDownList ID="ddbegin" runat="server">
+                        <asp:ListItem Value="1">pm</asp:ListItem>
+                        <asp:ListItem Value="0">a.m</asp:ListItem>
+                    </asp:DropDownList>
+&nbsp;&nbsp;
+                    <asp:Button ID="Button4" runat="server" CssClass="btn btn-primary" Text="save Begin date" OnClick="Button4_Click" />
+                </div>
+                <br />
+                
+
+
+
+                <div id="divFdate" runat="server" style="display: block">
+                    <asp:Calendar ID="finalDate" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="182px" OnSelectionChanged="beginDate_SelectionChanged">
+                        <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
+                        <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
+                        <OtherMonthDayStyle ForeColor="#999999" />
+                        <SelectedDayStyle BackColor="#333399" ForeColor="White" />
+                        <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
+                        <TodayDayStyle BackColor="#CCCCCC" />
+                    </asp:Calendar>
+                    <asp:Label ID="lbfinDate" runat="server" Text="end date"></asp:Label>
+                    <br />
+                    <br />
+                    <asp:Label ID="lbfin" runat="server" Text="hour"></asp:Label>
+                    &nbsp; 
+                     <asp:DropDownList ID="DropDownList3" runat="server">
+                         <asp:ListItem>1</asp:ListItem>
+                         <asp:ListItem>2</asp:ListItem>
+                         <asp:ListItem>3</asp:ListItem>
+                         <asp:ListItem>4</asp:ListItem>
+                         <asp:ListItem>5</asp:ListItem>
+                         <asp:ListItem>6</asp:ListItem>
+                         <asp:ListItem>7</asp:ListItem>
+                         <asp:ListItem>8</asp:ListItem>
+                         <asp:ListItem>9</asp:ListItem>
+                         <asp:ListItem>10</asp:ListItem>
+                         <asp:ListItem>11</asp:ListItem>
+                         <asp:ListItem>12</asp:ListItem>
+                     </asp:DropDownList>
+                    &nbsp;&nbsp; 
+                    <asp:DropDownList ID="ddfin" runat="server">
+                        <asp:ListItem Value="1">p.m.</asp:ListItem>
+                        <asp:ListItem Value="0">a.m.</asp:ListItem>
+                    </asp:DropDownList>
+&nbsp;&nbsp;
+                    <asp:Button ID="Button5" runat="server" CssClass="btn btn-primary" Text="save end date" OnClick="Button5_Click" />
+                </div>
 
             </div>
         </div>
