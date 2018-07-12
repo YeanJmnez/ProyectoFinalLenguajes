@@ -40,6 +40,10 @@
             <div class="form-group">
                 <asp:Button CssClass="btn custom-btn-blue btn-block" ID="btnLogIn" runat="server" Text="Log In" OnClick="btnLogIn_Click" />
             </div>
+            <asp:ScriptManager ID="ScriptManager" runat="server">
+            </asp:ScriptManager>
+            <asp:Timer ID="Timer_State" runat="server" Enabled="False" OnTick="Timer_State_Tick">
+            </asp:Timer>
         </form>
     </div>
 </body>

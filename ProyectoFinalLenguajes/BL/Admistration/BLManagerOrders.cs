@@ -130,13 +130,37 @@ namespace BL.Admistration
 
         public string ChangeOrderStatus(string code, string status)
         {
-            string transaction = "The client is already enabled";
+            string transaction = "The status Order is already changed";
             DAOClientOrders DcOrders = new DAOClientOrders();
             ClientOrder order = new ClientOrder();
             DcOrders.ChangeStateOrder(int.Parse(code), status);
             return transaction;
         }
 
+        public List<BLManagerOrders> ListUniversalOrder(string email, string status, DateTime Initialdate, DateTime finalDate, int option)
+        {
+            List<BLManagerOrders> ListOrder = new List<BLManagerOrders>();
+            switch (option)
+            {
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+                   
+                    break;
+                default:
+                    break;
+            }
+            return ListOrder;
+        }
     }
 }
+    
+
 
