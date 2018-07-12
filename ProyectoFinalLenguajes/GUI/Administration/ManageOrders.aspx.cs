@@ -36,8 +36,14 @@ namespace GUI.Administration
 
         protected void btfindbyClient(object sender, EventArgs e)
         {
-            manager.ListByClientEmail();
+            List<string> listString = manager.ListClientEmail(TxtClientEmail.Text.Trim());
+            foreach (string item in listString)
+            {
+                List_User.Items.Add(item);
+            }
         }
+       
+        
 
 
 
