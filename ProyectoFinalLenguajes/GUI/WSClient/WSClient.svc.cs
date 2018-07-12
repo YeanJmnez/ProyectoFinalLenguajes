@@ -90,6 +90,7 @@ namespace GUI.WSClient
             }
 
             BLClient clBl = new BLClient();
+            clBl.AddOrderWithDetails(email, totalPrice, dishesCodesList, dishesQuantitiesList);
         }
     }
 }
