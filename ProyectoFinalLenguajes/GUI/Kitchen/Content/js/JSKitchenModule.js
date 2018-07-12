@@ -1,7 +1,6 @@
 ﻿
 $(document).ready(function () {
     getAllOrder();
-
 });
 
 setInterval(getAllOrder, 1000);
@@ -14,6 +13,7 @@ function getAllOrder() {
         datatype: "jsonp"
     });
 
+   
     request.done(function (data) {
         processAllOrder(data);
         getQuantity();
@@ -72,7 +72,7 @@ function getQuantity() {
         timeout: 10000,
         datatype: "jsonp"
     });
-    document.getElementById('L_Quantity').innerHTML = "Existen un total de: " + request + " ordenes.";
+    document.getElementById("L_Quantity").innerHTML = "Existen un total de: " + request + " ordenes.";
 }
 
 function changeDeliver(orderCode, stateOrder) {
@@ -91,7 +91,6 @@ function UndoDeliver() {
         timeout: 10000,
         datatype: "jsonp"
     });
-    getAllOrder();
 }
 
 

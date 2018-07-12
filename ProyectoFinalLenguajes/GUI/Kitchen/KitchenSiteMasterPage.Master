@@ -85,6 +85,6 @@
             </div>
         </div>
     </form>
-    <script type="text/javascript" src="Content/js/dashboard.js"></script>
+    <script type="text/javascript" src="../Administration/Content/js/dashboard.js"></script>
 </body>
 </html>

@@ -21,7 +21,7 @@
             </tbody>
         </table>
 
-        <label id="L_Quantity" runat="server"></label>
+        <label id="L_Quantity" runat="server" class="btn btn-primary"></label>
         <br />
 
         <input type="button" id="undo_Button" onclick="UndoDeliver()" value="Undo" class="btn btn-primary" />

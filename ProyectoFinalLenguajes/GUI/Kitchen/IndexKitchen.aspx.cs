@@ -15,5 +15,11 @@ namespace GUI.Kitchen
             GridView1.DataSource = manager.ListKitchenModule();
             GridView1.DataBind();
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            ManagerOrder manager = new ManagerOrder();
+            //Label1.Text = manager.AutomaticState(5, 5, 5, manager.ListOrders());
+        }
     }
 }

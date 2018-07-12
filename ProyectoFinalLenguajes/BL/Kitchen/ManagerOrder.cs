@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using BL.Admistration;
 using DAO.Kitchen;
 using TO;
@@ -26,7 +27,7 @@ namespace BL.Kitchen
                         order.TotalPrice, order.DateHourIn, order.DeliveryAddress, order.ClientEmail, ConvertListOrderDetails(order.listOrders)));
                 }
             }
-            
+
             return finalList;
 
 
@@ -56,7 +57,6 @@ namespace BL.Kitchen
             return FinalList;
         }
 
-
         public int QuantityOrders()
         {
             return ListKitchenModule().Count;
@@ -77,5 +77,61 @@ namespace BL.Kitchen
             DAOClientOrders daoOrders = new DAOClientOrders();
             daoOrders.ChangeStateOrder(OrderCode, state);
         }
+
+        public void AutomaticState(int onTime, int AbTime, int Delayed, List<ClientOrder> ListOrders)
+        {
+            int abTimeFinal = onTime + AbTime;
+            int DelayedFinal = onTime + AbTime + Delayed;
+
+            DAOClientOrders DaoOrders = new DAOClientOrders();
+            foreach (ClientOrder item in ListOrders)
+            {
+                if (!(item.OrderState.Equals("Entregado")) || !(item.OrderState.Equals("Anulado")))
+                {
+                    TimeSpan result = DateTime.Now.Subtract(item.DateHourIn);
+                    int minute = int.Parse(result.TotalMinutes.ToString());
+                    switch (item.OrderState)
+                    {
+                        case "A Tiempo":
+                            if (onTime >= minute)
+                            {
+                                DaoOrders.ChangeStateOrder(item.OrderCode, "Sobre Tiempo");
+                            }
+                            break;
+                        case "Sobre Tiempo":
+                            if (abTimeFinal >= minute)
+                            {
+                                DaoOrders.ChangeStateOrder(item.OrderCode, "Demorado");
+                            }
+                            break;
+                        case "Demorado":
+                            if (DelayedFinal >= minute)
+                            {
+                                DaoOrders.ChangeStateOrder(item.OrderCode, "Anulado");
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                Thread.Sleep(3000);
+            }
+
+        }
+
+        public bool checkList()
+        {
+            ManagerOrder manager = new ManagerOrder();
+            if (manager.ListOrders().Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
     }
 }
