@@ -80,7 +80,7 @@ namespace GUI.Administration
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            string status = DropDownList1.SelectedItem.Text;
+            string status = DropDownList1.SelectedItem.Text.Trim();
             List<string> listString = manager.ListOrderStatus(status);
             foreach (string item in listString)
             {
@@ -89,7 +89,6 @@ namespace GUI.Administration
             String css = box.Attributes["style"];
             String newCss = css.Replace("none", "block");
             box.Attributes.Add("style", newCss);
-
         }
 
 
