@@ -46,8 +46,8 @@
 
                 <div runat="server" id="divClientCode" style="display: none">
                     <div class="form-group input-group">
-                        <span class="input-group-addon">Client Code</span>
-                        <asp:TextBox CssClass="form-control" ID="TxtClientCode" Width="240" runat="server"></asp:TextBox>&nbsp;
+                        <span class="input-group-addon">Client Email</span>
+                        <asp:TextBox CssClass="form-control" ID="TxtClientEmail" Width="240" runat="server"></asp:TextBox>&nbsp;
                         <asp:Button ID="btfinClient" CssClass="btn btn-primary" runat="server" Text="Find" OnClick="btfindbyClient" />
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                     </div>
                 </div>
 
-                <div id="dishes-list-div-column" class="col-sm-4">
+                <div id="dishes-list-div-column" class="col-sm-4" style="display: none">
                     <h3>Lista de Ordenes</h3>
                     <asp:GridView AlternatingRowStyle-CssClass="alternarColores" CssClass="customGrid table-responsive" ID="GridCompleteDishesList" runat="server"></asp:GridView>
                 </div>

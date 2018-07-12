@@ -4,11 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BL.Admistration;
 
 namespace GUI.Administration
 {
     public partial class ManageOrders : System.Web.UI.Page
     {
+        BLManagerOrders manager = new BLManagerOrders();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -34,7 +36,7 @@ namespace GUI.Administration
 
         protected void btfindbyClient(object sender, EventArgs e)
         {
-
+            manager.ListByClientEmail();
         }
 
 
