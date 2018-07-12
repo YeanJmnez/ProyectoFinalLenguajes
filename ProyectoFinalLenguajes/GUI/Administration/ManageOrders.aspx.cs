@@ -32,8 +32,6 @@ namespace GUI.Administration
             bt1.Visible = false;
         }
 
-
-
         protected void btfindbyClient(object sender, EventArgs e)
         {
             List<string> listString = manager.ListClientEmail(TxtClientEmail.Text.Trim());
@@ -45,11 +43,7 @@ namespace GUI.Administration
             String newCss = css.Replace("none", "block");
             box.Attributes.Add("style", newCss);
         }
-
-
-
-
-
+        
         protected void Button1_Click(object sender, EventArgs e)
         {
             if (int.Parse(dropDownone.SelectedValue) == 0)
@@ -81,7 +75,7 @@ namespace GUI.Administration
         protected void Button3_Click(object sender, EventArgs e)
         {
             string status = DropDownList1.SelectedItem.Text.Trim();
-            List<string> listString = manager.ListOrderStatus(status);
+            List<string> listString = manager.ListOrderStatus("late");
             foreach (string item in listString)
             {
                 List_User.Items.Add(item);
@@ -90,9 +84,7 @@ namespace GUI.Administration
             String newCss = css.Replace("none", "block");
             box.Attributes.Add("style", newCss);
         }
-
-
-
+        
         protected void Button4_Click(object sender, EventArgs e)
         {
          

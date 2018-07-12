@@ -10,96 +10,105 @@
 namespace GUI.Administration {
     
     
-    public partial class Login {
+    public partial class GUIManagerOrdes {
         
         /// <summary>
-        /// txtLoginUserName control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtLoginUserName;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// loginEmptyUserName control.
+        /// idList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl loginEmptyUserName;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl idList;
         
         /// <summary>
-        /// wrongUserName control.
+        /// List_ClientFilter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl wrongUserName;
+        protected global::System.Web.UI.WebControls.ListBox List_ClientFilter;
         
         /// <summary>
-        /// txtLoginUserPassword control.
+        /// TxtEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtLoginUserPassword;
+        protected global::System.Web.UI.WebControls.TextBox TxtEmail;
         
         /// <summary>
-        /// loginEmptyPassword control.
+        /// BtChargeList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl loginEmptyPassword;
+        protected global::System.Web.UI.WebControls.Button BtChargeList;
         
         /// <summary>
-        /// wrongPassword control.
+        /// RBOntime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl wrongPassword;
+        protected global::System.Web.UI.WebControls.RadioButton RBOntime;
         
         /// <summary>
-        /// rblRoleSelector control.
+        /// RBAboutTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rblRoleSelector;
+        protected global::System.Web.UI.WebControls.RadioButton RBAboutTime;
         
         /// <summary>
-        /// btnLogIn control.
+        /// RBCanceled control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogIn;
+        protected global::System.Web.UI.WebControls.RadioButton RBCanceled;
         
         /// <summary>
-        /// ScriptManager control.
+        /// RBComitted control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager;
+        protected global::System.Web.UI.WebControls.RadioButton RBComitted;
         
         /// <summary>
-        /// Timer_State control.
+        /// RBLate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.Timer Timer_State;
+        protected global::System.Web.UI.WebControls.RadioButton RBLate;
+        
+        /// <summary>
+        /// BtChageStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtChageStatus;
     }
 }
