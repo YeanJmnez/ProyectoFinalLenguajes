@@ -22,15 +22,6 @@ namespace GUI.Administration {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl addDishForm;
         
         /// <summary>
-        /// LbName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbName;
-        
-        /// <summary>
         /// TxtName control.
         /// </summary>
         /// <remarks>
@@ -38,15 +29,6 @@ namespace GUI.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtName;
-        
-        /// <summary>
-        /// LbDescription control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbDescription;
         
         /// <summary>
         /// TxtDescription control.
@@ -58,15 +40,6 @@ namespace GUI.Administration {
         protected global::System.Web.UI.WebControls.TextBox TxtDescription;
         
         /// <summary>
-        /// LbPrice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbPrice;
-        
-        /// <summary>
         /// TxtPrice control.
         /// </summary>
         /// <remarks>
@@ -74,15 +47,6 @@ namespace GUI.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtPrice;
-        
-        /// <summary>
-        /// LbState control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbState;
         
         /// <summary>
         /// TxtState control.
@@ -94,22 +58,13 @@ namespace GUI.Administration {
         protected global::System.Web.UI.WebControls.TextBox TxtState;
         
         /// <summary>
-        /// LbImage control.
+        /// FileUploadImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbImage;
-        
-        /// <summary>
-        /// FileUploadDish control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUploadDish;
+        protected global::System.Web.UI.WebControls.FileUpload FileUploadImage;
         
         /// <summary>
         /// BtAddDish control.

@@ -4,13 +4,16 @@
     var userAddress = document.getElementById("txtUserAddress").value;
     var userPassword = document.getElementById("txtUserPassword").value;
 
+    alert(userEmail + userName + userAddress + userPassword);
+
     var request = $.ajax({
         url: "http://proyelenguajes-001-site1.gtempurl.com/WSClient/WSClient.svc/AddNewWSClient?email="
             + userEmail 
             + "&name=" + userName 
             + "&address=" + userAddress 
             + "&password=" + userPassword,
-        timeout: 10000
+        timeout: 10000,
+        datatype: "jsonp"
     });
 
     request.done(function () {
@@ -21,4 +24,5 @@
     request.fail(function () {
         alert("ERROR");
     });
+    
 }

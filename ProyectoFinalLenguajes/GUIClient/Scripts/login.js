@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    $('#txtLoginUserName').keyup(function () {
+    $('#txtLoginUserEmail').keyup(function () {
         if ($(this).val() == "") {
             $('#wrongUserName').addClass('hidden');
             $('#loginEmptyUserName').removeClass('hidden');
@@ -20,7 +20,7 @@
 });
 
 function checkTextBoxes() {
-    var userEmail = document.getElementById('txtLoginUserName').value;
+    var userEmail = document.getElementById('txtLoginUserEmail').value;
     var userPassword = document.getElementById('txtLoginUserPassword').value;
 
     console.log(userEmail);
@@ -35,6 +35,26 @@ function checkTextBoxes() {
 
 }
 
-function showMessage() {
-    alert("HELLO WORLD.");
+function UserLogin() {
+    var userEmail = document.getElementById("txtLoginUserEmail");
+    var userPassword = document.getElementById("txtLoginUserPassword");
+
+    var request = $.ajax({
+        url: "http://proyelenguajes-001-site1.gtempurl.com/WSClient/WSClient.svc/UserLoginValidation?email="
+            + userEmail + "&password=" + userPassword,
+        timeout: 10000,
+        datatype: "jsonp"
+    });
+
+    request.done(function (data) {
+        alert(data);
+
+        $.each(data, function () {
+
+        });
+    });
+
+    request.fail(function () {
+        alert("ERROR");
+    });
 }

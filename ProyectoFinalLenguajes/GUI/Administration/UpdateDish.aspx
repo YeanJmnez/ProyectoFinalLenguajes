@@ -11,7 +11,7 @@
                 <div class="form-group input-group">
                     <span class="input-group-addon">Dish Code</span>
                     <asp:TextBox CssClass="form-control" ID="TxtCodeUpdate" Width="240" runat="server"></asp:TextBox>&nbsp;
-                        <asp:Button ID="BtChargeDU" CssClass="btn btn-primary" runat="server" Text="Buscar Plato" OnClick="BtChargeDU_Click" />
+                    <asp:Button ID="BtChargeDU" CssClass="btn btn-primary" runat="server" Text="Buscar Plato" OnClick="BtChargeDU_Click" />
                 </div>
                 <br />
                 <h4>Selected Dish Data</h4>

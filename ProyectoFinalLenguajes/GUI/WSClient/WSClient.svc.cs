@@ -56,5 +56,19 @@ namespace GUI.WSClient
 
             return allSelectedDishes;
         }
+
+        public List<BLClient> UserLoginValidation(string email, string password)
+        {
+            List<BLClient> clientFound = new List<BLClient>();
+            BLClient blCl = new BLClient();
+            BLClient blClFound = blCl.GetUserLoginValidation(email, password);
+            
+            if (blClFound != null)
+            {
+                clientFound.Add(blCl);
+            }
+
+            return clientFound;
+        }
     }
 }

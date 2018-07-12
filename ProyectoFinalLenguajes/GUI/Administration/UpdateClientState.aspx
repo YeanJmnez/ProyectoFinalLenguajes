@@ -5,7 +5,7 @@
         <div class="center-block">
         <h1>Change Client State</h1>
         <br />
-        <asp:Label ID="Label1" CssClass="btn btn-primary boton" runat="server" Text="Complete Client List" Width="224px"></asp:Label>
+        <asp:Label ID="Label1" CssClass="label label-primary custom-label" runat="server" Text="Complete Client List"></asp:Label>
             <br />
         <br />
         <asp:ListBox ID="List_User" runat="server" Height="167px" Width="508px" BackColor="#CCFFFF" ForeColor="Black" Rows="10"></asp:ListBox>

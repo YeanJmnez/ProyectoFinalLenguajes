@@ -26,8 +26,8 @@ namespace GUI.Administration
             {
                 state = false;
             }
-            BLDish newDish = new BLDish(TxtName.Text.Trim(), TxtDescription.Text.Trim(), decimal.Parse(TxtPrice.Text.ToLower().Trim()), state, FileUploadDish.FileName);
-            FileUploadDish.SaveAs(Server.MapPath("../DishesPicture/").ToString() + FileUploadDish.FileName);
+            BLDish newDish = new BLDish(TxtName.Text.Trim(), TxtDescription.Text.Trim(), decimal.Parse(TxtPrice.Text.ToLower().Trim()), state, FileUploadImage.FileName);
+            FileUploadImage.SaveAs(Server.MapPath("../DishesPicture/").ToString() + FileUploadImage.FileName);
             newDish.addDish(newDish);
 
             addDishForm.Visible = false;

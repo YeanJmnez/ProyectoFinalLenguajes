@@ -11,6 +11,30 @@ namespace DAO.Administration
     public class DAOClient
     {
 
+        public Client UserLoginValidation(Client client) {
+            using (DB_Project db = new DB_Project())
+            {
+                Client clientFound = db.Client.Find(client.ClientEmail);
+
+                if (clientFound == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    if (clientFound.ClientPassword != client.ClientPassword)
+                    {
+                        return null;
+                    }
+                    else
+                    {
+                        return clientFound;
+                    }
+                }
+                
+            }
+        }
+
         public List<Client> ClientList()
         {
             List<Client> Clientes = new List<Client>();

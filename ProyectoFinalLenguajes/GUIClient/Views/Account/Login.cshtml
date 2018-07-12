@@ -14,7 +14,7 @@
                 <span class="input-group-addon">
                     <span class="fa fa-envelope"></span>
                 </span>
-                <input id="txtLoginUserName" class="form-control" type="text" name="userName" placeholder="User Name" required="required" />
+                <input id="txtLoginUserEmail" class="form-control" type="text" name="userName" placeholder="User Name" required="required" />
                 <span class="input-group-addon warn hidden" id="loginEmptyUserName">Complete this field</span>
                 <span class="input-group-addon warn hidden" id="wrongUserName">Username not found</span>
             </div>
@@ -27,7 +27,7 @@
                 <span class="input-group-addon warn hidden" id="wrongPassword">Wrong password</span>
             </div>
             <div class="form-group">
-                <button class="btn custom-btn-blue" id="btnLogIn" onclick="checkTextBoxes()">Log In</button>
+                <button class="btn custom-btn-blue" id="btnLogIn" onclick="UserLogin()">Log In</button>
             </div>
             <div class="form-group">
                 <span class="left-span-separator"></span><span class="span-text-separator">OR</span><span class="right-span-separator"></span>
