@@ -65,7 +65,7 @@ namespace GUI.WSClient
             
             if (blClFound != null)
             {
-                clientFound.Add(blCl);
+                clientFound.Add(blClFound);
             }
 
             return clientFound;
