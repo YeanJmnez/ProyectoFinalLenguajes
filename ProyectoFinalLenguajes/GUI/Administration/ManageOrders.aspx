@@ -11,33 +11,56 @@
                 <h3>Manage Orders Menu</h3>
 
                 <div class="form-group input-group">
-                    <span class="input-group-addon">Select type of Filter</span>
-                    <asp:RadioButtonList CssClass="form-control" ID="rblRoleSelector" runat="server" RepeatDirection="Horizontal">
-                        <asp:ListItem Value="filter" Selected="True">filter &nbsp;&nbsp;&nbsp;</asp:ListItem>
-                        <asp:ListItem Value="multi-filter"> multi-filter</asp:ListItem>
-                    </asp:RadioButtonList>
-                       </div>
+                    <span class="input-group-addon">Select type of Filter 
+                         <asp:Button ID="bt1" CssClass="btn btn-primary" runat="server" Text="multi-filter" OnClick="bt1_Click" />
+                        <asp:Button ID="bt2" runat="server" CssClass="btn btn-primary" Text="one filter" OnClick="bt2_Click" />
+                    </span>
+                </div>
 
-                    <div>
-                        <div class="dropdown">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                Select  filter
-                       <span class="fa fa-arrow-circle-down"></span>
-                            </button>
+                <div runat="server" id="oneFilter" style="display: none">
+                    <asp:DropDownList ID="dropDownone" runat="server" CssClass="form-control" Width="200">
+                        <asp:ListItem Value="0">Filter by Client</asp:ListItem>
+                        <asp:ListItem Value="1">Filter by Date</asp:ListItem>
+                        <asp:ListItem Value="2">Filter by status</asp:ListItem>
+                    </asp:DropDownList>
 
+                    <br />
+                    <asp:Button ID="Button1" CssClass="btn btn-primary" runat="server" Height="28px" Text="Select Filter" Width="116px" OnClick="Button1_Click" />
+                    <br />
+                    <br />
+                </div>
 
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="#">Filter by Client</a></li>
-                                <li><a class="dropdown-item" href="#">Filter by Date</a></li>
-                                <li><a class="dropdown-item" href="#">Filter by State</a></li>
-                            </ul>
+                <div runat="server" id="divMuti" style="display: none">
+                    <fieldset class="form-group">
+                        <legend class="col-sm-3 control-label">Select the filters</legend>
+                        <div class="checkbox checkboxlist col-sm-7">
+                            <asp:CheckBoxList ID="checkBox" runat="server">
+                                <asp:ListItem Text="Filter by Client"></asp:ListItem>
+                                <asp:ListItem Text="Filter by Date"></asp:ListItem>
+                                <asp:ListItem Text="Filter by State"></asp:ListItem>
+                            </asp:CheckBoxList>
                         </div>
+                    </fieldset>
+                </div>
+                &nbsp;<br />
+
+                <div runat="server" id="divClientCode" style="display: none">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Client Code</span>
+                        <asp:TextBox CssClass="form-control" ID="TxtClientCode" Width="240" runat="server"></asp:TextBox>&nbsp;
+                        <asp:Button ID="btfinClient" CssClass="btn btn-primary" runat="server" Text="Find" OnClick="btfindbyClient" />
                     </div>
+                </div>
 
 
-                <br />
-
-
+                <div runat="server" id="div3" style="display: none">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Status:  
+                             <asp:RadioButton ID="RadioButton1" runat="server" Text="Enable" />
+                        </span>
+                        <asp:Button ID="Button2" CssClass="btn btn-primary" runat="server" Text="apply filter" OnClick="btfindbyClient" />
+                    </div>
+                </div>
 
                 <div id="dishes-list-div-column" class="col-sm-4">
                     <h3>Lista de Ordenes</h3>
