@@ -21,7 +21,8 @@ namespace DAO.Administration
 
                 ClientOrder orderFound = (from dbOrder in db.ClientOrder
                                           where dbOrder.ClientEmail == order.ClientEmail
-                                          select dbOrder).Last();
+                                          orderby dbOrder.OrderCode descending
+                                          select dbOrder).First();
                 orderCode = orderFound.OrderCode;
             }
 
